@@ -12,5 +12,4 @@ int main() {
   write_Diff_Xsec_PiRho_PiGamma();
   write_Total_Xsec_PiPi_RhoGamma();
   write_Diff_Xsec_PiPi_RhoGamma();
-
 }
