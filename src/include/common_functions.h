@@ -50,6 +50,28 @@ inline double max_mandelstam_t(double s, double m1, double m2, double m3) {
   return tmax;
 }
 
+/* Scattering Angle:
+ * Determine the scattering angle theta (in degrees) from kinematic properties.
+ * m1: mass of the first incoming particle
+ * m2: mass of the second incoming particle
+ * m3: mass of the first outgoing particle
+ * sqrts: center-of-mass energy
+ * pcm: center-of-mass momentum
+ */
+
+inline double theta_from_t(double t, double sqrts, double m1, double m2, double m3) {
+  double s = sqrts * sqrts;
+  double pcm = sqrt(pow(pow(m1,2) - pow(m2,2),2) - 2*(pow(m1,2) + pow(m2,2))*s + pow(s,2))/(2.*sqrt(s));
+  double costheta = (t - pow(m2, 2) +
+                     0.5 * (s + pow(m2, 2) - pow(m1, 2)) *
+                         (s - pow(m3, 2)) / s) /
+                    (pcm * (s - pow(m3, 2)) / sqrts);
+
+  double theta = acos(costheta) * 180.0 / M_PI;
+
+  return theta;
+}
+
 // Constant parameters:
 const double Const = 0.059;
 const double g_POR = 11.93; // 22.6 in case no form factors are applied

@@ -41,18 +41,19 @@ void write_Diff_Xsec_PiRho_PiGamma() {
 
   double sqrt_s = 1.0;
   Diff_Xsections_PiRho_PiGamma
-      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) + " GeV"
+      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) + " GeV as a function of mandelstam t and the scattering angle \u03F4"
       << std::endl;
-  Diff_Xsections_PiRho_PiGamma << "# t, C11, C12, C13, C14, C15, C16"
+  Diff_Xsections_PiRho_PiGamma << "# t, \u03F4 (degree), C11, C12, C13, C14, C15, C16"
                                << std::endl;
 
   double tmin = min_mandelstam_t(sqrt_s * sqrt_s, mpion, mrho, mpion);
   double tmax = max_mandelstam_t(sqrt_s * sqrt_s, mpion, mrho, mpion);
   double increment = (tmax - tmin) / 1000.0;
-  double t;
+  double t, theta;
 
-  for (int i = 1; i < 1002; i += 1) {
+  for (int i = 1; i < 1001; i += 1) {
     t = tmin + i * increment;
+    theta = theta_from_t(t, sqrt_s, mpion, mrho, mpion);
 
     diff_sigma_C11 = diff_xsection_C11(t, sqrt_s * sqrt_s);
     diff_sigma_C12 = diff_xsection_C12(t, sqrt_s * sqrt_s);
@@ -62,7 +63,7 @@ void write_Diff_Xsec_PiRho_PiGamma() {
     diff_sigma_C16 = diff_xsection_C16(t, sqrt_s * sqrt_s);
 
     Diff_Xsections_PiRho_PiGamma
-        << t << "\t" << diff_sigma_C11 << "\t" << diff_sigma_C12 << "\t"
+        << t << "\t" << theta << "\t" << diff_sigma_C11 << "\t" << diff_sigma_C12 << "\t"
         << diff_sigma_C13 << "\t" << diff_sigma_C14 << "\t" << diff_sigma_C15
         << "\t" << diff_sigma_C16 << std::endl;
   }
@@ -102,22 +103,23 @@ void write_Diff_Xsec_PiPi_RhoGamma() {
 
   double sqrt_s = 1.0;
   Diff_Xsections_PiPi_RhoGamma
-      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) + " GeV"
+      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) + " GeV as a function of mandelstam t and the scattering angle \u03F4"
       << std::endl;
-  Diff_Xsections_PiPi_RhoGamma << "# t, C21, C22" << std::endl;
+  Diff_Xsections_PiPi_RhoGamma << "# t, \u03F4 (degree), C21, C22" << std::endl;
 
   double tmin = min_mandelstam_t(sqrt_s * sqrt_s, mpion, mpion, mrho);
   double tmax = max_mandelstam_t(sqrt_s * sqrt_s, mpion, mpion, mrho);
   double increment = (tmax - tmin) / 1000.0;
-  double t;
+  double t, theta;
 
-  for (int i = 1; i < 1002; i += 1) {
+  for (int i = 1; i < 1001; i += 1) {
     t = tmin + i * increment;
+    theta = theta_from_t(t, sqrt_s, mpion, mpion, mrho);
 
     diff_sigma_C21 = diff_xsection_C21(t, sqrt_s * sqrt_s);
     diff_sigma_C22 = diff_xsection_C22(t, sqrt_s * sqrt_s);
 
-    Diff_Xsections_PiPi_RhoGamma << t << "\t" << diff_sigma_C21 << "\t"
+    Diff_Xsections_PiPi_RhoGamma << t << "\t" << theta << "\t" << diff_sigma_C21 << "\t"
                                  << diff_sigma_C22 << "\t" << std::endl;
   }
   Diff_Xsections_PiPi_RhoGamma.close();
