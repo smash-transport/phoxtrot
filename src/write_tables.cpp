@@ -41,10 +41,12 @@ void write_Diff_Xsec_PiRho_PiGamma() {
 
   double sqrt_s = 1.0;
   Diff_Xsections_PiRho_PiGamma
-      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) + " GeV as a function of mandelstam t and the scattering angle \u03F4"
+      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) +
+             " GeV as a function of mandelstam t and the scattering angle "
+             "\u03F4"
       << std::endl;
-  Diff_Xsections_PiRho_PiGamma << "# t, \u03F4 (degree), C11, C12, C13, C14, C15, C16"
-                               << std::endl;
+  Diff_Xsections_PiRho_PiGamma
+      << "# t, \u03F4 (degree), C11, C12, C13, C14, C15, C16" << std::endl;
 
   double tmin = min_mandelstam_t(sqrt_s * sqrt_s, mpion, mrho, mpion);
   double tmax = max_mandelstam_t(sqrt_s * sqrt_s, mpion, mrho, mpion);
@@ -63,9 +65,9 @@ void write_Diff_Xsec_PiRho_PiGamma() {
     diff_sigma_C16 = diff_xsection_C16(t, sqrt_s * sqrt_s);
 
     Diff_Xsections_PiRho_PiGamma
-        << t << "\t" << theta << "\t" << diff_sigma_C11 << "\t" << diff_sigma_C12 << "\t"
-        << diff_sigma_C13 << "\t" << diff_sigma_C14 << "\t" << diff_sigma_C15
-        << "\t" << diff_sigma_C16 << std::endl;
+        << t << "\t" << theta << "\t" << diff_sigma_C11 << "\t"
+        << diff_sigma_C12 << "\t" << diff_sigma_C13 << "\t" << diff_sigma_C14
+        << "\t" << diff_sigma_C15 << "\t" << diff_sigma_C16 << std::endl;
   }
   Diff_Xsections_PiRho_PiGamma.close();
 }
@@ -103,7 +105,9 @@ void write_Diff_Xsec_PiPi_RhoGamma() {
 
   double sqrt_s = 1.0;
   Diff_Xsections_PiPi_RhoGamma
-      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) + " GeV as a function of mandelstam t and the scattering angle \u03F4"
+      << "# Differential sigma at sqrt(s) = " + std::to_string(sqrt_s) +
+             " GeV as a function of mandelstam t and the scattering angle "
+             "\u03F4"
       << std::endl;
   Diff_Xsections_PiPi_RhoGamma << "# t, \u03F4 (degree), C21, C22" << std::endl;
 
@@ -119,8 +123,8 @@ void write_Diff_Xsec_PiPi_RhoGamma() {
     diff_sigma_C21 = diff_xsection_C21(t, sqrt_s * sqrt_s);
     diff_sigma_C22 = diff_xsection_C22(t, sqrt_s * sqrt_s);
 
-    Diff_Xsections_PiPi_RhoGamma << t << "\t" << theta << "\t" << diff_sigma_C21 << "\t"
-                                 << diff_sigma_C22 << "\t" << std::endl;
+    Diff_Xsections_PiPi_RhoGamma << t << "\t" << theta << "\t" << diff_sigma_C21
+                                 << "\t" << diff_sigma_C22 << "\t" << std::endl;
   }
   Diff_Xsections_PiPi_RhoGamma.close();
 }

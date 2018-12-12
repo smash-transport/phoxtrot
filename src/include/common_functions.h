@@ -59,13 +59,16 @@ inline double max_mandelstam_t(double s, double m1, double m2, double m3) {
  * pcm: center-of-mass momentum
  */
 
-inline double theta_from_t(double t, double sqrts, double m1, double m2, double m3) {
+inline double theta_from_t(double t, double sqrts, double m1, double m2,
+                           double m3) {
   double s = sqrts * sqrts;
-  double pcm = sqrt(pow(pow(m1,2) - pow(m2,2),2) - 2*(pow(m1,2) + pow(m2,2))*s + pow(s,2))/(2.*sqrt(s));
-  double costheta = (t - pow(m2, 2) +
-                     0.5 * (s + pow(m2, 2) - pow(m1, 2)) *
-                         (s - pow(m3, 2)) / s) /
-                    (pcm * (s - pow(m3, 2)) / sqrts);
+  double pcm = sqrt(pow(pow(m1, 2) - pow(m2, 2), 2) -
+                    2 * (pow(m1, 2) + pow(m2, 2)) * s + pow(s, 2)) /
+               (2. * sqrt(s));
+  double costheta =
+      (t - pow(m2, 2) +
+       0.5 * (s + pow(m2, 2) - pow(m1, 2)) * (s - pow(m3, 2)) / s) /
+      (pcm * (s - pow(m3, 2)) / sqrts);
 
   double theta = acos(costheta) * 180.0 / M_PI;
 
