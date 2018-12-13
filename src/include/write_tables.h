@@ -3,13 +3,15 @@
 #ifndef WRITE_TABLES_H
 #define WRITE_TABLES_H
 
+#include <string>
+
 // Write cross sections for (π + ρ0 ->  π + γ) processes
-void write_Total_Xsec_PiRho_PiGamma();
-void write_Diff_Xsec_PiRho_PiGamma();
+void write_Total_Xsec_PiRho_PiGamma(std::string dir);
+void write_Diff_Xsec_PiRho_PiGamma(std::string dir);
 
 // Write cross sections for (π + π -> ρ0 + γ) processes
-void write_Total_Xsec_PiPi_RhoGamma();
-void write_Diff_Xsec_PiPi_RhoGamma();
+void write_Total_Xsec_PiPi_RhoGamma(std::string dir);
+void write_Diff_Xsec_PiPi_RhoGamma(std::string dir);
 
 // Declarations of variables
 

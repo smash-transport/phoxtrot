@@ -7,9 +7,9 @@
 #include "differential_Xsections.cpp"
 #include "total_Xsections.cpp"
 
-void write_Total_Xsec_PiRho_PiGamma() {
+void write_Total_Xsec_PiRho_PiGamma(std::string dir) {
   std::ofstream Total_Xsections_PiRho_PiGamma;
-  Total_Xsections_PiRho_PiGamma.open("Total_Xsec_PiRho_PiGamma_mrho_" +
+  Total_Xsections_PiRho_PiGamma.open(dir + "/Total_Xsec_PiRho_PiGamma_mrho_" +
                                      std::to_string(int(mrho * 1000)) +
                                      "_MeV.txt");
 
@@ -33,9 +33,9 @@ void write_Total_Xsec_PiRho_PiGamma() {
   Total_Xsections_PiRho_PiGamma.close();
 }
 
-void write_Diff_Xsec_PiRho_PiGamma() {
+void write_Diff_Xsec_PiRho_PiGamma(std::string dir) {
   std::ofstream Diff_Xsections_PiRho_PiGamma;
-  Diff_Xsections_PiRho_PiGamma.open("Diff_Xsec_PiRho_PiGamma_mrho_" +
+  Diff_Xsections_PiRho_PiGamma.open(dir + "/Diff_Xsec_PiRho_PiGamma_mrho_" +
                                     std::to_string(int(mrho * 1000)) +
                                     "_MeV.txt");
 
@@ -72,9 +72,9 @@ void write_Diff_Xsec_PiRho_PiGamma() {
   Diff_Xsections_PiRho_PiGamma.close();
 }
 
-void write_Total_Xsec_PiPi_RhoGamma() {
+void write_Total_Xsec_PiPi_RhoGamma(std::string dir) {
   std::ofstream Total_Xsections_PiPi_RhoGamma;
-  Total_Xsections_PiPi_RhoGamma.open("Total_Xsec_PiPi_RhoGamma_mrho_" +
+  Total_Xsections_PiPi_RhoGamma.open(dir + "/Total_Xsec_PiPi_RhoGamma_mrho_" +
                                      std::to_string(int(mrho * 1000)) +
                                      "_MeV.txt");
   Total_Xsections_PiPi_RhoGamma << "# sqrt(s), C21, C22" << std::endl;
@@ -97,9 +97,9 @@ void write_Total_Xsec_PiPi_RhoGamma() {
   Total_Xsections_PiPi_RhoGamma.close();
 }
 
-void write_Diff_Xsec_PiPi_RhoGamma() {
+void write_Diff_Xsec_PiPi_RhoGamma(std::string dir) {
   std::ofstream Diff_Xsections_PiPi_RhoGamma;
-  Diff_Xsections_PiPi_RhoGamma.open("Diff_Xsec_PiPi_RhoGamma_mrho_" +
+  Diff_Xsections_PiPi_RhoGamma.open(dir + "/Diff_Xsec_PiPi_RhoGamma_mrho_" +
                                     std::to_string(int(mrho * 1000)) +
                                     "_MeV.txt");
 
