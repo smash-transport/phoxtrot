@@ -30,4 +30,4 @@ execute phoxtrot, create the cross section files and plot them, type
     make plots
 
 The generated cross section files can then be found in `PATH_TO_BUILD/tables`
-and the corresponding plots are located in `PATH_TO_BUILD/tables`.
+and the corresponding plots are located in `PATH_TO_BUILD/plots`.
