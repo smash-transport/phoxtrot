@@ -53,7 +53,7 @@ void write_Diff_Xsec_PiRho_PiGamma(std::string dir) {
   double increment = (tmax - tmin) / 1000.0;
   double t, theta;
 
-  for (int i = 1; i < 1001; i += 1) {
+  for (int i = 0; i < 1001; i += 1) {
     t = tmin + i * increment;
     theta = theta_from_t(t, sqrt_s, mpion, mrho, mpion);
 
@@ -116,9 +116,13 @@ void write_Diff_Xsec_PiPi_RhoGamma(std::string dir) {
   double increment = (tmax - tmin) / 1000.0;
   double t, theta;
 
-  for (int i = 1; i < 1001; i += 1) {
+  for (int i = 0; i < 1001; i += 1) {
     t = tmin + i * increment;
     theta = theta_from_t(t, sqrt_s, mpion, mpion, mrho);
+
+    if (t == tmin) {
+      std::cout << t << "\t" << theta << '\n';
+    }
 
     diff_sigma_C21 = diff_xsection_C21(t, sqrt_s * sqrt_s);
     diff_sigma_C22 = diff_xsection_C22(t, sqrt_s * sqrt_s);

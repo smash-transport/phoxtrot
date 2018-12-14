@@ -109,6 +109,9 @@ def plot_diff_cross_section(xsec_data, mrho, as_theta, output_dir):
             plt.xlabel(r"$\theta$")
             plt.ylabel(r"$\frac{\mathrm{d}\sigma}{\mathrm{d}\theta}$ [mb]")
             plt.xlim(0,180)
+            xticks = [0,45,90,135,180]
+            xticks_labels = ["0","45","90","135","180"]
+            plt.xticks(xticks,xticks_labels)
         else:
             plt.plot(t, C21*to_mb, label = Labels['C21'], color = Colours['C21'], ls = Linestyles['C21'])
             plt.plot(t, C22*to_mb, label = Labels['C22'], color = Colours['C22'], ls = Linestyles['C22'])
@@ -116,6 +119,8 @@ def plot_diff_cross_section(xsec_data, mrho, as_theta, output_dir):
             plt.axvline(t[-1], ls = "-", color = 'grey')
             plt.xlabel(r"$\sqrt{s}$ [GeV]")
             plt.ylabel(r"$\sigma$ [mb]")
+            xticks = [t[0],-0.3,-0.2,-0.1,t[-1]]
+            xticks_labels = [r"$t_{\mathrm{min}}$","-0.3","-0.2","-0.1",r"$t_{\mathrm{max}}$"]
             plt.xticks(xticks,xticks_labels)
         plt.ylim(0,4.3)
         plt.legend(loc="best")
@@ -268,18 +273,21 @@ if __name__ == '__main__':
     parser.add_argument("-o", "--output_dir", nargs = '+', required = False,
                         default = '.', help = 'Path to the output directory \
                         to store the results')
-    parser.add_argument("--plot_theta", type=bool, required = False, default = False,
-                        help = "Plot cross sections as a function of theta \
-                                instead of t")
     args = parser.parse_args()
 
     cross_section_directory = args.directory[0] + '/'
-    as_func_of_theta = args.plot_theta
     output_directory = args.output_dir[0]
 
     Diff_PiRho, Diff_PiPi, Total_PiRho, Total_PiPi, rho_mass = read_cross_section_files(cross_section_directory)
 
-    plot_diff_cross_section(Diff_PiPi, rho_mass, as_func_of_theta, output_directory)
-    plot_diff_cross_section(Diff_PiRho, rho_mass, as_func_of_theta, output_directory)
+    # plot differential Xsection as a function of t
+    plot_diff_cross_section(Diff_PiPi, rho_mass, False, output_directory)
+    plot_diff_cross_section(Diff_PiRho, rho_mass, False, output_directory)
+
+    # plot differential Xsection as a function of theta
+    plot_diff_cross_section(Diff_PiPi, rho_mass, True, output_directory)
+    plot_diff_cross_section(Diff_PiRho, rho_mass, True, output_directory)
+
+    # plot total cross section as a function of sqrt(s)
     plot_total_cross_section(Total_PiPi, rho_mass, output_directory)
     plot_total_cross_section(Total_PiRho, rho_mass, output_directory)

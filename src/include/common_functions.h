@@ -61,6 +61,7 @@ inline double max_mandelstam_t(double s, double m1, double m2, double m3) {
 
 inline double theta_from_t(double t, double sqrts, double m1, double m2,
                            double m3) {
+  double theta;
   double s = sqrts * sqrts;
   double pcm = sqrt(pow(pow(m1, 2) - pow(m2, 2), 2) -
                     2 * (pow(m1, 2) + pow(m2, 2)) * s + pow(s, 2)) /
@@ -70,7 +71,15 @@ inline double theta_from_t(double t, double sqrts, double m1, double m2,
        0.5 * (s + pow(m2, 2) - pow(m1, 2)) * (s - pow(m3, 2)) / s) /
       (pcm * (s - pow(m3, 2)) / sqrts);
 
-  double theta = acos(costheta) * 180.0 / M_PI;
+  // numerical issues arise for arccos(-1) and arccos(1), thus setting values
+  // by hand
+  if (abs(costheta - 1.0) < 1e-10) {
+    theta = 0.0;
+  } else if (abs(costheta + 1.0) < 1e-10) {
+    theta = 180.0;
+  } else {
+    theta = acos(costheta) * 180.0 / M_PI;
+  }
 
   return theta;
 }
