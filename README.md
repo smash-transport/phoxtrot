@@ -1,10 +1,8 @@
 # PHOXTROT
 
-**Caution: This repository is still very much work in progress...**
-
 Welcome to PHOXTROT (**PHO**ton **X**sections for **TR**ansp**O**r**T**).
 This repository contains a collection of cross sections useful to describe the
-production of photons in a hadronic medium. See * **paper(once public)** * for
+production of photons in a hadronic medium. See **paper(once public)** for
 further details.
 
 The presented cross sections and processes rely on a theoretical framework
@@ -24,8 +22,12 @@ create the executable, use the following commands:
     cmake ..
     make phoxtrot
 
-The executable `phoxtrot` is then located in the build directory. Upon execution, txt files for the differential and total cross section are created that contain the computed cross sections for varying values of t and s. To execute phoxtrot and to create the cross section files, type
+The executable `phoxtrot` is located in the build directory. Upon
+execution, txt files for the differential and total cross section are created
+that contain the computed cross sections for varying values of t and s. To
+execute phoxtrot, create the cross section files and plot them, type
 
-    make phoxtrot_tables
+    make plots
 
-The generated cross section files can be found in `PATH_TO_BUILD/tables`.
+The generated cross section files can then be found in `PATH_TO_BUILD/tables`
+and the corresponding plots are located in `PATH_TO_BUILD/tables`.

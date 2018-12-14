@@ -55,16 +55,16 @@ def read_cross_section_files(directory):
     for file in Xsec_files:
         filename = file.split('_')
         if 'Diff' in filename and 'PiRho' in filename:
-            Diff_Xsections_PiRho_PiGamma = np.loadtxt(file, unpack = True, skiprows = 2)
+            Diff_Xsections_PiRho_PiGamma = np.loadtxt(directory + file, unpack = True, skiprows = 2)
             mrho = float(filename[-2])/1000        #in GeV
         elif 'Diff' in filename and 'PiPi' in filename:
-            Diff_Xsections_PiPi_RhoGamma = np.loadtxt(file, unpack = True, skiprows = 2)
+            Diff_Xsections_PiPi_RhoGamma = np.loadtxt(directory + file, unpack = True, skiprows = 2)
             mrho1 = float(filename[-2])/1000
         elif 'Total' in filename and 'PiRho' in filename:
-            Total_Xsections_PiRho_PiGamma = np.loadtxt(file, unpack = True, skiprows = 1)
+            Total_Xsections_PiRho_PiGamma = np.loadtxt(directory + file, unpack = True, skiprows = 1)
             mrho2 = float(filename[-2])/1000
         elif 'Total' in filename and 'PiPi' in filename:
-            Total_Xsections_PiPi_RhoGamma = np.loadtxt(file, unpack = True, skiprows = 1)
+            Total_Xsections_PiPi_RhoGamma = np.loadtxt(directory + file, unpack = True, skiprows = 1)
             mrho3 = float(filename[-2])/1000
         else:
             print 'WARNING: Cannot match filename of file ' + str(file) + '. Skipping file ...'
@@ -273,7 +273,7 @@ if __name__ == '__main__':
                                 instead of t")
     args = parser.parse_args()
 
-    cross_section_directory = args.directory[0]
+    cross_section_directory = args.directory[0] + '/'
     as_func_of_theta = args.plot_theta
     output_directory = args.output_dir[0]
 

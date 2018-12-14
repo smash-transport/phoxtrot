@@ -30,10 +30,41 @@ function(generate_cross_section_tables)
                           "${cross_sections}/Total_Xsections_PiPi_RhoGamma"
                           "${cross_sections}/Diff_Xsections_PiPi_RhoGamma"
                           PARENT_SCOPE)
+  set(Tables_dir "${cross_sections}" PARENT_SCOPE)
+endfunction()
+
+
+# Plot cross sections from phoxtrot output
+function(plot_cross_sections)
+
+  set(plots_dir "${CMAKE_CURRENT_BINARY_DIR}/plots")
+  file(MAKE_DIRECTORY ${plots_dir})
+
+  add_custom_command(
+              OUTPUT "${plots_dir}/Total_Xsec_PiPi_RhoGamma.pdf"
+                     "${plots_dir}/Total_Xsec_PiRho_PiGamma.pdf"
+                     "${plots_dir}/Diff_Xsec_PiPi_RhoGamma.pdf"
+                     "${plots_dir}/Diff_Xsec_PiRho_PiGamma.pdf"
+              COMMAND "python" "${PROJECT_SOURCE_DIR}/src/plot_cross_sections.py"
+                      "-d" "${Tables_dir}"
+                      "-o" ${plots_dir}
+              DEPENDS "${PROJECT_SOURCE_DIR}/src/plot_cross_sections.py"
+                      "${cross_section_files}"
+              COMMENT "Plotting cross sections for photon processes."
+              VERBATIM
+          )
+
+    set(cross_section_plots "${plots_dir}/Total_Xsec_PiPi_RhoGamma.pdf"
+                            "${plots_dir}/Total_Xsec_PiRho_PiGamma.pdf"
+                            "${plots_dir}/Diff_Xsec_PiPi_RhoGamma.pdf"
+                            "${plots_dir}/Diff_Xsec_PiRho_PiGamma.pdf"
+                            PARENT_SCOPE)
 endfunction()
 
 
 generate_cross_section_tables()
-add_custom_target(phoxtrot_tables
-    DEPENDS ${cross_section_files}
+plot_cross_sections()
+
+add_custom_target(plots
+    DEPENDS ${cross_section_plots}
 )
