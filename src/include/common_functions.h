@@ -73,9 +73,9 @@ inline double theta_from_t(double t, double sqrts, double m1, double m2,
 
   // numerical issues arise for arccos(-1) and arccos(1), thus setting values
   // by hand
-  if (abs(costheta - 1.0) < 1e-10) {
+  if (fabs(costheta - 1.0) < 1e-10) {
     theta = 0.0;
-  } else if (abs(costheta + 1.0) < 1e-10) {
+  } else if (fabs(costheta + 1.0) < 1e-10) {
     theta = 180.0;
   } else {
     theta = acos(costheta) * 180.0 / M_PI;
