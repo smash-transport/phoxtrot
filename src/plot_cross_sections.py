@@ -10,6 +10,9 @@ import glob
 mpl.rcParams['font.size'] = 16
 mpl.rcParams['legend.fontsize'] = 12
 mpl.rcParams['lines.linewidth'] = 2
+mpl.rcParams['axes.labelsize'] = 15
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
 
 
 Labels = {
@@ -24,25 +27,25 @@ Labels = {
     }
 
 Colours = {
-    'C11': 'C3',
-    'C12': 'C9',
+    'C11': 'C0',
+    'C12': 'C1',
     'C13': 'C2',
-    'C14': 'C1',
+    'C14': 'C4',
     'C15': 'C2',
-    'C16': 'C9',
-    'C21': 'darkred',
-    'C22': 'midnightblue'
+    'C16': 'C1',
+    'C21': 'C3',
+    'C22': 'C7'
     }
 
 Linestyles = {
     'C11': '-',
     'C12': '--',
     'C13': '-.',
-    'C14': '-',
+    'C14': (0, (4.5, 1, 1, 1, 4.5, 1)),
     'C15': '-.',
     'C16': '--',
-    'C21': '-',
-    'C22': '-.'
+    'C21': (0, (1, 2, 1, 2, 5, 2)),
+    'C22': ':'
     }
 
 def read_cross_section_files(directory):
