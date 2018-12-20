@@ -45,7 +45,7 @@ function(plot_cross_sections)
                      "${plots_dir}/Total_Xsec_PiRho_PiGamma.pdf"
                      "${plots_dir}/Diff_Xsec_PiPi_RhoGamma.pdf"
                      "${plots_dir}/Diff_Xsec_PiRho_PiGamma.pdf"
-              COMMAND "python" "${PROJECT_SOURCE_DIR}/src/plot_cross_sections.py"
+              COMMAND "python2" "${PROJECT_SOURCE_DIR}/src/plot_cross_sections.py"
                       "-d" "${Tables_dir}"
                       "-o" ${plots_dir}
               DEPENDS "${PROJECT_SOURCE_DIR}/src/plot_cross_sections.py"

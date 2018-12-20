@@ -120,7 +120,7 @@ def plot_diff_cross_section(xsec_data, mrho, as_theta, output_dir):
             plt.plot(t, C22*to_mb, label = Labels['C22'], color = Colours['C22'], ls = Linestyles['C22'])
             plt.axvline(t[0], ls = "-", color = 'grey')
             plt.axvline(t[-1], ls = "-", color = 'grey')
-            plt.xlabel(r"$\sqrt{s}$ [GeV]")
+            plt.xlabel(r"$t$ [GeV$^2$]")
             plt.ylabel(r"$\sigma$ [mb]")
             xticks = [t[0],-0.3,-0.2,-0.1,t[-1]]
             xticks_labels = [r"$t_{\mathrm{min}}$","-0.3","-0.2","-0.1",r"$t_{\mathrm{max}}$"]
