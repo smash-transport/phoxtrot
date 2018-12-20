@@ -778,7 +778,7 @@ double total_xsection_C11(double s) {
                pow(ma1, 2) *
                    (4 * pow(mpion, 4) + pow(mrho, 4) - 2 * pow(mrho, 2) * s +
                     2 * pow(s, 2) - 4 * pow(mpion, 2) * (pow(mrho, 2) + s)))) *
-         log(abs(-pow(ma1, 2) + tmax))) /
+         log(fabs(-pow(ma1, 2) + tmax))) /
             (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
              2 * pow(mpion, 2) * (pow(mrho, 2) + s)) -
         (2 * pow(eta1 - eta2, 2) * (pow(ma1, 2) - s) *
@@ -813,7 +813,7 @@ double total_xsection_C11(double s) {
                     pow(mrho, 2) * s * (-pow(mrho, 2) + s) -
                     pow(ma1, 2) * (pow(mrho, 4) - 4 * pow(mrho, 2) * s +
                                    2 * pow(s, 2))))) *
-         log(abs(-pow(ma1, 2) + tmax))) /
+         log(fabs(-pow(ma1, 2) + tmax))) /
             ((pow(Gammaa1, 2) * pow(ma1, 2) + pow(pow(ma1, 2) - s, 2)) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) +
@@ -918,25 +918,25 @@ double total_xsection_C11(double s) {
                                           2 * C4 * pow(s, 3)) +
                          pow(mpion, 4) * (pow(mrho, 2) * (3 - 22 * C4 * s) +
                                           2 * s * (-3 + 5 * C4 * s)))))) *
-         log(abs(-pow(ma1, 2) + tmax))) /
+         log(fabs(-pow(ma1, 2) + tmax))) /
             ((pow(ma1, 2) - pow(mpion, 2)) * pow(mrho, 2) *
              (pow(mpion, 2) - s) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) +
         (16 * pow(-2 + delta, 2) * pow(mpion, 2) *
-         log(abs(-pow(mpion, 2) + tmax))) /
+         log(fabs(-pow(mpion, 2) + tmax))) /
             (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
              2 * pow(mpion, 2) * (pow(mrho, 2) + s)) -
         (8 * pow(-2 + delta, 2) *
          (3 * pow(mpion, 4) - 4 * pow(mpion, 2) * (pow(mrho, 2) - s) +
           pow(pow(mrho, 2) - s, 2)) *
-         log(abs(-pow(mpion, 2) + tmax))) /
+         log(fabs(-pow(mpion, 2) + tmax))) /
             ((pow(mpion, 2) - s) * (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
                                     2 * pow(mpion, 2) * (pow(mrho, 2) + s))) +
         (8 * (-2 + delta) * (eta1 - eta2) * pow(mpion, 2) *
          (2 * eta1 * pow(mpion, 2) - 2 * eta2 * pow(mpion, 2) -
           eta1 * pow(mrho, 2)) *
-         (pow(mpion, 2) - s) * log(abs(-pow(mpion, 2) + tmax))) /
+         (pow(mpion, 2) - s) * log(fabs(-pow(mpion, 2) + tmax))) /
             ((pow(ma1, 2) - pow(mpion, 2)) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) +
@@ -944,7 +944,7 @@ double total_xsection_C11(double s) {
          (pow(mpion, 2) - s) *
          (-(eta2 * (pow(mpion, 2) + s)) +
           eta1 * (pow(mpion, 2) - pow(mrho, 2) + s)) *
-         log(abs(-pow(mpion, 2) + tmax))) /
+         log(fabs(-pow(mpion, 2) + tmax))) /
             ((pow(Gammaa1, 2) * pow(ma1, 2) + pow(pow(ma1, 2) - s, 2)) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) +
@@ -954,7 +954,7 @@ double total_xsection_C11(double s) {
           2 * pow(mrho, 2) *
               (8 * C4 * pow(mpion, 4) - pow(mrho, 2) + s +
                pow(mpion, 2) * (3 - 8 * C4 * s))) *
-         log(abs(-pow(mpion, 2) + tmax))) /
+         log(fabs(-pow(mpion, 2) + tmax))) /
             (pow(mrho, 2) * (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
                              2 * pow(mpion, 2) * (pow(mrho, 2) + s))) -
         (2 * pow(eta1 - eta2, 2) *
@@ -984,7 +984,7 @@ double total_xsection_C11(double s) {
                pow(ma1, 2) *
                    (4 * pow(mpion, 4) + pow(mrho, 4) - 2 * pow(mrho, 2) * s +
                     2 * pow(s, 2) - 4 * pow(mpion, 2) * (pow(mrho, 2) + s)))) *
-         log(abs(-pow(ma1, 2) + tmin))) /
+         log(fabs(-pow(ma1, 2) + tmin))) /
             (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
              2 * pow(mpion, 2) * (pow(mrho, 2) + s)) +
         (2 * pow(eta1 - eta2, 2) * (pow(ma1, 2) - s) *
@@ -1019,7 +1019,7 @@ double total_xsection_C11(double s) {
                     pow(mrho, 2) * s * (-pow(mrho, 2) + s) -
                     pow(ma1, 2) * (pow(mrho, 4) - 4 * pow(mrho, 2) * s +
                                    2 * pow(s, 2))))) *
-         log(abs(-pow(ma1, 2) + tmin))) /
+         log(fabs(-pow(ma1, 2) + tmin))) /
             ((pow(Gammaa1, 2) * pow(ma1, 2) + pow(pow(ma1, 2) - s, 2)) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) -
@@ -1124,25 +1124,25 @@ double total_xsection_C11(double s) {
                                           2 * C4 * pow(s, 3)) +
                          pow(mpion, 4) * (pow(mrho, 2) * (3 - 22 * C4 * s) +
                                           2 * s * (-3 + 5 * C4 * s)))))) *
-         log(abs(-pow(ma1, 2) + tmin))) /
+         log(fabs(-pow(ma1, 2) + tmin))) /
             ((pow(ma1, 2) - pow(mpion, 2)) * pow(mrho, 2) *
              (pow(mpion, 2) - s) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) -
         (16 * pow(-2 + delta, 2) * pow(mpion, 2) *
-         log(abs(-pow(mpion, 2) + tmin))) /
+         log(fabs(-pow(mpion, 2) + tmin))) /
             (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
              2 * pow(mpion, 2) * (pow(mrho, 2) + s)) +
         (8 * pow(-2 + delta, 2) *
          (3 * pow(mpion, 4) - 4 * pow(mpion, 2) * (pow(mrho, 2) - s) +
           pow(pow(mrho, 2) - s, 2)) *
-         log(abs(-pow(mpion, 2) + tmin))) /
+         log(fabs(-pow(mpion, 2) + tmin))) /
             ((pow(mpion, 2) - s) * (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
                                     2 * pow(mpion, 2) * (pow(mrho, 2) + s))) -
         (8 * (-2 + delta) * (eta1 - eta2) * pow(mpion, 2) *
          (2 * eta1 * pow(mpion, 2) - 2 * eta2 * pow(mpion, 2) -
           eta1 * pow(mrho, 2)) *
-         (pow(mpion, 2) - s) * log(abs(-pow(mpion, 2) + tmin))) /
+         (pow(mpion, 2) - s) * log(fabs(-pow(mpion, 2) + tmin))) /
             ((pow(ma1, 2) - pow(mpion, 2)) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) -
@@ -1150,7 +1150,7 @@ double total_xsection_C11(double s) {
          (pow(mpion, 2) - s) *
          (-(eta2 * (pow(mpion, 2) + s)) +
           eta1 * (pow(mpion, 2) - pow(mrho, 2) + s)) *
-         log(abs(-pow(mpion, 2) + tmin))) /
+         log(fabs(-pow(mpion, 2) + tmin))) /
             ((pow(Gammaa1, 2) * pow(ma1, 2) + pow(pow(ma1, 2) - s, 2)) *
              (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
               2 * pow(mpion, 2) * (pow(mrho, 2) + s))) +
@@ -1160,7 +1160,7 @@ double total_xsection_C11(double s) {
           2 * pow(mrho, 2) *
               (8 * C4 * pow(mpion, 4) - pow(mrho, 2) + s +
                pow(mpion, 2) * (3 - 8 * C4 * s))) *
-         log(abs(-pow(mpion, 2) + tmin))) /
+         log(fabs(-pow(mpion, 2) + tmin))) /
             (pow(mrho, 2) * (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
                              2 * pow(mpion, 2) * (pow(mrho, 2) + s))))) /
       (512. * Pi);
@@ -1521,7 +1521,7 @@ double total_xsection_C12(double s) {
                pow(mpion, 4) *
                    (-0.5 * pow(mrho, 2) + 2.220446049250313e-16 * s) +
                pow(mpion, 2) * (0.5 * pow(mrho, 4) + 0.5 * pow(mrho, 2) * s))) *
-         log(abs(-1. * pow(mpion, 2) + 0.5 * s + 0.5 * tmax))) /
+         log(fabs(-1. * pow(mpion, 2) + 0.5 * s + 0.5 * tmax))) /
             (pow(mrho, 4) * (pow(mpion, 2) - 1. * s)) -
         (0.25 * (eta1 - 1. * eta2) * (pow(ma1, 2) - 1. * s) *
          (eta2 * ((-2. + 1. * delta) * pow(mpion, 6) +
@@ -1539,7 +1539,7 @@ double total_xsection_C12(double s) {
                   pow(mpion, 2) * ((-2. + 1. * delta) * pow(mrho, 4) +
                                    (-4. + 2. * delta) * pow(mrho, 2) * s +
                                    (6. - 3. * delta) * pow(s, 2)))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmax))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmax))) /
             (pow(Gammaa1, 2) * pow(ma1, 2) + pow(ma1, 4) -
              2. * pow(ma1, 2) * s + pow(s, 2)) +
         (0.25 *
@@ -1553,7 +1553,7 @@ double total_xsection_C12(double s) {
               (-4. * pow(mpion, 4) + 3. * pow(mrho, 4) - 2. * pow(mrho, 2) * s -
                4. * pow(s, 2) +
                pow(mpion, 2) * (-6. * pow(mrho, 2) + 8. * s))) *
-         log(abs(-2. * pow(mpion, 2) + 1. * s + 1. * tmax))) /
+         log(fabs(-2. * pow(mpion, 2) + 1. * s + 1. * tmax))) /
             pow(mrho, 6) +
         (0.5 *
          (0. + pow(mpion, 2) * (4. * pow(mrho, 6) - 8. * C4 * pow(mrho, 8)) -
@@ -1566,7 +1566,7 @@ double total_xsection_C12(double s) {
                pow(mpion, 2) *
                    (-10. * pow(mrho, 2) + 4. * C4 * pow(mrho, 4) + 8. * s) +
                pow(mrho, 4) * (2. - 4. * C4 * s))) *
-         log(abs(-2. * pow(mpion, 2) + 1. * s + 1. * tmax))) /
+         log(fabs(-2. * pow(mpion, 2) + 1. * s + 1. * tmax))) /
             pow(mrho, 6))) /
           (16. * Pi *
            (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
@@ -1916,7 +1916,7 @@ double total_xsection_C12(double s) {
                pow(mpion, 4) *
                    (-0.5 * pow(mrho, 2) + 2.220446049250313e-16 * s) +
                pow(mpion, 2) * (0.5 * pow(mrho, 4) + 0.5 * pow(mrho, 2) * s))) *
-         log(abs(-1. * pow(mpion, 2) + 0.5 * s + 0.5 * tmin))) /
+         log(fabs(-1. * pow(mpion, 2) + 0.5 * s + 0.5 * tmin))) /
             (pow(mrho, 4) * (pow(mpion, 2) - 1. * s)) -
         (0.25 * (eta1 - 1. * eta2) * (pow(ma1, 2) - 1. * s) *
          (eta2 * ((-2. + 1. * delta) * pow(mpion, 6) +
@@ -1934,7 +1934,7 @@ double total_xsection_C12(double s) {
                   pow(mpion, 2) * ((-2. + 1. * delta) * pow(mrho, 4) +
                                    (-4. + 2. * delta) * pow(mrho, 2) * s +
                                    (6. - 3. * delta) * pow(s, 2)))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmin))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmin))) /
             (pow(Gammaa1, 2) * pow(ma1, 2) + pow(ma1, 4) -
              2. * pow(ma1, 2) * s + pow(s, 2)) +
         (0.25 *
@@ -1948,7 +1948,7 @@ double total_xsection_C12(double s) {
               (-4. * pow(mpion, 4) + 3. * pow(mrho, 4) - 2. * pow(mrho, 2) * s -
                4. * pow(s, 2) +
                pow(mpion, 2) * (-6. * pow(mrho, 2) + 8. * s))) *
-         log(abs(-2. * pow(mpion, 2) + 1. * s + 1. * tmin))) /
+         log(fabs(-2. * pow(mpion, 2) + 1. * s + 1. * tmin))) /
             pow(mrho, 6) +
         (0.5 *
          (0. + pow(mpion, 2) * (4. * pow(mrho, 6) - 8. * C4 * pow(mrho, 8)) -
@@ -1961,7 +1961,7 @@ double total_xsection_C12(double s) {
                pow(mpion, 2) *
                    (-10. * pow(mrho, 2) + 4. * C4 * pow(mrho, 4) + 8. * s) +
                pow(mrho, 4) * (2. - 4. * C4 * s))) *
-         log(abs(-2. * pow(mpion, 2) + 1. * s + 1. * tmin))) /
+         log(fabs(-2. * pow(mpion, 2) + 1. * s + 1. * tmin))) /
             pow(mrho, 6))) /
           (16. * Pi *
            (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
@@ -2290,7 +2290,7 @@ double total_xsection_C13(double s) {
                   pow(ma1, 2) * (-2. * pow(mpion, 4) - 2. * pow(mrho, 4) +
                                  pow(mpion, 2) * (4. * pow(mrho, 2) - 4. * s) -
                                  2. * pow(mrho, 2) * s + 5. * pow(s, 2)))) *
-         log(abs(-pow(ma1, 2) + tmax))) /
+         log(fabs(-pow(ma1, 2) + tmax))) /
             (pow(mrho, 2) * (pow(ma1, 2) - 2. * pow(mpion, 2) + s)) +
         (0.125 * (-2. + delta) * (eta1 - 1. * eta2) *
          (eta2 * (-1. * pow(ma1, 6) + pow(mpion, 6) -
@@ -2305,7 +2305,7 @@ double total_xsection_C13(double s) {
                   pow(ma1, 2) *
                       (pow(mpion, 4) + pow(mrho, 4) - 1. * pow(mrho, 2) * s +
                        pow(mpion, 2) * (pow(mrho, 2) + 2. * s)))) *
-         log(abs(-pow(ma1, 2) + tmax))) /
+         log(fabs(-pow(ma1, 2) + tmax))) /
             (pow(ma1, 2) - 1. * pow(mpion, 2)) +
         0.0625 * pow(eta1 - 1. * eta2, 2) *
             (pow(eta1, 2) *
@@ -2339,7 +2339,7 @@ double total_xsection_C13(double s) {
                       (-8. * pow(mpion, 4) + 2. * pow(mrho, 4) +
                        4. * pow(mrho, 2) * s - 4. * pow(s, 2) +
                        pow(mpion, 2) * (-4. * pow(mrho, 2) + 8. * s)))) *
-            log(abs(-pow(ma1, 2) + tmax)) +
+            log(fabs(-pow(ma1, 2) + tmax)) +
         (0.0625 * (1. * eta1 - 1. * eta2) *
          (delta *
               (eta1 *
@@ -2391,15 +2391,15 @@ double total_xsection_C13(double s) {
                             pow(mrho, 2) * (-6. + 16. * C4 * s) +
                             pow(mpion, 2) * (-12. - 32. * C4 * pow(mrho, 2) +
                                              32. * C4 * s))))) *
-         log(abs(-pow(ma1, 2) + tmax))) /
+         log(fabs(-pow(ma1, 2) + tmax))) /
             pow(mrho, 2) +
         0.5 * pow(-2. + delta, 2) * pow(mpion, 2) *
-            log(abs(-pow(mpion, 2) + tmax)) -
+            log(fabs(-pow(mpion, 2) + tmax)) -
         (0.25 * (-2. + delta) * (eta1 - 1. * eta2) *
          (eta2 * (2. * pow(mpion, 6) - 2. * pow(mpion, 4) * s) +
           eta1 * (-2. * pow(mpion, 6) - 1. * pow(mpion, 2) * pow(mrho, 2) * s +
                   pow(mpion, 4) * (pow(mrho, 2) + 2. * s))) *
-         log(abs(-pow(mpion, 2) + tmax))) /
+         log(fabs(-pow(mpion, 2) + tmax))) /
             (pow(ma1, 2) - 1. * pow(mpion, 2)) -
         (0.125 *
          (0. - 32. * C4 * pow(mpion, 6) * pow(mrho, 4) - 8. * pow(mrho, 8) +
@@ -2420,7 +2420,7 @@ double total_xsection_C13(double s) {
                                                            32. * C4 * s)) +
                pow(mpion, 2) * (-24. * pow(mrho, 4) + 8. * pow(s, 2) +
                                 pow(mrho, 2) * s * (16. + 16. * C4 * s)))) *
-         log(abs(-pow(mpion, 2) + tmax))) /
+         log(fabs(-pow(mpion, 2) + tmax))) /
             (pow(mrho, 4) * (-1. * pow(mpion, 2) + 1. * s)) -
         (0.25 * (1. * eta1 - 1. * eta2) *
          (eta2 * ((2. - 1. * delta) * pow(mpion, 6) +
@@ -2439,7 +2439,7 @@ double total_xsection_C13(double s) {
                   pow(mpion, 2) * ((2. - 1. * delta) * pow(mrho, 4) +
                                    (4. - 2. * delta) * pow(mrho, 2) * s +
                                    (-6. + 3. * delta) * pow(s, 2)))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmax))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmax))) /
             (pow(ma1, 2) - 2. * pow(mpion, 2) + s) +
         (0.125 *
          (0. +
@@ -2449,7 +2449,7 @@ double total_xsection_C13(double s) {
           pow(mpion, 2) * pow(mrho, 4) *
               (8.000000000000002 * pow(2. - 1. * delta, 2) * pow(mrho, 2) +
                (-32. + 31.999999999999996 * delta - 8. * pow(delta, 2)) * s)) *
-         log(abs(-2. * pow(mpion, 2) + s + tmax))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmax))) /
             (pow(mrho, 4) * (-1. * pow(mpion, 2) + 1. * s)) +
         (0.25 *
          (0. + 8. * pow(mpion, 2) * pow(mrho, 6) + 4. * pow(mrho, 8) -
@@ -2462,7 +2462,7 @@ double total_xsection_C13(double s) {
               (-4. * pow(mpion, 4) + 3. * pow(mrho, 4) - 2. * pow(mrho, 2) * s -
                4. * pow(s, 2) +
                pow(mpion, 2) * (-6. * pow(mrho, 2) + 8. * s))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmax))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmax))) /
             pow(mrho, 6) -
         (0.5 *
          (0. + pow(mpion, 2) * (4. * pow(mrho, 6) - 8. * C4 * pow(mrho, 8)) -
@@ -2476,7 +2476,7 @@ double total_xsection_C13(double s) {
                    (6. * pow(mrho, 2) + 4. * C4 * pow(mrho, 4) - 8. * s) +
                2. * pow(mrho, 2) * s + 4. * pow(s, 2) +
                pow(mrho, 4) * (-2. - 4. * C4 * s))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmax))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmax))) /
             pow(mrho, 6))) /
           (16. * Pi *
            (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
@@ -2793,7 +2793,7 @@ double total_xsection_C13(double s) {
                   pow(ma1, 2) * (-2. * pow(mpion, 4) - 2. * pow(mrho, 4) +
                                  pow(mpion, 2) * (4. * pow(mrho, 2) - 4. * s) -
                                  2. * pow(mrho, 2) * s + 5. * pow(s, 2)))) *
-         log(abs(-pow(ma1, 2) + tmin))) /
+         log(fabs(-pow(ma1, 2) + tmin))) /
             (pow(mrho, 2) * (pow(ma1, 2) - 2. * pow(mpion, 2) + s)) +
         (0.125 * (-2. + delta) * (eta1 - 1. * eta2) *
          (eta2 * (-1. * pow(ma1, 6) + pow(mpion, 6) -
@@ -2808,7 +2808,7 @@ double total_xsection_C13(double s) {
                   pow(ma1, 2) *
                       (pow(mpion, 4) + pow(mrho, 4) - 1. * pow(mrho, 2) * s +
                        pow(mpion, 2) * (pow(mrho, 2) + 2. * s)))) *
-         log(abs(-pow(ma1, 2) + tmin))) /
+         log(fabs(-pow(ma1, 2) + tmin))) /
             (pow(ma1, 2) - 1. * pow(mpion, 2)) +
         0.0625 * pow(eta1 - 1. * eta2, 2) *
             (pow(eta1, 2) *
@@ -2842,7 +2842,7 @@ double total_xsection_C13(double s) {
                       (-8. * pow(mpion, 4) + 2. * pow(mrho, 4) +
                        4. * pow(mrho, 2) * s - 4. * pow(s, 2) +
                        pow(mpion, 2) * (-4. * pow(mrho, 2) + 8. * s)))) *
-            log(abs(-pow(ma1, 2) + tmin)) +
+            log(fabs(-pow(ma1, 2) + tmin)) +
         (0.0625 * (1. * eta1 - 1. * eta2) *
          (delta *
               (eta1 *
@@ -2894,15 +2894,15 @@ double total_xsection_C13(double s) {
                             pow(mrho, 2) * (-6. + 16. * C4 * s) +
                             pow(mpion, 2) * (-12. - 32. * C4 * pow(mrho, 2) +
                                              32. * C4 * s))))) *
-         log(abs(-pow(ma1, 2) + tmin))) /
+         log(fabs(-pow(ma1, 2) + tmin))) /
             pow(mrho, 2) +
         0.5 * pow(-2. + delta, 2) * pow(mpion, 2) *
-            log(abs(-pow(mpion, 2) + tmin)) -
+            log(fabs(-pow(mpion, 2) + tmin)) -
         (0.25 * (-2. + delta) * (eta1 - 1. * eta2) *
          (eta2 * (2. * pow(mpion, 6) - 2. * pow(mpion, 4) * s) +
           eta1 * (-2. * pow(mpion, 6) - 1. * pow(mpion, 2) * pow(mrho, 2) * s +
                   pow(mpion, 4) * (pow(mrho, 2) + 2. * s))) *
-         log(abs(-pow(mpion, 2) + tmin))) /
+         log(fabs(-pow(mpion, 2) + tmin))) /
             (pow(ma1, 2) - 1. * pow(mpion, 2)) -
         (0.125 *
          (0. - 32. * C4 * pow(mpion, 6) * pow(mrho, 4) - 8. * pow(mrho, 8) +
@@ -2923,7 +2923,7 @@ double total_xsection_C13(double s) {
                                                            32. * C4 * s)) +
                pow(mpion, 2) * (-24. * pow(mrho, 4) + 8. * pow(s, 2) +
                                 pow(mrho, 2) * s * (16. + 16. * C4 * s)))) *
-         log(abs(-pow(mpion, 2) + tmin))) /
+         log(fabs(-pow(mpion, 2) + tmin))) /
             (pow(mrho, 4) * (-1. * pow(mpion, 2) + 1. * s)) -
         (0.25 * (1. * eta1 - 1. * eta2) *
          (eta2 * ((2. - 1. * delta) * pow(mpion, 6) +
@@ -2942,7 +2942,7 @@ double total_xsection_C13(double s) {
                   pow(mpion, 2) * ((2. - 1. * delta) * pow(mrho, 4) +
                                    (4. - 2. * delta) * pow(mrho, 2) * s +
                                    (-6. + 3. * delta) * pow(s, 2)))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmin))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmin))) /
             (pow(ma1, 2) - 2. * pow(mpion, 2) + s) +
         (0.125 *
          (0. +
@@ -2952,7 +2952,7 @@ double total_xsection_C13(double s) {
           pow(mpion, 2) * pow(mrho, 4) *
               (8.000000000000002 * pow(2. - 1. * delta, 2) * pow(mrho, 2) +
                (-32. + 31.999999999999996 * delta - 8. * pow(delta, 2)) * s)) *
-         log(abs(-2. * pow(mpion, 2) + s + tmin))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmin))) /
             (pow(mrho, 4) * (-1. * pow(mpion, 2) + 1. * s)) +
         (0.25 *
          (0. + 8. * pow(mpion, 2) * pow(mrho, 6) + 4. * pow(mrho, 8) -
@@ -2965,7 +2965,7 @@ double total_xsection_C13(double s) {
               (-4. * pow(mpion, 4) + 3. * pow(mrho, 4) - 2. * pow(mrho, 2) * s -
                4. * pow(s, 2) +
                pow(mpion, 2) * (-6. * pow(mrho, 2) + 8. * s))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmin))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmin))) /
             pow(mrho, 6) -
         (0.5 *
          (0. + pow(mpion, 2) * (4. * pow(mrho, 6) - 8. * C4 * pow(mrho, 8)) -
@@ -2979,7 +2979,7 @@ double total_xsection_C13(double s) {
                    (6. * pow(mrho, 2) + 4. * C4 * pow(mrho, 4) - 8. * s) +
                2. * pow(mrho, 2) * s + 4. * pow(s, 2) +
                pow(mrho, 4) * (-2. - 4. * C4 * s))) *
-         log(abs(-2. * pow(mpion, 2) + s + tmin))) /
+         log(fabs(-2. * pow(mpion, 2) + s + tmin))) /
             pow(mrho, 6))) /
           (16. * Pi *
            (pow(mpion, 4) + pow(pow(mrho, 2) - s, 2) -
