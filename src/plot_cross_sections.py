@@ -262,7 +262,7 @@ def plot_total_cross_section(xsec_data, mrho, output_dir):
         plt.legend()
 
         plt.tight_layout()
-        plt.savefig(output_dir + "/Total_Xsec_PiRho_RhoGamma.pdf")
+        plt.savefig(output_dir + "/Total_Xsec_PiRho_PiGamma.pdf")
         plt.close()
 
 
