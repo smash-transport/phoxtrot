@@ -9,7 +9,7 @@ import glob
 
 mpl.rcParams['font.size'] = 16
 mpl.rcParams['legend.fontsize'] = 12
-mpl.rcParams['lines.linewidth'] = 2
+mpl.rcParams['lines.linewidth'] = 3
 mpl.rcParams['axes.labelsize'] = 15
 mpl.rcParams['xtick.labelsize'] = 10
 mpl.rcParams['ytick.labelsize'] = 10
@@ -118,8 +118,8 @@ def plot_diff_cross_section(xsec_data, mrho, as_theta, output_dir):
         else:
             plt.plot(t, C21*to_mb, label = Labels['C21'], color = Colours['C21'], ls = Linestyles['C21'])
             plt.plot(t, C22*to_mb, label = Labels['C22'], color = Colours['C22'], ls = Linestyles['C22'])
-            plt.axvline(t[0], ls = "-", color = 'grey')
-            plt.axvline(t[-1], ls = "-", color = 'grey')
+            plt.axvline(t[0], ls = "-", color = 'grey', lw = 1)
+            plt.axvline(t[-1], ls = "-", color = 'grey', lw = 1)
             plt.xlabel(r"$t$ [GeV$^2$]")
             plt.ylabel(r"$\sigma$ [mb]")
             xticks = [t[0],-0.3,-0.2,-0.1,t[-1]]
@@ -161,8 +161,8 @@ def plot_diff_cross_section(xsec_data, mrho, as_theta, output_dir):
             plt.plot(t, C11*to_mb, label = Labels['C11'], color = Colours['C11'], ls = Linestyles['C11'])
             plt.plot(t, C12*to_mb, label = Labels['C12'], color = Colours['C12'], ls = Linestyles['C12'])
             plt.plot(t, C13*to_mb, label = Labels['C13'], color = Colours['C13'], ls = Linestyles['C13'])
-            plt.axvline(t[0], ls = "-", color = 'grey')
-            plt.axvline(t[-1], ls = "-", color = 'grey')
+            plt.axvline(t[0], ls = "-", color = 'grey', lw = 1)
+            plt.axvline(t[-1], ls = "-", color = 'grey', lw = 1)
             plt.ylim(0,1.4)
             plt.xticks(xticks,xticks_labels)
             plt.xlabel(r"$t$ [GeV$^2$]")
@@ -182,8 +182,8 @@ def plot_diff_cross_section(xsec_data, mrho, as_theta, output_dir):
             plt.plot(t, C14*to_mb, label = Labels['C14'], color = Colours['C14'], ls = Linestyles['C14'])
             plt.plot(t, C15*to_mb, label = Labels['C15'], color = Colours['C15'], ls = Linestyles['C15'])
             plt.plot(t, C16*to_mb, label = Labels['C16'], color = Colours['C16'], ls = Linestyles['C16'])
-            plt.axvline(t[0], ls = "-", color = 'grey')
-            plt.axvline(t[-1], ls = "-", color = 'grey')
+            plt.axvline(t[0], ls = "-", color = 'grey', lw = 1)
+            plt.axvline(t[-1], ls = "-", color = 'grey', lw = 1)
             plt.ylim(0,0.25)
             plt.xticks(xticks,xticks_labels)
             plt.xlabel(r"$t$ [GeV$^2$]")
@@ -219,7 +219,7 @@ def plot_total_cross_section(xsec_data, mrho, output_dir):
 
         plt.plot(sqrts, C21*to_mb, label = Labels['C21'], color = Colours['C21'], ls = Linestyles['C21'])
         plt.plot(sqrts, C22*to_mb, label = Labels['C22'], color = Colours['C22'], ls = Linestyles['C22'])
-        plt.axvline(x=mrho, color = 'grey', label = r"$\sqrt{s} = m_{\pi} + m_{\rho}$")
+        plt.axvline(x=mrho, color = 'grey', label = r"$\sqrt{s} = m_{\pi} + m_{\rho}$", lw = 1)
         plt.ylim(0,1)
         plt.xlim(0.6,3)
         plt.xlabel(r"$\sqrt{s}$ [GeV]")
@@ -243,7 +243,7 @@ def plot_total_cross_section(xsec_data, mrho, output_dir):
         plt.plot(sqrts, C11*to_mb, label = Labels['C11'], color = Colours['C11'], ls = Linestyles['C11'])
         plt.plot(sqrts, C12*to_mb, label = Labels['C12'], color = Colours['C12'], ls = Linestyles['C12'])
         plt.plot(sqrts, C13*to_mb, label = Labels['C13'], color = Colours['C13'], ls = Linestyles['C13'])
-        plt.axvline(x=mrho + mpion, color = 'grey', label = r"$\sqrt{s} = m_{\pi} + m_{\rho}$")
+        plt.axvline(x=mrho + mpion, color = 'grey', label = r"$\sqrt{s} = m_{\pi} + m_{\rho}$", lw = 1)
         plt.ylim(0,0.5)
         plt.xlim(mrho -0.05,3)
         plt.xlabel(r"$\sqrt{s}$ [GeV]")
@@ -254,7 +254,7 @@ def plot_total_cross_section(xsec_data, mrho, output_dir):
         plt.plot(sqrts, C14*to_mb, label = Labels['C14'], color = Colours['C14'], ls = Linestyles['C14'])
         plt.plot(sqrts, C15*to_mb, label = Labels['C15'], color = Colours['C15'], ls = Linestyles['C15'])
         plt.plot(sqrts, C16*to_mb, label = Labels['C16'], color = Colours['C16'], ls = Linestyles['C16'])
-        plt.axvline(x=mrho + mpion, color = 'grey', label = r"$\sqrt{s} = m_{\pi} + m_{\rho}$")
+        plt.axvline(x=mrho + mpion, color = 'grey', label = r"$\sqrt{s} = m_{\pi} + m_{\rho}$", lw = 1)
         plt.ylim(0,0.3)
         plt.xlim(mrho -0.05,3)
         plt.xlabel(r"$\sqrt{s}$ [GeV]")
