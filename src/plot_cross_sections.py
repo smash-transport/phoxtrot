@@ -16,14 +16,14 @@ mpl.rcParams['ytick.labelsize'] = 10
 
 
 Labels = {
-    'C11': r"$\pi + \ \rho^0 \ \rightarrow \ (\pi, \rho, \gamma) \ \rightarrow \ \pi \ + \ \gamma$",
-    'C12': r"$\pi^0 + \ \rho \ \rightarrow \ (\pi, \rho, \gamma) \ \rightarrow \ \pi \ + \ \gamma$",
-    'C13': r"$\pi \ + \ \rho \ \rightarrow \ (\pi, \rho, \gamma) \ \rightarrow \ \pi^0 + \ \gamma$",
+    'C11': r"$\pi + \ \rho^0 \ \rightarrow \ (\pi, \rho, a_1) \ \rightarrow \ \pi \ + \ \gamma$",
+    'C12': r"$\pi^0 + \ \rho \ \rightarrow \ (\pi, \rho, a_1) \ \rightarrow \ \pi \ + \ \gamma$",
+    'C13': r"$\pi \ + \ \rho \ \rightarrow \ (\pi, \rho, a_1) \ \rightarrow \ \pi^0 + \ \gamma$",
     'C14': r"$\pi^0 + \ \rho^0 \ \rightarrow \ \omega \ \rightarrow \ \pi^0 \ + \ \gamma$",
     'C15': r"$\pi \ + \ \rho \rightarrow \ \omega \ \rightarrow \ \pi^0 + \ \gamma$",
     'C16': r"$\pi^0 + \ \rho  \rightarrow \ \omega \ \rightarrow \ \pi \ + \ \gamma$",
-    'C21': r"$\pi \ + \ \pi \ \rightarrow \ (\pi, \rho, \gamma) \ \rightarrow \ \rho^0 + \ \gamma$",
-    'C22': r"$\pi \ + \ \pi^0 \ \rightarrow \ (\pi, \rho, \gamma) \ \rightarrow \ \rho \ + \ \gamma$"
+    'C21': r"$\pi \ + \ \pi \ \rightarrow \ (\pi, \rho, a_1) \ \rightarrow \ \rho^0 + \ \gamma$",
+    'C22': r"$\pi \ + \ \pi^0 \ \rightarrow \ (\pi, \rho, a_1) \ \rightarrow \ \rho \ + \ \gamma$"
     }
 
 Colours = {
@@ -219,7 +219,7 @@ def plot_total_cross_section(xsec_data, mrho, output_dir):
 
         plt.plot(sqrts, C21*to_mb, label = Labels['C21'], color = Colours['C21'], ls = Linestyles['C21'])
         plt.plot(sqrts, C22*to_mb, label = Labels['C22'], color = Colours['C22'], ls = Linestyles['C22'])
-        plt.axvline(x=mrho, color = 'grey', label = r"$\sqrt{s} = m_{\pi} + m_{\rho}$", lw = 1)
+        plt.axvline(x=mrho, color = 'grey', label = r"$\sqrt{s} = m_{\rho}$", lw = 1)
         plt.ylim(0,1)
         plt.xlim(0.6,3)
         plt.xlabel(r"$\sqrt{s}$ [GeV]")
