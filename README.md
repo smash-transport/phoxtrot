@@ -2,7 +2,7 @@
 
 Welcome to PHOXTROT (**PHO**ton **X**sections for **TR**ansp**O**r**T**).
 This repository contains a collection of cross sections useful to describe the
-production of photons in a hadronic medium. See **paper(once public)** for
+production of photons in a hadronic medium. See [Phys. Rev. D 99, 114021 (2019)](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.114021) for
 further details.
 
 The presented cross sections and processes rely on a theoretical framework
