@@ -5,10 +5,14 @@ project(phoxtrot)
 cmake_minimum_required(VERSION 2.8.11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-include_directories("${PROJECT_SOURCE_DIR}/src")
+set(SOURCES
+    ${PROJECT_SOURCE_DIR}/src/main.cpp
+    ${PROJECT_SOURCE_DIR}/src/write_tables.cpp
+    ${PROJECT_SOURCE_DIR}/src/TwoToTwo_differential_Xsections.cpp
+    ${PROJECT_SOURCE_DIR}/src/TwoToTwo_total_Xsections.cpp
+  )
 
-# compile code and create executable 'phoxtrot'
-add_executable(phoxtrot src/main.cpp)
+add_executable(phoxtrot ${SOURCES})
 
 # execute phoxtrot and generate tables
 function(generate_cross_section_tables)

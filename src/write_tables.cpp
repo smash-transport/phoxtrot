@@ -3,11 +3,12 @@
  * to txt files.
  */
 
+#include "include/common_functions.h"
 #include "include/write_tables.h"
-#include "differential_Xsections.cpp"
-#include "total_Xsections.cpp"
+#include "include/TwoToTwo_differential_Xsections.h"
+#include "include/TwoToTwo_total_Xsections.h"
 
-void write_Total_Xsec_PiRho_PiGamma(std::string dir) {
+void TwoToTwo_writing::write_Total_Xsec_PiRho_PiGamma(std::string dir) {
   std::ofstream Total_Xsections_PiRho_PiGamma;
   Total_Xsections_PiRho_PiGamma.open(dir + "/Total_Xsec_PiRho_PiGamma_mrho_" +
                                      std::to_string(int(mrho * 1000)) +
@@ -15,15 +16,18 @@ void write_Total_Xsec_PiRho_PiGamma(std::string dir) {
 
   Total_Xsections_PiRho_PiGamma << "# sqrt(s), C11, C12, C13, C14, C15, C16"
                                 << std::endl;
-  for (int i = 1; i < 1002; i += 1) {
-    double sqrt_s = mpion + mrho + i * 0.005;
 
-    sigma_C11 = total_xsection_C11(sqrt_s * sqrt_s);
-    sigma_C12 = total_xsection_C12(sqrt_s * sqrt_s);
-    sigma_C13 = total_xsection_C13(sqrt_s * sqrt_s);
-    sigma_C14 = total_xsection_C14(sqrt_s * sqrt_s);
-    sigma_C15 = total_xsection_C15(sqrt_s * sqrt_s);
-    sigma_C16 = total_xsection_C16(sqrt_s * sqrt_s);
+  double sigma_C11, sigma_C12, sigma_C13, sigma_C14, sigma_C15, sigma_C16;
+  double sqrt_s;
+  for (int i = 1; i < 1002; i += 1) {
+    sqrt_s = mpion + mrho + i * 0.005;
+
+    sigma_C11 = TwoToTwo_Tot_Xsections::total_xsection_C11(sqrt_s * sqrt_s);
+    sigma_C12 = TwoToTwo_Tot_Xsections::total_xsection_C12(sqrt_s * sqrt_s);
+    sigma_C13 = TwoToTwo_Tot_Xsections::total_xsection_C13(sqrt_s * sqrt_s);
+    sigma_C14 = TwoToTwo_Tot_Xsections::total_xsection_C14(sqrt_s * sqrt_s);
+    sigma_C15 = TwoToTwo_Tot_Xsections::total_xsection_C15(sqrt_s * sqrt_s);
+    sigma_C16 = TwoToTwo_Tot_Xsections::total_xsection_C16(sqrt_s * sqrt_s);
 
     Total_Xsections_PiRho_PiGamma
         << sqrt_s << "\t" << sigma_C11 << "\t" << sigma_C12 << "\t" << sigma_C13
@@ -33,7 +37,7 @@ void write_Total_Xsec_PiRho_PiGamma(std::string dir) {
   Total_Xsections_PiRho_PiGamma.close();
 }
 
-void write_Diff_Xsec_PiRho_PiGamma(std::string dir) {
+void TwoToTwo_writing::write_Diff_Xsec_PiRho_PiGamma(std::string dir) {
   std::ofstream Diff_Xsections_PiRho_PiGamma;
   Diff_Xsections_PiRho_PiGamma.open(dir + "/Diff_Xsec_PiRho_PiGamma_mrho_" +
                                     std::to_string(int(mrho * 1000)) +
@@ -52,17 +56,19 @@ void write_Diff_Xsec_PiRho_PiGamma(std::string dir) {
   double tmax = max_mandelstam_t(sqrt_s * sqrt_s, mpion, mrho, mpion);
   double increment = (tmax - tmin) / 1000.0;
   double t, theta;
+  double diff_sigma_C11, diff_sigma_C12, diff_sigma_C13;
+  double diff_sigma_C14, diff_sigma_C15, diff_sigma_C16;
 
   for (int i = 0; i < 1001; i += 1) {
     t = tmin + i * increment;
     theta = theta_from_t(t, sqrt_s, mpion, mrho, mpion);
 
-    diff_sigma_C11 = diff_xsection_C11(t, sqrt_s * sqrt_s);
-    diff_sigma_C12 = diff_xsection_C12(t, sqrt_s * sqrt_s);
-    diff_sigma_C13 = diff_xsection_C13(t, sqrt_s * sqrt_s);
-    diff_sigma_C14 = diff_xsection_C14(t, sqrt_s * sqrt_s);
-    diff_sigma_C15 = diff_xsection_C15(t, sqrt_s * sqrt_s);
-    diff_sigma_C16 = diff_xsection_C16(t, sqrt_s * sqrt_s);
+    diff_sigma_C11 = TwoToTwo_Diff_Xsections::diff_xsection_C11(t, sqrt_s * sqrt_s);
+    diff_sigma_C12 = TwoToTwo_Diff_Xsections::diff_xsection_C12(t, sqrt_s * sqrt_s);
+    diff_sigma_C13 = TwoToTwo_Diff_Xsections::diff_xsection_C13(t, sqrt_s * sqrt_s);
+    diff_sigma_C14 = TwoToTwo_Diff_Xsections::diff_xsection_C14(t, sqrt_s * sqrt_s);
+    diff_sigma_C15 = TwoToTwo_Diff_Xsections::diff_xsection_C15(t, sqrt_s * sqrt_s);
+    diff_sigma_C16 = TwoToTwo_Diff_Xsections::diff_xsection_C16(t, sqrt_s * sqrt_s);
 
     Diff_Xsections_PiRho_PiGamma
         << t << "\t" << theta << "\t" << diff_sigma_C11 << "\t"
@@ -72,13 +78,14 @@ void write_Diff_Xsec_PiRho_PiGamma(std::string dir) {
   Diff_Xsections_PiRho_PiGamma.close();
 }
 
-void write_Total_Xsec_PiPi_RhoGamma(std::string dir) {
+void TwoToTwo_writing::write_Total_Xsec_PiPi_RhoGamma(std::string dir) {
   std::ofstream Total_Xsections_PiPi_RhoGamma;
   Total_Xsections_PiPi_RhoGamma.open(dir + "/Total_Xsec_PiPi_RhoGamma_mrho_" +
                                      std::to_string(int(mrho * 1000)) +
                                      "_MeV.txt");
   Total_Xsections_PiPi_RhoGamma << "# sqrt(s), C21, C22" << std::endl;
 
+  double sigma_C21, sigma_C22;
   double sqrt_s;
   for (int i = 1; i < 1002; i += 1) {
     // Threshold depends on mass of rho meson
@@ -88,8 +95,8 @@ void write_Total_Xsec_PiPi_RhoGamma(std::string dir) {
       sqrt_s = mpion + mpion + i * 0.005;
     }
 
-    sigma_C21 = total_xsection_C21(sqrt_s * sqrt_s);
-    sigma_C22 = total_xsection_C22(sqrt_s * sqrt_s);
+    sigma_C21 = TwoToTwo_Tot_Xsections::total_xsection_C21(sqrt_s * sqrt_s);
+    sigma_C22 = TwoToTwo_Tot_Xsections::total_xsection_C22(sqrt_s * sqrt_s);
 
     Total_Xsections_PiPi_RhoGamma << sqrt_s << "\t" << sigma_C21 << "\t"
                                   << sigma_C22 << std::endl;
@@ -97,7 +104,7 @@ void write_Total_Xsec_PiPi_RhoGamma(std::string dir) {
   Total_Xsections_PiPi_RhoGamma.close();
 }
 
-void write_Diff_Xsec_PiPi_RhoGamma(std::string dir) {
+void TwoToTwo_writing::write_Diff_Xsec_PiPi_RhoGamma(std::string dir) {
   std::ofstream Diff_Xsections_PiPi_RhoGamma;
   Diff_Xsections_PiPi_RhoGamma.open(dir + "/Diff_Xsec_PiPi_RhoGamma_mrho_" +
                                     std::to_string(int(mrho * 1000)) +
@@ -115,13 +122,14 @@ void write_Diff_Xsec_PiPi_RhoGamma(std::string dir) {
   double tmax = max_mandelstam_t(sqrt_s * sqrt_s, mpion, mpion, mrho);
   double increment = (tmax - tmin) / 1000.0;
   double t, theta;
+  double diff_sigma_C21, diff_sigma_C22;
 
   for (int i = 0; i < 1001; i += 1) {
     t = tmin + i * increment;
     theta = theta_from_t(t, sqrt_s, mpion, mpion, mrho);
 
-    diff_sigma_C21 = diff_xsection_C21(t, sqrt_s * sqrt_s);
-    diff_sigma_C22 = diff_xsection_C22(t, sqrt_s * sqrt_s);
+    diff_sigma_C21 = TwoToTwo_Diff_Xsections::diff_xsection_C21(t, sqrt_s * sqrt_s);
+    diff_sigma_C22 = TwoToTwo_Diff_Xsections::diff_xsection_C22(t, sqrt_s * sqrt_s);
 
     Diff_Xsections_PiPi_RhoGamma << t << "\t" << theta << "\t" << diff_sigma_C21
                                  << "\t" << diff_sigma_C22 << "\t" << std::endl;

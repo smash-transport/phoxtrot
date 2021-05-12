@@ -4,7 +4,8 @@
  *
  */
 
-#include "write_tables.cpp"
+#include <iostream>
+#include "include/write_tables.h"
 
 int main(int argc, char **argv) {
 
@@ -22,8 +23,8 @@ int main(int argc, char **argv) {
     std::exit(0);
   }
 
-  write_Total_Xsec_PiRho_PiGamma(directory);
-  write_Diff_Xsec_PiRho_PiGamma(directory);
-  write_Total_Xsec_PiPi_RhoGamma(directory);
-  write_Diff_Xsec_PiPi_RhoGamma(directory);
+  TwoToTwo_writing::write_Total_Xsec_PiRho_PiGamma(directory);
+  TwoToTwo_writing::write_Diff_Xsec_PiRho_PiGamma(directory);
+  TwoToTwo_writing::write_Total_Xsec_PiPi_RhoGamma(directory);
+  TwoToTwo_writing::write_Diff_Xsec_PiPi_RhoGamma(directory);
 }
