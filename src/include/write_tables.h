@@ -16,4 +16,18 @@ class TwoToTwo_writing {
     static void write_Total_Xsec_PiPi_RhoGamma(std::string dir);
     static void write_Diff_Xsec_PiPi_RhoGamma(std::string dir);
 };
+
+class Brems_writing {
+
+  public:
+    // Write total cross sections
+    static void write_Total_Xsec(std::string dir);
+
+    // Write differential cross sections for dSigma/dk
+    static void write_dSigma_dk(std::string dir);
+
+    // Write differential cross sections for dSigma/dtheta
+    static void write_dSigma_dTheta(std::string dir);
+};
+
 #endif
