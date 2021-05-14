@@ -5,10 +5,20 @@ project(phoxtrot)
 cmake_minimum_required(VERSION 2.8.11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-include_directories("${PROJECT_SOURCE_DIR}/src")
+find_package(GSL 2.0 REQUIRED)
+include_directories(${GSL_INCLUDE_DIR})
 
-# compile code and create executable 'phoxtrot'
-add_executable(phoxtrot src/main.cpp)
+set(SOURCES
+    ${PROJECT_SOURCE_DIR}/src/main.cpp
+    ${PROJECT_SOURCE_DIR}/src/write_tables.cpp
+    ${PROJECT_SOURCE_DIR}/src/TwoToTwo_differential_Xsections.cpp
+    ${PROJECT_SOURCE_DIR}/src/TwoToTwo_total_Xsections.cpp
+  )
+
+add_executable(phoxtrot ${SOURCES})
+
+# Link to gsl
+target_link_libraries(phoxtrot ${GSL_LIBRARY})
 
 # execute phoxtrot and generate tables
 function(generate_cross_section_tables)
@@ -46,12 +56,25 @@ function(plot_cross_sections)
                      "${plots_dir}/Total_Xsec_PiRho_PiGamma.pdf"
                      "${plots_dir}/Diff_Xsec_PiPi_RhoGamma.pdf"
                      "${plots_dir}/Diff_Xsec_PiRho_PiGamma.pdf"
-              COMMAND "python2" "${PROJECT_SOURCE_DIR}/src/plot_cross_sections.py"
+              COMMAND "python2" "${PROJECT_SOURCE_DIR}/src/plot_2to2_cross_sections.py"
                       "-d" "${Tables_dir}"
                       "-o" ${plots_dir}
-              DEPENDS "${PROJECT_SOURCE_DIR}/src/plot_cross_sections.py"
+              DEPENDS "${PROJECT_SOURCE_DIR}/src/plot_2to2_cross_sections.py"
                       "${cross_section_files}"
-              COMMENT "Plotting cross sections for photon processes."
+              COMMENT "Plotting cross sections for 2to2 photon processes."
+              VERBATIM
+          )
+
+  add_custom_command(
+              OUTPUT "${plots_dir}/Total_Xsec_Brems.pdf"
+                     # "${plots_dir}/dSigma_dk_Xsec_Brems.pdf"
+                     # "${plots_dir}/dSigma_dTheta_Xsec_Brems.pdf"
+              COMMAND "python2" "${PROJECT_SOURCE_DIR}/src/plot_Brems_cross_sections.py"
+                      "-d" "${Tables_dir}"
+                      "-o" ${plots_dir}
+              DEPENDS "${PROJECT_SOURCE_DIR}/src/plot_Brems_cross_sections.py"
+                      "${cross_section_files}"
+              COMMENT "Plotting cross sections for bremsstrahlung photon processes."
               VERBATIM
           )
 
@@ -59,6 +82,7 @@ function(plot_cross_sections)
                             "${plots_dir}/Total_Xsec_PiRho_PiGamma.pdf"
                             "${plots_dir}/Diff_Xsec_PiPi_RhoGamma.pdf"
                             "${plots_dir}/Diff_Xsec_PiRho_PiGamma.pdf"
+                            "${plots_dir}/Total_Xsec_Brems.pdf"
                             PARENT_SCOPE)
 endfunction()
 

@@ -6,11 +6,12 @@
  * S. Turbide (See README for link).
  */
 
-#include "include/total_Xsections.h"
+#include "include/TwoToTwo_total_Xsections.h"
 #include "include/common_functions.h"
 
+
 // C11
-double total_xsection_C11(double s) {
+double TwoToTwo_Tot_Xsections::total_xsection_C11(double s) {
   double sigma;
   double spin_deg_factor = 3.0;
   double tmin = min_mandelstam_t(s, mpion, mrho, mpion);
@@ -1169,7 +1170,7 @@ double total_xsection_C11(double s) {
 }
 
 // C12
-double total_xsection_C12(double s) {
+double TwoToTwo_Tot_Xsections::total_xsection_C12(double s) {
   double sigma;
   double spin_deg_factor = 3.0;
   double tmin = min_mandelstam_t(s, mpion, mrho, mpion);
@@ -1971,7 +1972,7 @@ double total_xsection_C12(double s) {
 }
 
 // C13
-double total_xsection_C13(double s) {
+double TwoToTwo_Tot_Xsections::total_xsection_C13(double s) {
   double sigma;
   double spin_deg_factor = 3.0;
   double tmin = min_mandelstam_t(s, mpion, mrho, mpion);
@@ -2989,7 +2990,7 @@ double total_xsection_C13(double s) {
 }
 
 // C14
-double total_xsection_C14(double s) {
+double TwoToTwo_Tot_Xsections::total_xsection_C14(double s) {
   double sigma;
   double spin_deg_factor = 3.0;
   double tmin = min_mandelstam_t(s, mpion, mrho, mpion);
@@ -3145,7 +3146,7 @@ double total_xsection_C14(double s) {
 }
 
 // C15
-double total_xsection_C15(double s) {
+double TwoToTwo_Tot_Xsections::total_xsection_C15(double s) {
   double sigma;
   double spin_deg_factor = 3.0;
   double tmin = min_mandelstam_t(s, mpion, mrho, mpion);
@@ -3180,7 +3181,7 @@ double total_xsection_C15(double s) {
 }
 
 // C16
-double total_xsection_C16(double s) {
+double TwoToTwo_Tot_Xsections::total_xsection_C16(double s) {
   double sigma;
   double spin_deg_factor = 3.0;
   double tmin = min_mandelstam_t(s, mpion, mrho, mpion);
@@ -3243,7 +3244,7 @@ double total_xsection_C16(double s) {
 }
 
 // C21
-double total_xsection_C21(double s) {
+double TwoToTwo_Tot_Xsections::total_xsection_C21(double s) {
   double sigma;
   double spin_deg_factor = 1.0;
   double tmin = min_mandelstam_t(s, mpion, mpion, mrho);
@@ -5357,1343 +5358,1343 @@ double total_xsection_C21(double s) {
 }
 
 // C22
-double total_xsection_C22(double s) {
-  double sigma;
-  double spin_deg_factor = 1.0;
-  double tmin = min_mandelstam_t(s, mpion, mpion, mrho);
-  double tmax = max_mandelstam_t(s, mpion, mpion, mrho);
+double TwoToTwo_Tot_Xsections::total_xsection_C22(double s) {
+      double sigma;
+      double spin_deg_factor = 1.0;
+      double tmin = min_mandelstam_t(s, mpion, mpion, mrho);
+      double tmax = max_mandelstam_t(s, mpion, mpion, mrho);
 
-  sigma =
-      (pow(Const, 2) * pow(ghat, 4) *
-       ((-0.03125 * pow(eta1 - 1. * eta2, 2) *
-         (eta1 * eta2 *
-              (-2. * pow(ma1, 8) - 2. * pow(mpion, 8) +
-               2. * pow(mpion, 4) * pow(mrho, 4) +
-               pow(ma1, 6) * (8. * pow(mpion, 2) - 4. * s) +
-               pow(ma1, 2) * pow(mpion, 2) *
-                   (8. * pow(mpion, 4) - 8. * pow(mrho, 4) -
-                    4. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s) +
-               pow(ma1, 4) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
-                              8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
-                              4. * pow(s, 2))) +
-          pow(eta2, 2) *
-              (1. * pow(ma1, 8) + 1. * pow(mpion, 8) -
-               2. * pow(mpion, 6) * pow(mrho, 2) +
-               1. * pow(mpion, 4) * pow(mrho, 4) +
-               pow(ma1, 6) *
-                   (-4. * pow(mpion, 2) + 2. * pow(mrho, 2) + 2. * s) +
-               pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                              pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
-                              2. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
-               pow(ma1, 2) * (-4. * pow(mpion, 6) -
-                              2. * pow(mpion, 2) * pow(mrho, 2) * s +
-                              pow(mpion, 4) * (6. * pow(mrho, 2) + 2. * s))) +
-          pow(eta1, 2) *
-              (1. * pow(ma1, 8) +
-               pow(ma1, 6) *
-                   (-4. * pow(mpion, 2) - 2. * pow(mrho, 2) + 2. * s) +
-               pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                              pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
-                              4. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
-               pow(ma1, 2) * (-4. * pow(mpion, 6) +
-                              2. * pow(mpion, 2) * pow(mrho, 2) * s +
-                              pow(mrho, 2) * (2. * pow(mrho, 2) - 2. * s) * s +
-                              pow(mpion, 4) * (-6. * pow(mrho, 2) + 2. * s)) +
-               pow(mpion, 2) *
-                   (1. * pow(mpion, 6) + 2. * pow(mpion, 4) * pow(mrho, 2) -
-                    2. * pow(mrho, 6) + 2. * pow(mrho, 4) * s +
-                    pow(mpion, 2) *
-                        (1. * pow(mrho, 4) - 2. * pow(mrho, 2) * s))))) /
-            (1. * pow(ma1, 2) - 1. * tmin) -
-        (1. * pow(-2. + delta, 2) * pow(mpion, 2) *
-         (1. * pow(mpion, 2) - 0.25 * pow(mrho, 2))) /
-            (1. * pow(mpion, 2) - 1. * tmin) -
-        0.75 * tmin +
-        (0.25 * pow(-2. + delta, 2) * pow(mpion, 2) * tmin) / pow(mrho, 2) +
-        0.125 * (-2. + delta) * (eta1 - 1. * eta2) *
-            (eta2 * (-1. * pow(ma1, 2) + pow(mrho, 2) - 2. * s) +
-             eta1 * (2. * pow(mpion, 2) + s)) *
-            tmin -
-        C4 *
-            (2. * C4 * pow(mrho, 4) + pow(mrho, 2) * (-3. - 4. * C4 * s) +
-             s * (3. + 2. * C4 * s)) *
-            tmin -
-        (0.5 * pow(delta, 2) *
-         (1. * pow(mpion, 4) * pow(mrho, 2) + 0.25 * pow(mrho, 6) -
-          0.75 * pow(mrho, 4) * s + 0.125 * pow(mrho, 2) * pow(s, 2) +
-          0.25 * pow(s, 3) +
-          pow(mpion, 2) * (2.5 * pow(mrho, 4) + 0.25 * pow(mrho, 2) * s -
-                           0.75 * pow(s, 2))) *
-         tmin) /
-            pow(mrho, 6) -
-        0.03125 * pow(eta1 - 1. * eta2, 2) *
-            (eta1 * eta2 *
-                 (-6. * pow(ma1, 4) - 12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
-                  pow(ma1, 2) * (16. * pow(mpion, 2) - 8. * s) +
-                  8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
-                  4. * pow(s, 2)) +
-             pow(eta1, 2) *
-                 (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
-                  pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
-                  4. * pow(mrho, 2) * s + 2. * pow(s, 2) +
-                  pow(ma1, 2) *
-                      (-8. * pow(mpion, 2) - 4. * pow(mrho, 2) + 4. * s)) +
-             pow(eta2, 2) *
-                 (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
-                  pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
-                  2. * pow(mrho, 2) * s + 2. * pow(s, 2) +
-                  pow(ma1, 2) *
-                      (-8. * pow(mpion, 2) + 4. * pow(mrho, 2) + 4. * s))) *
-            tmin -
-        (3. * delta *
-         (0.6666666666666666 * C4 * pow(mrho, 6) -
-          0.08333333333333333 * pow(s, 2) +
-          pow(mrho, 4) * (-0.25 - 0.5 * C4 * s) +
-          pow(mrho, 2) * s *
-              (0.08333333333333333 - 0.16666666666666666 * C4 * s) +
-          pow(mpion, 2) * (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
-                           pow(mrho, 2) * (-0.4166666666666667 -
-                                           0.3333333333333333 * C4 * s))) *
-         tmin) /
-            pow(mrho, 4) -
-        (0.25 * (1. * eta1 - 1. * eta2) *
-         (pow(mrho, 2) *
-              (eta1 * (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
-                       pow(ma1, 2) * (1. - 2. * C4 * pow(mrho, 2)) +
-                       pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
-                       2. * C4 * pow(s, 2)) +
-               eta2 * (-1.5 * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
-                       pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
-                       pow(ma1, 2) * (-1. + 2. * C4 * pow(mrho, 2)) + 0.5 * s -
-                       4. * C4 * pow(mrho, 2) * s + 2. * C4 * pow(s, 2))) +
-          delta * (eta2 * (-1. * pow(ma1, 4) - 3. * pow(mpion, 4) +
-                           1. * pow(mrho, 4) +
-                           pow(ma1, 2) * (3. * pow(mpion, 2) -
-                                          1. * pow(mrho, 2) - 1. * s) +
-                           0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
-                           pow(mpion, 2) * (1. * pow(mrho, 2) + 1. * s)) +
-                   eta1 * (1. * pow(ma1, 4) + 3. * pow(mpion, 4) +
-                           0.5 * pow(mrho, 4) +
-                           pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
-                           2. * pow(mrho, 2) * s + 1. * pow(s, 2) +
-                           pow(ma1, 2) * (-3. * pow(mpion, 2) -
-                                          1.5 * pow(mrho, 2) + 1.5 * s)))) *
-         tmin) /
-            pow(mrho, 2) -
-        0.0625 * (-2. + delta) * (eta1 - 1. * eta2) * eta2 * pow(tmin, 2) +
-        (0.25 * pow(delta, 2) *
-         (2. * pow(mpion, 2) * pow(mrho, 2) + 1. * pow(mrho, 4) -
-          0.75 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) *
-         pow(tmin, 2)) /
-            pow(mrho, 6) -
-        0.03125 * pow(eta1 - 1. * eta2, 3) *
-            (eta2 * (-1. * pow(ma1, 2) + 2. * pow(mpion, 2) -
-                     1. * pow(mrho, 2) - 1. * s) +
-             eta1 *
-                 (pow(ma1, 2) - 2. * pow(mpion, 2) - 1. * pow(mrho, 2) + s)) *
-            pow(tmin, 2) +
-        (1.5 * delta *
-         (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
-          pow(mrho, 2) * (-0.4166666666666667 - 0.3333333333333333 * C4 * s)) *
-         pow(tmin, 2)) /
-            pow(mrho, 4) -
-        (0.125 * (1. * eta1 - 1. * eta2) *
-         (pow(mrho, 2) * (eta1 * (1. - 2. * C4 * pow(mrho, 2)) +
-                          eta2 * (-1. + 2. * C4 * pow(mrho, 2))) +
-          delta * (eta2 * (-1. * pow(ma1, 2) + 3. * pow(mpion, 2) -
-                           1. * pow(mrho, 2) - 1. * s) +
-                   eta1 * (1. * pow(ma1, 2) - 3. * pow(mpion, 2) -
-                           1.5 * pow(mrho, 2) + 1.5 * s))) *
-         pow(tmin, 2)) /
-            pow(mrho, 2) -
-        0.010416666666666666 * pow(eta1 - 1. * eta2, 4) * pow(tmin, 3) -
-        (0.16666666666666666 * pow(delta, 2) * pow(tmin, 3)) / pow(mrho, 4) -
-        (0.08333333333333333 * delta * pow(1. * eta1 - 1. * eta2, 2) *
-         pow(tmin, 3)) /
-            pow(mrho, 2) +
-        (0.03125 * pow(eta1 - 1. * eta2, 2) *
-         (eta1 * eta2 *
-              (-2. * pow(ma1, 8) - 2. * pow(mpion, 8) +
-               2. * pow(mpion, 4) * pow(mrho, 4) +
-               pow(ma1, 6) * (8. * pow(mpion, 2) - 4. * s) +
-               pow(ma1, 2) * pow(mpion, 2) *
-                   (8. * pow(mpion, 4) - 8. * pow(mrho, 4) -
-                    4. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s) +
-               pow(ma1, 4) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
-                              8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
-                              4. * pow(s, 2))) +
-          pow(eta2, 2) *
-              (1. * pow(ma1, 8) + 1. * pow(mpion, 8) -
-               2. * pow(mpion, 6) * pow(mrho, 2) +
-               1. * pow(mpion, 4) * pow(mrho, 4) +
-               pow(ma1, 6) *
-                   (-4. * pow(mpion, 2) + 2. * pow(mrho, 2) + 2. * s) +
-               pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                              pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
-                              2. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
-               pow(ma1, 2) * (-4. * pow(mpion, 6) -
-                              2. * pow(mpion, 2) * pow(mrho, 2) * s +
-                              pow(mpion, 4) * (6. * pow(mrho, 2) + 2. * s))) +
-          pow(eta1, 2) *
-              (1. * pow(ma1, 8) +
-               pow(ma1, 6) *
-                   (-4. * pow(mpion, 2) - 2. * pow(mrho, 2) + 2. * s) +
-               pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                              pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
-                              4. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
-               pow(ma1, 2) * (-4. * pow(mpion, 6) +
-                              2. * pow(mpion, 2) * pow(mrho, 2) * s +
-                              pow(mrho, 2) * (2. * pow(mrho, 2) - 2. * s) * s +
-                              pow(mpion, 4) * (-6. * pow(mrho, 2) + 2. * s)) +
-               pow(mpion, 2) *
-                   (1. * pow(mpion, 6) + 2. * pow(mpion, 4) * pow(mrho, 2) -
-                    2. * pow(mrho, 6) + 2. * pow(mrho, 4) * s +
-                    pow(mpion, 2) *
-                        (1. * pow(mrho, 4) - 2. * pow(mrho, 2) * s))))) /
-            (1. * pow(ma1, 2) - 1. * tmax) +
-        (1. * pow(-2. + delta, 2) * pow(mpion, 2) *
-         (1. * pow(mpion, 2) - 0.25 * pow(mrho, 2))) /
-            (1. * pow(mpion, 2) - 1. * tmax) +
-        0.75 * tmax -
-        (0.25 * pow(-2. + delta, 2) * pow(mpion, 2) * tmax) / pow(mrho, 2) -
-        0.125 * (-2. + delta) * (eta1 - 1. * eta2) *
-            (eta2 * (-1. * pow(ma1, 2) + pow(mrho, 2) - 2. * s) +
-             eta1 * (2. * pow(mpion, 2) + s)) *
-            tmax +
-        C4 *
-            (2. * C4 * pow(mrho, 4) + pow(mrho, 2) * (-3. - 4. * C4 * s) +
-             s * (3. + 2. * C4 * s)) *
-            tmax +
-        (0.5 * pow(delta, 2) *
-         (1. * pow(mpion, 4) * pow(mrho, 2) + 0.25 * pow(mrho, 6) -
-          0.75 * pow(mrho, 4) * s + 0.125 * pow(mrho, 2) * pow(s, 2) +
-          0.25 * pow(s, 3) +
-          pow(mpion, 2) * (2.5 * pow(mrho, 4) + 0.25 * pow(mrho, 2) * s -
-                           0.75 * pow(s, 2))) *
-         tmax) /
-            pow(mrho, 6) +
-        0.03125 * pow(eta1 - 1. * eta2, 2) *
-            (eta1 * eta2 *
-                 (-6. * pow(ma1, 4) - 12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
-                  pow(ma1, 2) * (16. * pow(mpion, 2) - 8. * s) +
-                  8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
-                  4. * pow(s, 2)) +
-             pow(eta1, 2) *
-                 (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
-                  pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
-                  4. * pow(mrho, 2) * s + 2. * pow(s, 2) +
-                  pow(ma1, 2) *
-                      (-8. * pow(mpion, 2) - 4. * pow(mrho, 2) + 4. * s)) +
-             pow(eta2, 2) *
-                 (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
-                  pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
-                  2. * pow(mrho, 2) * s + 2. * pow(s, 2) +
-                  pow(ma1, 2) *
-                      (-8. * pow(mpion, 2) + 4. * pow(mrho, 2) + 4. * s))) *
-            tmax +
-        (3. * delta *
-         (0.6666666666666666 * C4 * pow(mrho, 6) -
-          0.08333333333333333 * pow(s, 2) +
-          pow(mrho, 4) * (-0.25 - 0.5 * C4 * s) +
-          pow(mrho, 2) * s *
-              (0.08333333333333333 - 0.16666666666666666 * C4 * s) +
-          pow(mpion, 2) * (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
-                           pow(mrho, 2) * (-0.4166666666666667 -
-                                           0.3333333333333333 * C4 * s))) *
-         tmax) /
-            pow(mrho, 4) +
-        (0.25 * (1. * eta1 - 1. * eta2) *
-         (pow(mrho, 2) *
-              (eta1 * (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
-                       pow(ma1, 2) * (1. - 2. * C4 * pow(mrho, 2)) +
-                       pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
-                       2. * C4 * pow(s, 2)) +
-               eta2 * (-1.5 * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
-                       pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
-                       pow(ma1, 2) * (-1. + 2. * C4 * pow(mrho, 2)) + 0.5 * s -
-                       4. * C4 * pow(mrho, 2) * s + 2. * C4 * pow(s, 2))) +
-          delta * (eta2 * (-1. * pow(ma1, 4) - 3. * pow(mpion, 4) +
-                           1. * pow(mrho, 4) +
-                           pow(ma1, 2) * (3. * pow(mpion, 2) -
-                                          1. * pow(mrho, 2) - 1. * s) +
-                           0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
-                           pow(mpion, 2) * (1. * pow(mrho, 2) + 1. * s)) +
-                   eta1 * (1. * pow(ma1, 4) + 3. * pow(mpion, 4) +
-                           0.5 * pow(mrho, 4) +
-                           pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
-                           2. * pow(mrho, 2) * s + 1. * pow(s, 2) +
-                           pow(ma1, 2) * (-3. * pow(mpion, 2) -
-                                          1.5 * pow(mrho, 2) + 1.5 * s)))) *
-         tmax) /
-            pow(mrho, 2) +
-        0.0625 * (-2. + delta) * (eta1 - 1. * eta2) * eta2 * pow(tmax, 2) -
-        (0.25 * pow(delta, 2) *
-         (2. * pow(mpion, 2) * pow(mrho, 2) + 1. * pow(mrho, 4) -
-          0.75 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) *
-         pow(tmax, 2)) /
-            pow(mrho, 6) +
-        0.03125 * pow(eta1 - 1. * eta2, 3) *
-            (eta2 * (-1. * pow(ma1, 2) + 2. * pow(mpion, 2) -
-                     1. * pow(mrho, 2) - 1. * s) +
-             eta1 *
-                 (pow(ma1, 2) - 2. * pow(mpion, 2) - 1. * pow(mrho, 2) + s)) *
-            pow(tmax, 2) -
-        (1.5 * delta *
-         (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
-          pow(mrho, 2) * (-0.4166666666666667 - 0.3333333333333333 * C4 * s)) *
-         pow(tmax, 2)) /
-            pow(mrho, 4) +
-        (0.125 * (1. * eta1 - 1. * eta2) *
-         (pow(mrho, 2) * (eta1 * (1. - 2. * C4 * pow(mrho, 2)) +
-                          eta2 * (-1. + 2. * C4 * pow(mrho, 2))) +
-          delta * (eta2 * (-1. * pow(ma1, 2) + 3. * pow(mpion, 2) -
-                           1. * pow(mrho, 2) - 1. * s) +
-                   eta1 * (1. * pow(ma1, 2) - 3. * pow(mpion, 2) -
-                           1.5 * pow(mrho, 2) + 1.5 * s))) *
-         pow(tmax, 2)) /
-            pow(mrho, 2) +
-        0.010416666666666666 * pow(eta1 - 1. * eta2, 4) * pow(tmax, 3) +
-        (0.16666666666666666 * pow(delta, 2) * pow(tmax, 3)) / pow(mrho, 4) +
-        (0.08333333333333333 * delta * pow(1. * eta1 - 1. * eta2, 2) *
-         pow(tmax, 3)) /
-            pow(mrho, 2) -
-        (2. * pow(mpion, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (5. * pow(mpion, 2) * pow(mrho, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (0.5 * pow(mrho, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (2.499999 * pow(mpion, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (5.0000100000000005 * delta * pow(mpion, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1.2500010000000001 * pow(mrho, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (0.500001 * delta * pow(mrho, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (6. * C4 * pow(mpion, 2) * pow(mrho, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (3. * C4 * pow(mrho, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (5. * delta * pow(mpion, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (1.75 * pow(mrho, 2) * s * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (0.5 * delta * pow(mrho, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (1.5 * s * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1.0000005 * delta * s * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (0.2500005 * pow(delta, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (2.000001 * C4 * pow(mpion, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (3. * C4 * delta * pow(mpion, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (3.9999899999999995 * C4 * pow(mrho, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1.5 * C4 * delta * pow(mrho, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1.75 * delta * pow(s, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (0.125 * pow(delta, 2) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (0.5 * pow(delta, 2) * pow(mpion, 4) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (0.999999 * C4 * pow(s, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1.9999949999999997 * C4 * delta * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1. * delta * pow(mpion, 2) * pow(s, 3) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (0.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 4) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (0.25 * delta * pow(s, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (0.0625 * pow(delta, 2) * pow(s, 5) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (2. * delta * pow(mpion, 4) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (1. * pow(mpion, 2) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (1.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (0.25 * pow(s, 3) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (0.4375 * pow(delta, 2) * pow(s, 3) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (2.000001 * delta * pow(mpion, 4) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.500001 * pow(mpion, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (1.4999993999999999 * delta * pow(mpion, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (2.5000050000000003 * pow(delta, 2) * pow(mpion, 2) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.2499999 * pow(s, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.9999998999999999 * delta * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.8125005000000001 * pow(delta, 2) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (1.0000005 * C4 * delta * pow(mpion, 2) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.4999995 * C4 * delta * pow(s, 3) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (1.0000005 * pow(delta, 2) * pow(mpion, 4) * s * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (1.5000015000000002 * delta * pow(mpion, 2) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (0.12499995 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (0.49999994999999997 * delta * pow(s, 3) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (0.12499995 * pow(delta, 2) * pow(s, 3) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (0.6250005000000001 * pow(delta, 2) * pow(mpion, 2) * pow(s, 3) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 8) - 1. * pow(mrho, 6) * s) -
-        (0.1875 * pow(delta, 2) * pow(s, 4) * tmin *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 8) - 1. * pow(mrho, 6) * s) +
-        (2. * pow(mpion, 2) * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (1. * pow(mrho, 2) * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (1.2499995 * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1.0000005 * delta * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (3. * C4 * pow(mrho, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1. * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (1. * delta * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (1.0000005 * C4 * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1.5 * C4 * delta * s * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (0.5 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (0.25 * pow(delta, 2) * pow(s, 3) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (2. * delta * pow(mpion, 2) * s * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (1. * delta * pow(s, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (0.25 * pow(delta, 2) * pow(s, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (1.9999949999999997 * delta * pow(mpion, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.2500005 * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.24999974999999997 * delta * s * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.50000025 * pow(delta, 2) * s * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.50000025 * C4 * delta * pow(s, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.9999974999999999 * pow(delta, 2) * pow(mpion, 2) * s * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (0.2500002 * delta * pow(s, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (0.43749974999999997 * pow(delta, 2) * pow(s, 2) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (0.062499975 * pow(delta, 2) * pow(s, 3) * pow(tmin, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 8) - 1. * pow(mrho, 6) * s) -
-        (0.6666666666666666 * pow(tmin, 3) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (0.16666666666666666 * pow(delta, 2) * pow(s, 2) * pow(tmin, 3) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (0.6666666666666666 * delta * s * pow(tmin, 3) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (0.666667 * delta * pow(tmin, 3) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.3333335 * pow(delta, 2) * s * pow(tmin, 3) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (2. * pow(mpion, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (5. * pow(mpion, 2) * pow(mrho, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (0.5 * pow(mrho, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (2.499999 * pow(mpion, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (5.0000100000000005 * delta * pow(mpion, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1.2500010000000001 * pow(mrho, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (0.500001 * delta * pow(mrho, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (6. * C4 * pow(mpion, 2) * pow(mrho, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (3. * C4 * pow(mrho, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (5. * delta * pow(mpion, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (1.75 * pow(mrho, 2) * s * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (0.5 * delta * pow(mrho, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (1.5 * s * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1.0000005 * delta * s * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (0.2500005 * pow(delta, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (2.000001 * C4 * pow(mpion, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (3. * C4 * delta * pow(mpion, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (3.9999899999999995 * C4 * pow(mrho, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1.5 * C4 * delta * pow(mrho, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1.75 * delta * pow(s, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (0.125 * pow(delta, 2) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (0.5 * pow(delta, 2) * pow(mpion, 4) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (0.999999 * C4 * pow(s, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1.9999949999999997 * C4 * delta * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1. * delta * pow(mpion, 2) * pow(s, 3) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (0.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 4) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (0.25 * delta * pow(s, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (0.0625 * pow(delta, 2) * pow(s, 5) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (2. * delta * pow(mpion, 4) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (1. * pow(mpion, 2) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (1.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (0.25 * pow(s, 3) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (0.4375 * pow(delta, 2) * pow(s, 3) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (2.000001 * delta * pow(mpion, 4) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.500001 * pow(mpion, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (1.4999993999999999 * delta * pow(mpion, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (2.5000050000000003 * pow(delta, 2) * pow(mpion, 2) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.2499999 * pow(s, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.9999998999999999 * delta * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.8125005000000001 * pow(delta, 2) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (1.0000005 * C4 * delta * pow(mpion, 2) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.4999995 * C4 * delta * pow(s, 3) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (1.0000005 * pow(delta, 2) * pow(mpion, 4) * s * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (1.5000015000000002 * delta * pow(mpion, 2) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (0.12499995 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (0.49999994999999997 * delta * pow(s, 3) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (0.12499995 * pow(delta, 2) * pow(s, 3) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (0.6250005000000001 * pow(delta, 2) * pow(mpion, 2) * pow(s, 3) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 8) - 1. * pow(mrho, 6) * s) +
-        (0.1875 * pow(delta, 2) * pow(s, 4) * tmax *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 8) - 1. * pow(mrho, 6) * s) -
-        (2. * pow(mpion, 2) * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (1. * pow(mrho, 2) * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (1.2499995 * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1.0000005 * delta * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (3. * C4 * pow(mrho, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) +
-        (1. * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (1. * delta * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) -
-        (1.0000005 * C4 * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (1.5 * C4 * delta * s * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 2) - 1. * s) -
-        (0.5 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (0.25 * pow(delta, 2) * pow(s, 3) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
-        (2. * delta * pow(mpion, 2) * s * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (1. * delta * pow(s, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (0.25 * pow(delta, 2) * pow(s, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) +
-        (1.9999949999999997 * delta * pow(mpion, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.2500005 * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.24999974999999997 * delta * s * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.50000025 * pow(delta, 2) * s * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.50000025 * C4 * delta * pow(s, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
-        (0.9999974999999999 * pow(delta, 2) * pow(mpion, 2) * s * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        (0.2500002 * delta * pow(s, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (0.43749974999999997 * pow(delta, 2) * pow(s, 2) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
-        (0.062499975 * pow(delta, 2) * pow(s, 3) * pow(tmax, 2) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 8) - 1. * pow(mrho, 6) * s) +
-        (0.6666666666666666 * pow(tmax, 3) * HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 2) - 1. * s, 2) +
-        (0.16666666666666666 * pow(delta, 2) * pow(s, 2) * pow(tmax, 3) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
-        (0.6666666666666666 * delta * s * pow(tmax, 3) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            pow(pow(mrho, 3) - 1. * mrho * s, 2) -
-        (0.666667 * delta * pow(tmax, 3) * HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
-        (0.3333335 * pow(delta, 2) * s * pow(tmax, 3) *
-         HeavisideTheta(-mrho + sqrt(s))) /
-            (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
-        0.0625 * pow(eta1 - 1. * eta2, 2) *
-            (eta1 * eta2 *
-                 (-4. * pow(ma1, 6) +
-                  pow(ma1, 4) * (12. * pow(mpion, 2) - 6. * s) +
-                  pow(mpion, 2) *
-                      (4. * pow(mpion, 4) - 4. * pow(mrho, 4) -
-                       2. * pow(mpion, 2) * s + 2. * pow(mrho, 2) * s) +
-                  pow(ma1, 2) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
-                                 8. * pow(mpion, 2) * s +
-                                 4. * pow(mrho, 2) * s - 4. * pow(s, 2))) +
-             pow(eta1, 2) *
-                 (2. * pow(ma1, 6) - 2. * pow(mpion, 6) +
-                  pow(mpion, 2) * pow(mrho, 2) * s +
-                  pow(mrho, 2) * (pow(mrho, 2) - 1. * s) * s +
-                  pow(mpion, 4) * (-3. * pow(mrho, 2) + s) +
-                  pow(ma1, 4) *
-                      (-6. * pow(mpion, 2) - 3. * pow(mrho, 2) + 3. * s) +
-                  pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
-                                 pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
-                                 4. * pow(mrho, 2) * s + 2. * pow(s, 2))) +
-             pow(eta2, 2) *
-                 (2. * pow(ma1, 6) - 2. * pow(mpion, 6) -
-                  1. * pow(mpion, 2) * pow(mrho, 2) * s +
-                  pow(mpion, 4) * (3. * pow(mrho, 2) + s) +
-                  pow(ma1, 4) *
-                      (-6. * pow(mpion, 2) + 3. * pow(mrho, 2) + 3. * s) +
-                  pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
-                                 pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
-                                 2. * pow(mrho, 2) * s + 2. * pow(s, 2)))) *
-            log(fabs(-1. * pow(ma1, 2) + tmin)) +
-        (0.25 * (-2. + delta) * (eta1 - 1. * eta2) *
-         (eta2 * (-0.5 * pow(ma1, 6) - 0.5 * pow(mpion, 6) +
-                  0.5 * pow(mpion, 4) * pow(mrho, 2) +
-                  pow(ma1, 4) *
-                      (0.5 * pow(mpion, 2) + 0.5 * pow(mrho, 2) - 1. * s) +
-                  pow(ma1, 2) * pow(mpion, 2) *
-                      (0.5 * pow(mpion, 2) + 1. * pow(mrho, 2) - 1. * s)) +
-          eta1 *
-              (pow(ma1, 4) * (1. * pow(mpion, 2) + 0.5 * s) +
-               pow(mpion, 2) * (1. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                                pow(mpion, 2) * (-1. * pow(mrho, 2) + 0.5 * s) -
-                                0.5 * pow(mrho, 2) * s) +
-               pow(ma1, 2) * (-2. * pow(mpion, 4) - 0.5 * pow(mrho, 2) * s +
-                              pow(mpion, 2) * (-1. * pow(mrho, 2) + 1. * s)))) *
-         log(fabs(-1. * pow(ma1, 2) + tmin))) /
-            (pow(ma1, 2) - 1. * pow(mpion, 2)) -
-        (0.25 * (1. * eta1 - 1. * eta2) *
-         (delta *
-              (eta1 * (1. * pow(ma1, 6) - 1. * pow(mpion, 6) +
-                       pow(mpion, 4) * (-2.5 * pow(mrho, 2) + 0.5 * s) +
-                       pow(mpion, 2) * s * (-0.5 * pow(mrho, 2) + 1. * s) +
-                       pow(ma1, 4) * (-3. * pow(mpion, 2) - 1.5 * pow(mrho, 2) +
-                                      1.5 * s) +
-                       s * (0.5 * pow(mrho, 4) - 0.25 * pow(mrho, 2) * s -
-                            0.25 * pow(s, 2)) +
-                       pow(ma1, 2) *
-                           (3. * pow(mpion, 4) + 0.5 * pow(mrho, 4) +
-                            pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
-                            2. * pow(mrho, 2) * s + 1. * pow(s, 2))) +
-               eta2 * (-1. * pow(ma1, 6) +
-                       pow(ma1, 4) *
-                           (3. * pow(mpion, 2) - 1. * pow(mrho, 2) - 1. * s) +
-                       pow(mpion, 2) *
-                           (1. * pow(mpion, 4) - 0.5 * pow(mrho, 4) +
-                            0.25 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) +
-                       pow(ma1, 2) *
-                           (-3. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                            0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
-                            pow(mpion, 2) * (1. * pow(mrho, 2) + 1. * s)))) +
-          pow(mrho, 2) *
-              (eta2 * (pow(ma1, 4) * (-1. + 2. * C4 * pow(mrho, 2)) +
-                       pow(mpion, 2) *
-                           (0.5 * pow(mrho, 2) +
-                            pow(mpion, 2) * (-1. + 2. * C4 * pow(mrho, 2)) +
-                            0.5 * s) +
-                       pow(ma1, 2) *
-                           (2. * C4 * pow(mrho, 4) +
-                            pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
-                            pow(mrho, 2) * (-1.5 - 4. * C4 * s) +
-                            s * (0.5 + 2. * C4 * s))) +
-               eta1 * (pow(ma1, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
-                       pow(mpion, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
-                       (-0.5 * pow(mrho, 2) + 0.5 * s) * s +
-                       pow(ma1, 2) *
-                           (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
-                            pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
-                            2. * C4 * pow(s, 2)) +
-                       pow(mpion, 2) * (-4. * C4 * pow(mrho, 4) - 1. * s +
-                                        pow(mrho, 2) * (2. + 4. * C4 * s))))) *
-         log(fabs(-1. * pow(ma1, 2) + tmin))) /
-            pow(mrho, 2) -
-        (HeavisideTheta(-mrho + sqrt(s)) *
-         (-0.5 *
-              (eta1 * eta2 *
-                   (0.25 * pow(mrho, 6) + 1.5 * pow(mrho, 4) * s -
-                    0.125 * delta * pow(mrho, 4) * s -
-                    0.75 * pow(mrho, 2) * pow(s, 2) -
-                    0.75 * delta * pow(mrho, 2) * pow(s, 2) +
-                    0.375 * delta * pow(s, 3) +
-                    pow(ma1, 4) * (-2. * pow(mrho, 2) + 1. * delta * s) +
-                    pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
-                    pow(mpion, 2) * (-3. * pow(mrho, 4) +
-                                     (3. + 1.5 * delta) * pow(mrho, 2) * s -
-                                     1.5 * delta * pow(s, 2)) +
-                    pow(ma1, 2) * (0.5 * pow(mrho, 4) +
-                                   (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
-                                   1.25 * delta * pow(s, 2) +
-                                   pow(mpion, 2) *
-                                       (6. * pow(mrho, 2) - 3. * delta * s))) +
-               pow(eta1, 2) *
-                   (0.5 * pow(mrho, 6) - 2. * pow(mrho, 4) * s -
-                    0.25 * delta * pow(mrho, 4) * s +
-                    0.5 * pow(mrho, 2) * pow(s, 2) +
-                    1. * delta * pow(mrho, 2) * pow(s, 2) -
-                    0.25 * delta * pow(s, 3) +
-                    pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                    pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (4. * pow(mrho, 4) +
-                                     (-2. - 2. * delta) * pow(mrho, 2) * s +
-                                     1. * delta * pow(s, 2)) +
-                    pow(ma1, 2) * (-1.5 * pow(mrho, 4) +
-                                   (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
-                                   0.75 * delta * pow(s, 2) +
-                                   pow(mpion, 2) * (-3. * pow(mrho, 2) +
-                                                    1.5 * delta * s))) +
-               pow(eta2, 2) *
-                   (-0.75 * pow(mrho, 6) + 0.5 * pow(mrho, 4) * s +
-                    0.375 * delta * pow(mrho, 4) * s +
-                    0.25 * pow(mrho, 2) * pow(s, 2) -
-                    0.25 * delta * pow(mrho, 2) * pow(s, 2) -
-                    0.125 * delta * pow(s, 3) +
-                    pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                    pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (-1. * pow(mrho, 4) +
-                                     (-1. + 0.5 * delta) * pow(mrho, 2) * s +
-                                     0.5 * delta * pow(s, 2)) +
-                    pow(ma1, 2) * (1. * pow(mrho, 4) +
-                                   (1. - 0.5 * delta) * pow(mrho, 2) * s -
-                                   0.5 * delta * pow(s, 2) +
-                                   pow(mpion, 2) * (-3. * pow(mrho, 2) +
-                                                    1.5 * delta * s)))) *
-              tmin -
-          0.25 *
-              (eta1 * eta2 *
-                   (0.5 * pow(mrho, 4) - 2.5 * pow(mrho, 2) * s -
-                    0.25 * delta * pow(mrho, 2) * s + 1.25 * delta * pow(s, 2) +
-                    pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s) +
-                    pow(ma1, 2) * (-2. * pow(mrho, 2) + 1. * delta * s)) +
-               pow(eta1, 2) *
-                   (-1.5 * pow(mrho, 4) + 1.5 * pow(mrho, 2) * s +
-                    0.75 * delta * pow(mrho, 2) * s - 0.75 * delta * pow(s, 2) +
-                    pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
-               pow(eta2, 2) *
-                   (1. * pow(mrho, 4) + 1. * pow(mrho, 2) * s -
-                    0.5 * delta * pow(mrho, 2) * s - 0.5 * delta * pow(s, 2) +
-                    pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s))) *
-              pow(tmin, 2) -
-          0.16666666666666666 *
-              (pow(eta1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-               pow(eta2, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-               eta1 * eta2 * (-2. * pow(mrho, 2) + 1. * delta * s)) *
-              pow(tmin, 3) -
-          0.5 *
-              (eta1 * eta2 *
-                   (pow(mpion, 6) * (2. * pow(mrho, 2) - 1. * delta * s) +
-                    pow(ma1, 6) * (-2. * pow(mrho, 2) + 1. * delta * s) +
-                    pow(mpion, 4) * (2.5 * pow(mrho, 4) +
-                                     (-0.5 - 1.25 * delta) * pow(mrho, 2) * s +
-                                     0.25 * delta * pow(s, 2)) +
-                    s * (-0.25 * pow(mrho, 6) +
-                         0.125 * delta * pow(mrho, 4) * s +
-                         0.25 * pow(mrho, 2) * pow(s, 2) -
-                         0.125 * delta * pow(s, 3)) +
-                    pow(mpion, 2) *
-                        (-0.25 * pow(mrho, 6) +
-                         (0.5 + 0.125 * delta) * pow(mrho, 4) * s +
-                         (-1.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) +
-                         0.625 * delta * pow(s, 3)) +
-                    pow(ma1, 4) *
-                        (0.5 * pow(mrho, 4) +
-                         (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
-                         1.25 * delta * pow(s, 2) +
-                         pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s)) +
-                    pow(ma1, 2) *
-                        (0.25 * pow(mrho, 6) +
-                         (1.5 - 0.125 * delta) * pow(mrho, 4) * s +
-                         (-0.75 - 0.75 * delta) * pow(mrho, 2) * pow(s, 2) +
-                         0.375 * delta * pow(s, 3) +
-                         pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
-                         pow(mpion, 2) *
-                             (-3. * pow(mrho, 4) +
-                              (3. + 1.5 * delta) * pow(mrho, 2) * s -
-                              1.5 * delta * pow(s, 2)))) +
-               pow(eta2, 2) *
-                   (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) *
-                        (0.25 * pow(mrho, 6) +
-                         (-0.5 - 0.125 * delta) * pow(mrho, 4) * s +
-                         (0.25 + 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
-                         0.125 * delta * pow(s, 3) +
-                         pow(mpion, 4) *
-                             (-1. * pow(mrho, 2) + 0.5 * delta * s)) +
-                    pow(ma1, 4) * (1. * pow(mrho, 4) +
-                                   (1. - 0.5 * delta) * pow(mrho, 2) * s -
-                                   0.5 * delta * pow(s, 2) +
-                                   pow(mpion, 2) *
-                                       (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
-                    pow(ma1, 2) *
-                        (-0.75 * pow(mrho, 6) +
-                         (0.5 + 0.375 * delta) * pow(mrho, 4) * s +
-                         (0.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
-                         0.125 * delta * pow(s, 3) +
-                         pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                         pow(mpion, 2) *
-                             (-1. * pow(mrho, 4) +
-                              (-1. + 0.5 * delta) * pow(mrho, 2) * s +
-                              0.5 * delta * pow(s, 2)))) +
-               pow(eta1, 2) *
-                   (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * pow(s, 2) *
-                        (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 6) * (-1. * pow(mrho, 2) + 0.5 * delta * s) +
-                    pow(mpion, 4) * (-2.5 * pow(mrho, 4) +
-                                     (0.5 + 1.25 * delta) * pow(mrho, 2) * s -
-                                     0.25 * delta * pow(s, 2)) +
-                    s * (0.25 * pow(mrho, 6) -
-                         0.125 * delta * pow(mrho, 4) * s -
-                         0.25 * pow(mrho, 2) * pow(s, 2) +
-                         0.125 * delta * pow(s, 3)) +
-                    pow(ma1, 4) * (-1.5 * pow(mrho, 4) +
-                                   (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
-                                   0.75 * delta * pow(s, 2) +
-                                   pow(mpion, 2) *
-                                       (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
-                    pow(ma1, 2) *
-                        (0.5 * pow(mrho, 6) +
-                         (-2. - 0.25 * delta) * pow(mrho, 4) * s +
-                         (0.5 + 1. * delta) * pow(mrho, 2) * pow(s, 2) -
-                         0.25 * delta * pow(s, 3) +
-                         pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                         pow(mpion, 2) *
-                             (4. * pow(mrho, 4) +
-                              (-2. - 2. * delta) * pow(mrho, 2) * s +
-                              1. * delta * pow(s, 2))))) *
-              log(fabs(-1. * pow(ma1, 2) + tmin)))) /
-            (pow(mrho, 2) * (pow(mrho, 2) - 1. * s)) -
-        0.5 * pow(-2. + delta, 2) * pow(mpion, 2) *
-            log(fabs(-1. * pow(mpion, 2) + tmin)) +
-        (0.5 * (-2. + delta) * (eta1 - 1. * eta2) *
-         (eta2 * pow(mpion, 4) * (-1. * pow(mrho, 2) + 1. * s) +
-          eta1 * pow(mpion, 2) *
-              (-0.5 * pow(mrho, 4) +
-               pow(mpion, 2) * (1. * pow(mrho, 2) - 1. * s) +
-               0.5 * pow(mrho, 2) * s)) *
-         log(fabs(-1. * pow(mpion, 2) + tmin))) /
-            (pow(ma1, 2) - 1. * pow(mpion, 2)) -
-        (0.5 * (pow(mrho, 2) - 1. * s) *
-             ((0.5 - 0.25 * delta) * pow(mrho, 2) +
-              C4 * (-2. + 1. * delta) * pow(mrho, 4) +
-              (-0.25 + 0.125 * delta) * delta * s) *
-             pow(tmin, 2) +
-         tmin *
-             (-0.5 * pow(mrho, 6) + 0.25 * delta * pow(mrho, 6) +
-              2. * C4 * pow(mrho, 8) - 1. * C4 * delta * pow(mrho, 8) +
-              1. * pow(mrho, 4) * s + 0.25 * delta * pow(mrho, 4) * s -
-              0.375 * pow(delta, 2) * pow(mrho, 4) * s -
-              6. * C4 * pow(mrho, 6) * s + 3. * C4 * delta * pow(mrho, 6) * s -
-              0.5 * pow(mrho, 2) * pow(s, 2) -
-              0.75 * delta * pow(mrho, 2) * pow(s, 2) +
-              0.5 * pow(delta, 2) * pow(mrho, 2) * pow(s, 2) +
-              4. * C4 * pow(mrho, 4) * pow(s, 2) -
-              2. * C4 * delta * pow(mrho, 4) * pow(s, 2) +
-              0.25 * delta * pow(s, 3) - 0.125 * pow(delta, 2) * pow(s, 3) +
-              pow(mpion, 2) *
-                  (C4 * (2. - 1. * delta) * pow(mrho, 6) +
-                   (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
-                   (-1.25 + 0.625 * delta) * delta * pow(s, 2) +
-                   pow(mrho, 4) * (-0.5 + 1.25 * delta - 0.5 * pow(delta, 2) -
-                                   2. * C4 * s + 1. * C4 * delta * s)) +
-              (pow(mpion, 2) * ((-2. + 1. * delta) * pow(mrho, 4) -
-                                0.5000000000000001 * pow(2. - 1. * delta, 2) *
-                                    pow(mrho, 2) * s +
-                                (1. - 0.5 * delta) * delta * pow(s, 2)) +
-               s * ((-0.5 + 0.25 * delta) * pow(mrho, 4) +
-                    (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
-                    (-0.25 + 0.125 * delta) * delta * pow(s, 2))) *
-                  HeavisideTheta(-mrho + sqrt(s))) +
-         pow(mrho, 2) *
-             (s * ((0.5 - 0.75 * delta + 0.25 * pow(delta, 2)) * pow(mrho, 4) -
-                   0.12500000000000003 * pow(2. - 1. * delta, 2) *
-                       pow(mrho, 2) * s +
-                   (0.25 - 0.125 * delta) * delta * pow(s, 2)) +
-              pow(mpion, 2) * (C4 * (4. - 2. * delta) * pow(mrho, 6) +
-                               delta * (-3. + 1.5 * delta) * pow(s, 2) +
-                               pow(mrho, 2) * s *
-                                   (2. - 1.5 * pow(delta, 2) + 4. * C4 * s +
-                                    delta * (2. - 2. * C4 * s)) +
-                               pow(mrho, 4) * (-2. - 8. * C4 * s +
-                                               delta * (1. + 4. * C4 * s))) +
-              s * ((0.5 - 0.25 * delta) * pow(mrho, 4) + 0.12500000000000003 * pow(2. - 1. * delta, 2) * pow(mrho, 2) * s + (-0.25 + 0.125 * delta) * delta * pow(s, 2) + pow(mpion, 2) * ((-4. + 2. * delta) * pow(mrho, 2) + (2. - 1. * delta) * delta * s)) *
-                  HeavisideTheta(-mrho + sqrt(s))) *
+      sigma =
+          (pow(Const, 2) * pow(ghat, 4) *
+           ((-0.03125 * pow(eta1 - 1. * eta2, 2) *
+             (eta1 * eta2 *
+                  (-2. * pow(ma1, 8) - 2. * pow(mpion, 8) +
+                   2. * pow(mpion, 4) * pow(mrho, 4) +
+                   pow(ma1, 6) * (8. * pow(mpion, 2) - 4. * s) +
+                   pow(ma1, 2) * pow(mpion, 2) *
+                       (8. * pow(mpion, 4) - 8. * pow(mrho, 4) -
+                        4. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s) +
+                   pow(ma1, 4) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
+                                  8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
+                                  4. * pow(s, 2))) +
+              pow(eta2, 2) *
+                  (1. * pow(ma1, 8) + 1. * pow(mpion, 8) -
+                   2. * pow(mpion, 6) * pow(mrho, 2) +
+                   1. * pow(mpion, 4) * pow(mrho, 4) +
+                   pow(ma1, 6) *
+                       (-4. * pow(mpion, 2) + 2. * pow(mrho, 2) + 2. * s) +
+                   pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                  pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
+                                  2. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
+                   pow(ma1, 2) * (-4. * pow(mpion, 6) -
+                                  2. * pow(mpion, 2) * pow(mrho, 2) * s +
+                                  pow(mpion, 4) * (6. * pow(mrho, 2) + 2. * s))) +
+              pow(eta1, 2) *
+                  (1. * pow(ma1, 8) +
+                   pow(ma1, 6) *
+                       (-4. * pow(mpion, 2) - 2. * pow(mrho, 2) + 2. * s) +
+                   pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                  pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
+                                  4. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
+                   pow(ma1, 2) * (-4. * pow(mpion, 6) +
+                                  2. * pow(mpion, 2) * pow(mrho, 2) * s +
+                                  pow(mrho, 2) * (2. * pow(mrho, 2) - 2. * s) * s +
+                                  pow(mpion, 4) * (-6. * pow(mrho, 2) + 2. * s)) +
+                   pow(mpion, 2) *
+                       (1. * pow(mpion, 6) + 2. * pow(mpion, 4) * pow(mrho, 2) -
+                        2. * pow(mrho, 6) + 2. * pow(mrho, 4) * s +
+                        pow(mpion, 2) *
+                            (1. * pow(mrho, 4) - 2. * pow(mrho, 2) * s))))) /
+                (1. * pow(ma1, 2) - 1. * tmin) -
+            (1. * pow(-2. + delta, 2) * pow(mpion, 2) *
+             (1. * pow(mpion, 2) - 0.25 * pow(mrho, 2))) /
+                (1. * pow(mpion, 2) - 1. * tmin) -
+            0.75 * tmin +
+            (0.25 * pow(-2. + delta, 2) * pow(mpion, 2) * tmin) / pow(mrho, 2) +
+            0.125 * (-2. + delta) * (eta1 - 1. * eta2) *
+                (eta2 * (-1. * pow(ma1, 2) + pow(mrho, 2) - 2. * s) +
+                 eta1 * (2. * pow(mpion, 2) + s)) *
+                tmin -
+            C4 *
+                (2. * C4 * pow(mrho, 4) + pow(mrho, 2) * (-3. - 4. * C4 * s) +
+                 s * (3. + 2. * C4 * s)) *
+                tmin -
+            (0.5 * pow(delta, 2) *
+             (1. * pow(mpion, 4) * pow(mrho, 2) + 0.25 * pow(mrho, 6) -
+              0.75 * pow(mrho, 4) * s + 0.125 * pow(mrho, 2) * pow(s, 2) +
+              0.25 * pow(s, 3) +
+              pow(mpion, 2) * (2.5 * pow(mrho, 4) + 0.25 * pow(mrho, 2) * s -
+                               0.75 * pow(s, 2))) *
+             tmin) /
+                pow(mrho, 6) -
+            0.03125 * pow(eta1 - 1. * eta2, 2) *
+                (eta1 * eta2 *
+                     (-6. * pow(ma1, 4) - 12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
+                      pow(ma1, 2) * (16. * pow(mpion, 2) - 8. * s) +
+                      8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
+                      4. * pow(s, 2)) +
+                 pow(eta1, 2) *
+                     (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
+                      pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
+                      4. * pow(mrho, 2) * s + 2. * pow(s, 2) +
+                      pow(ma1, 2) *
+                          (-8. * pow(mpion, 2) - 4. * pow(mrho, 2) + 4. * s)) +
+                 pow(eta2, 2) *
+                     (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
+                      pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
+                      2. * pow(mrho, 2) * s + 2. * pow(s, 2) +
+                      pow(ma1, 2) *
+                          (-8. * pow(mpion, 2) + 4. * pow(mrho, 2) + 4. * s))) *
+                tmin -
+            (3. * delta *
+             (0.6666666666666666 * C4 * pow(mrho, 6) -
+              0.08333333333333333 * pow(s, 2) +
+              pow(mrho, 4) * (-0.25 - 0.5 * C4 * s) +
+              pow(mrho, 2) * s *
+                  (0.08333333333333333 - 0.16666666666666666 * C4 * s) +
+              pow(mpion, 2) * (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
+                               pow(mrho, 2) * (-0.4166666666666667 -
+                                               0.3333333333333333 * C4 * s))) *
+             tmin) /
+                pow(mrho, 4) -
+            (0.25 * (1. * eta1 - 1. * eta2) *
+             (pow(mrho, 2) *
+                  (eta1 * (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
+                           pow(ma1, 2) * (1. - 2. * C4 * pow(mrho, 2)) +
+                           pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
+                           2. * C4 * pow(s, 2)) +
+                   eta2 * (-1.5 * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
+                           pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
+                           pow(ma1, 2) * (-1. + 2. * C4 * pow(mrho, 2)) + 0.5 * s -
+                           4. * C4 * pow(mrho, 2) * s + 2. * C4 * pow(s, 2))) +
+              delta * (eta2 * (-1. * pow(ma1, 4) - 3. * pow(mpion, 4) +
+                               1. * pow(mrho, 4) +
+                               pow(ma1, 2) * (3. * pow(mpion, 2) -
+                                              1. * pow(mrho, 2) - 1. * s) +
+                               0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
+                               pow(mpion, 2) * (1. * pow(mrho, 2) + 1. * s)) +
+                       eta1 * (1. * pow(ma1, 4) + 3. * pow(mpion, 4) +
+                               0.5 * pow(mrho, 4) +
+                               pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
+                               2. * pow(mrho, 2) * s + 1. * pow(s, 2) +
+                               pow(ma1, 2) * (-3. * pow(mpion, 2) -
+                                              1.5 * pow(mrho, 2) + 1.5 * s)))) *
+             tmin) /
+                pow(mrho, 2) -
+            0.0625 * (-2. + delta) * (eta1 - 1. * eta2) * eta2 * pow(tmin, 2) +
+            (0.25 * pow(delta, 2) *
+             (2. * pow(mpion, 2) * pow(mrho, 2) + 1. * pow(mrho, 4) -
+              0.75 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) *
+             pow(tmin, 2)) /
+                pow(mrho, 6) -
+            0.03125 * pow(eta1 - 1. * eta2, 3) *
+                (eta2 * (-1. * pow(ma1, 2) + 2. * pow(mpion, 2) -
+                         1. * pow(mrho, 2) - 1. * s) +
+                 eta1 *
+                     (pow(ma1, 2) - 2. * pow(mpion, 2) - 1. * pow(mrho, 2) + s)) *
+                pow(tmin, 2) +
+            (1.5 * delta *
+             (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
+              pow(mrho, 2) * (-0.4166666666666667 - 0.3333333333333333 * C4 * s)) *
+             pow(tmin, 2)) /
+                pow(mrho, 4) -
+            (0.125 * (1. * eta1 - 1. * eta2) *
+             (pow(mrho, 2) * (eta1 * (1. - 2. * C4 * pow(mrho, 2)) +
+                              eta2 * (-1. + 2. * C4 * pow(mrho, 2))) +
+              delta * (eta2 * (-1. * pow(ma1, 2) + 3. * pow(mpion, 2) -
+                               1. * pow(mrho, 2) - 1. * s) +
+                       eta1 * (1. * pow(ma1, 2) - 3. * pow(mpion, 2) -
+                               1.5 * pow(mrho, 2) + 1.5 * s))) *
+             pow(tmin, 2)) /
+                pow(mrho, 2) -
+            0.010416666666666666 * pow(eta1 - 1. * eta2, 4) * pow(tmin, 3) -
+            (0.16666666666666666 * pow(delta, 2) * pow(tmin, 3)) / pow(mrho, 4) -
+            (0.08333333333333333 * delta * pow(1. * eta1 - 1. * eta2, 2) *
+             pow(tmin, 3)) /
+                pow(mrho, 2) +
+            (0.03125 * pow(eta1 - 1. * eta2, 2) *
+             (eta1 * eta2 *
+                  (-2. * pow(ma1, 8) - 2. * pow(mpion, 8) +
+                   2. * pow(mpion, 4) * pow(mrho, 4) +
+                   pow(ma1, 6) * (8. * pow(mpion, 2) - 4. * s) +
+                   pow(ma1, 2) * pow(mpion, 2) *
+                       (8. * pow(mpion, 4) - 8. * pow(mrho, 4) -
+                        4. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s) +
+                   pow(ma1, 4) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
+                                  8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
+                                  4. * pow(s, 2))) +
+              pow(eta2, 2) *
+                  (1. * pow(ma1, 8) + 1. * pow(mpion, 8) -
+                   2. * pow(mpion, 6) * pow(mrho, 2) +
+                   1. * pow(mpion, 4) * pow(mrho, 4) +
+                   pow(ma1, 6) *
+                       (-4. * pow(mpion, 2) + 2. * pow(mrho, 2) + 2. * s) +
+                   pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                  pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
+                                  2. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
+                   pow(ma1, 2) * (-4. * pow(mpion, 6) -
+                                  2. * pow(mpion, 2) * pow(mrho, 2) * s +
+                                  pow(mpion, 4) * (6. * pow(mrho, 2) + 2. * s))) +
+              pow(eta1, 2) *
+                  (1. * pow(ma1, 8) +
+                   pow(ma1, 6) *
+                       (-4. * pow(mpion, 2) - 2. * pow(mrho, 2) + 2. * s) +
+                   pow(ma1, 4) * (6. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                  pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
+                                  4. * pow(mrho, 2) * s + 2. * pow(s, 2)) +
+                   pow(ma1, 2) * (-4. * pow(mpion, 6) +
+                                  2. * pow(mpion, 2) * pow(mrho, 2) * s +
+                                  pow(mrho, 2) * (2. * pow(mrho, 2) - 2. * s) * s +
+                                  pow(mpion, 4) * (-6. * pow(mrho, 2) + 2. * s)) +
+                   pow(mpion, 2) *
+                       (1. * pow(mpion, 6) + 2. * pow(mpion, 4) * pow(mrho, 2) -
+                        2. * pow(mrho, 6) + 2. * pow(mrho, 4) * s +
+                        pow(mpion, 2) *
+                            (1. * pow(mrho, 4) - 2. * pow(mrho, 2) * s))))) /
+                (1. * pow(ma1, 2) - 1. * tmax) +
+            (1. * pow(-2. + delta, 2) * pow(mpion, 2) *
+             (1. * pow(mpion, 2) - 0.25 * pow(mrho, 2))) /
+                (1. * pow(mpion, 2) - 1. * tmax) +
+            0.75 * tmax -
+            (0.25 * pow(-2. + delta, 2) * pow(mpion, 2) * tmax) / pow(mrho, 2) -
+            0.125 * (-2. + delta) * (eta1 - 1. * eta2) *
+                (eta2 * (-1. * pow(ma1, 2) + pow(mrho, 2) - 2. * s) +
+                 eta1 * (2. * pow(mpion, 2) + s)) *
+                tmax +
+            C4 *
+                (2. * C4 * pow(mrho, 4) + pow(mrho, 2) * (-3. - 4. * C4 * s) +
+                 s * (3. + 2. * C4 * s)) *
+                tmax +
+            (0.5 * pow(delta, 2) *
+             (1. * pow(mpion, 4) * pow(mrho, 2) + 0.25 * pow(mrho, 6) -
+              0.75 * pow(mrho, 4) * s + 0.125 * pow(mrho, 2) * pow(s, 2) +
+              0.25 * pow(s, 3) +
+              pow(mpion, 2) * (2.5 * pow(mrho, 4) + 0.25 * pow(mrho, 2) * s -
+                               0.75 * pow(s, 2))) *
+             tmax) /
+                pow(mrho, 6) +
+            0.03125 * pow(eta1 - 1. * eta2, 2) *
+                (eta1 * eta2 *
+                     (-6. * pow(ma1, 4) - 12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
+                      pow(ma1, 2) * (16. * pow(mpion, 2) - 8. * s) +
+                      8. * pow(mpion, 2) * s + 4. * pow(mrho, 2) * s -
+                      4. * pow(s, 2)) +
+                 pow(eta1, 2) *
+                     (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
+                      pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
+                      4. * pow(mrho, 2) * s + 2. * pow(s, 2) +
+                      pow(ma1, 2) *
+                          (-8. * pow(mpion, 2) - 4. * pow(mrho, 2) + 4. * s)) +
+                 pow(eta2, 2) *
+                     (3. * pow(ma1, 4) + 6. * pow(mpion, 4) + pow(mrho, 4) +
+                      pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
+                      2. * pow(mrho, 2) * s + 2. * pow(s, 2) +
+                      pow(ma1, 2) *
+                          (-8. * pow(mpion, 2) + 4. * pow(mrho, 2) + 4. * s))) *
+                tmax +
+            (3. * delta *
+             (0.6666666666666666 * C4 * pow(mrho, 6) -
+              0.08333333333333333 * pow(s, 2) +
+              pow(mrho, 4) * (-0.25 - 0.5 * C4 * s) +
+              pow(mrho, 2) * s *
+                  (0.08333333333333333 - 0.16666666666666666 * C4 * s) +
+              pow(mpion, 2) * (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
+                               pow(mrho, 2) * (-0.4166666666666667 -
+                                               0.3333333333333333 * C4 * s))) *
+             tmax) /
+                pow(mrho, 4) +
+            (0.25 * (1. * eta1 - 1. * eta2) *
+             (pow(mrho, 2) *
+                  (eta1 * (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
+                           pow(ma1, 2) * (1. - 2. * C4 * pow(mrho, 2)) +
+                           pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
+                           2. * C4 * pow(s, 2)) +
+                   eta2 * (-1.5 * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
+                           pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
+                           pow(ma1, 2) * (-1. + 2. * C4 * pow(mrho, 2)) + 0.5 * s -
+                           4. * C4 * pow(mrho, 2) * s + 2. * C4 * pow(s, 2))) +
+              delta * (eta2 * (-1. * pow(ma1, 4) - 3. * pow(mpion, 4) +
+                               1. * pow(mrho, 4) +
+                               pow(ma1, 2) * (3. * pow(mpion, 2) -
+                                              1. * pow(mrho, 2) - 1. * s) +
+                               0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
+                               pow(mpion, 2) * (1. * pow(mrho, 2) + 1. * s)) +
+                       eta1 * (1. * pow(ma1, 4) + 3. * pow(mpion, 4) +
+                               0.5 * pow(mrho, 4) +
+                               pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
+                               2. * pow(mrho, 2) * s + 1. * pow(s, 2) +
+                               pow(ma1, 2) * (-3. * pow(mpion, 2) -
+                                              1.5 * pow(mrho, 2) + 1.5 * s)))) *
+             tmax) /
+                pow(mrho, 2) +
+            0.0625 * (-2. + delta) * (eta1 - 1. * eta2) * eta2 * pow(tmax, 2) -
+            (0.25 * pow(delta, 2) *
+             (2. * pow(mpion, 2) * pow(mrho, 2) + 1. * pow(mrho, 4) -
+              0.75 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) *
+             pow(tmax, 2)) /
+                pow(mrho, 6) +
+            0.03125 * pow(eta1 - 1. * eta2, 3) *
+                (eta2 * (-1. * pow(ma1, 2) + 2. * pow(mpion, 2) -
+                         1. * pow(mrho, 2) - 1. * s) +
+                 eta1 *
+                     (pow(ma1, 2) - 2. * pow(mpion, 2) - 1. * pow(mrho, 2) + s)) *
+                pow(tmax, 2) -
+            (1.5 * delta *
+             (1. * C4 * pow(mrho, 4) + 0.08333333333333333 * s +
+              pow(mrho, 2) * (-0.4166666666666667 - 0.3333333333333333 * C4 * s)) *
+             pow(tmax, 2)) /
+                pow(mrho, 4) +
+            (0.125 * (1. * eta1 - 1. * eta2) *
+             (pow(mrho, 2) * (eta1 * (1. - 2. * C4 * pow(mrho, 2)) +
+                              eta2 * (-1. + 2. * C4 * pow(mrho, 2))) +
+              delta * (eta2 * (-1. * pow(ma1, 2) + 3. * pow(mpion, 2) -
+                               1. * pow(mrho, 2) - 1. * s) +
+                       eta1 * (1. * pow(ma1, 2) - 3. * pow(mpion, 2) -
+                               1.5 * pow(mrho, 2) + 1.5 * s))) *
+             pow(tmax, 2)) /
+                pow(mrho, 2) +
+            0.010416666666666666 * pow(eta1 - 1. * eta2, 4) * pow(tmax, 3) +
+            (0.16666666666666666 * pow(delta, 2) * pow(tmax, 3)) / pow(mrho, 4) +
+            (0.08333333333333333 * delta * pow(1. * eta1 - 1. * eta2, 2) *
+             pow(tmax, 3)) /
+                pow(mrho, 2) -
+            (2. * pow(mpion, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (5. * pow(mpion, 2) * pow(mrho, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (0.5 * pow(mrho, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (2.499999 * pow(mpion, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (5.0000100000000005 * delta * pow(mpion, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1.2500010000000001 * pow(mrho, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (0.500001 * delta * pow(mrho, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (6. * C4 * pow(mpion, 2) * pow(mrho, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (3. * C4 * pow(mrho, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (5. * delta * pow(mpion, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (1.75 * pow(mrho, 2) * s * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (0.5 * delta * pow(mrho, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (1.5 * s * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1.0000005 * delta * s * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (0.2500005 * pow(delta, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (2.000001 * C4 * pow(mpion, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (3. * C4 * delta * pow(mpion, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (3.9999899999999995 * C4 * pow(mrho, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1.5 * C4 * delta * pow(mrho, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1.75 * delta * pow(s, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (0.125 * pow(delta, 2) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (0.5 * pow(delta, 2) * pow(mpion, 4) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (0.999999 * C4 * pow(s, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1.9999949999999997 * C4 * delta * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1. * delta * pow(mpion, 2) * pow(s, 3) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (0.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 4) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (0.25 * delta * pow(s, 4) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (0.0625 * pow(delta, 2) * pow(s, 5) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (2. * delta * pow(mpion, 4) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (1. * pow(mpion, 2) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (1.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (0.25 * pow(s, 3) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (0.4375 * pow(delta, 2) * pow(s, 3) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (2.000001 * delta * pow(mpion, 4) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.500001 * pow(mpion, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (1.4999993999999999 * delta * pow(mpion, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (2.5000050000000003 * pow(delta, 2) * pow(mpion, 2) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.2499999 * pow(s, 2) * tmin * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.9999998999999999 * delta * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.8125005000000001 * pow(delta, 2) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (1.0000005 * C4 * delta * pow(mpion, 2) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.4999995 * C4 * delta * pow(s, 3) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (1.0000005 * pow(delta, 2) * pow(mpion, 4) * s * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (1.5000015000000002 * delta * pow(mpion, 2) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (0.12499995 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (0.49999994999999997 * delta * pow(s, 3) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (0.12499995 * pow(delta, 2) * pow(s, 3) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (0.6250005000000001 * pow(delta, 2) * pow(mpion, 2) * pow(s, 3) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 8) - 1. * pow(mrho, 6) * s) -
+            (0.1875 * pow(delta, 2) * pow(s, 4) * tmin *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 8) - 1. * pow(mrho, 6) * s) +
+            (2. * pow(mpion, 2) * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (1. * pow(mrho, 2) * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (1.2499995 * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1.0000005 * delta * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (3. * C4 * pow(mrho, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1. * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (1. * delta * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (1.0000005 * C4 * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1.5 * C4 * delta * s * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (0.5 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (0.25 * pow(delta, 2) * pow(s, 3) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (2. * delta * pow(mpion, 2) * s * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (1. * delta * pow(s, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (0.25 * pow(delta, 2) * pow(s, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (1.9999949999999997 * delta * pow(mpion, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.2500005 * s * pow(tmin, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.24999974999999997 * delta * s * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.50000025 * pow(delta, 2) * s * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.50000025 * C4 * delta * pow(s, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.9999974999999999 * pow(delta, 2) * pow(mpion, 2) * s * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (0.2500002 * delta * pow(s, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (0.43749974999999997 * pow(delta, 2) * pow(s, 2) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (0.062499975 * pow(delta, 2) * pow(s, 3) * pow(tmin, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 8) - 1. * pow(mrho, 6) * s) -
+            (0.6666666666666666 * pow(tmin, 3) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (0.16666666666666666 * pow(delta, 2) * pow(s, 2) * pow(tmin, 3) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (0.6666666666666666 * delta * s * pow(tmin, 3) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (0.666667 * delta * pow(tmin, 3) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.3333335 * pow(delta, 2) * s * pow(tmin, 3) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (2. * pow(mpion, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (5. * pow(mpion, 2) * pow(mrho, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (0.5 * pow(mrho, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (2.499999 * pow(mpion, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (5.0000100000000005 * delta * pow(mpion, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1.2500010000000001 * pow(mrho, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (0.500001 * delta * pow(mrho, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (6. * C4 * pow(mpion, 2) * pow(mrho, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (3. * C4 * pow(mrho, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (5. * delta * pow(mpion, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (1.75 * pow(mrho, 2) * s * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (0.5 * delta * pow(mrho, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (1.5 * s * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1.0000005 * delta * s * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (0.2500005 * pow(delta, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (2.000001 * C4 * pow(mpion, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (3. * C4 * delta * pow(mpion, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (3.9999899999999995 * C4 * pow(mrho, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1.5 * C4 * delta * pow(mrho, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1.75 * delta * pow(s, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (0.125 * pow(delta, 2) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (0.5 * pow(delta, 2) * pow(mpion, 4) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (0.999999 * C4 * pow(s, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1.9999949999999997 * C4 * delta * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1. * delta * pow(mpion, 2) * pow(s, 3) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (0.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 4) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (0.25 * delta * pow(s, 4) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (0.0625 * pow(delta, 2) * pow(s, 5) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (2. * delta * pow(mpion, 4) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (1. * pow(mpion, 2) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (1.25 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (0.25 * pow(s, 3) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (0.4375 * pow(delta, 2) * pow(s, 3) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (2.000001 * delta * pow(mpion, 4) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.500001 * pow(mpion, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (1.4999993999999999 * delta * pow(mpion, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (2.5000050000000003 * pow(delta, 2) * pow(mpion, 2) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.2499999 * pow(s, 2) * tmax * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.9999998999999999 * delta * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.8125005000000001 * pow(delta, 2) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (1.0000005 * C4 * delta * pow(mpion, 2) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.4999995 * C4 * delta * pow(s, 3) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (1.0000005 * pow(delta, 2) * pow(mpion, 4) * s * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (1.5000015000000002 * delta * pow(mpion, 2) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (0.12499995 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (0.49999994999999997 * delta * pow(s, 3) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (0.12499995 * pow(delta, 2) * pow(s, 3) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (0.6250005000000001 * pow(delta, 2) * pow(mpion, 2) * pow(s, 3) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 8) - 1. * pow(mrho, 6) * s) +
+            (0.1875 * pow(delta, 2) * pow(s, 4) * tmax *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 8) - 1. * pow(mrho, 6) * s) -
+            (2. * pow(mpion, 2) * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (1. * pow(mrho, 2) * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (1.2499995 * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1.0000005 * delta * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (3. * C4 * pow(mrho, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) +
+            (1. * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (1. * delta * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) -
+            (1.0000005 * C4 * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (1.5 * C4 * delta * s * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 2) - 1. * s) -
+            (0.5 * pow(delta, 2) * pow(mpion, 2) * pow(s, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (0.25 * pow(delta, 2) * pow(s, 3) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) +
+            (2. * delta * pow(mpion, 2) * s * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (1. * delta * pow(s, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (0.25 * pow(delta, 2) * pow(s, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) +
+            (1.9999949999999997 * delta * pow(mpion, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.2500005 * s * pow(tmax, 2) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.24999974999999997 * delta * s * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.50000025 * pow(delta, 2) * s * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.50000025 * C4 * delta * pow(s, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) -
+            (0.9999974999999999 * pow(delta, 2) * pow(mpion, 2) * s * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            (0.2500002 * delta * pow(s, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (0.43749974999999997 * pow(delta, 2) * pow(s, 2) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) +
+            (0.062499975 * pow(delta, 2) * pow(s, 3) * pow(tmax, 2) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 8) - 1. * pow(mrho, 6) * s) +
+            (0.6666666666666666 * pow(tmax, 3) * HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 2) - 1. * s, 2) +
+            (0.16666666666666666 * pow(delta, 2) * pow(s, 2) * pow(tmax, 3) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) * pow(pow(mrho, 2) - 1. * s, 2)) -
+            (0.6666666666666666 * delta * s * pow(tmax, 3) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                pow(pow(mrho, 3) - 1. * mrho * s, 2) -
+            (0.666667 * delta * pow(tmax, 3) * HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 4) - 1. * pow(mrho, 2) * s) +
+            (0.3333335 * pow(delta, 2) * s * pow(tmax, 3) *
+             HeavisideTheta(-mrho + sqrt(s))) /
+                (pow(mrho, 6) - 1. * pow(mrho, 4) * s) -
+            0.0625 * pow(eta1 - 1. * eta2, 2) *
+                (eta1 * eta2 *
+                     (-4. * pow(ma1, 6) +
+                      pow(ma1, 4) * (12. * pow(mpion, 2) - 6. * s) +
+                      pow(mpion, 2) *
+                          (4. * pow(mpion, 4) - 4. * pow(mrho, 4) -
+                           2. * pow(mpion, 2) * s + 2. * pow(mrho, 2) * s) +
+                      pow(ma1, 2) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
+                                     8. * pow(mpion, 2) * s +
+                                     4. * pow(mrho, 2) * s - 4. * pow(s, 2))) +
+                 pow(eta1, 2) *
+                     (2. * pow(ma1, 6) - 2. * pow(mpion, 6) +
+                      pow(mpion, 2) * pow(mrho, 2) * s +
+                      pow(mrho, 2) * (pow(mrho, 2) - 1. * s) * s +
+                      pow(mpion, 4) * (-3. * pow(mrho, 2) + s) +
+                      pow(ma1, 4) *
+                          (-6. * pow(mpion, 2) - 3. * pow(mrho, 2) + 3. * s) +
+                      pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
+                                     pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
+                                     4. * pow(mrho, 2) * s + 2. * pow(s, 2))) +
+                 pow(eta2, 2) *
+                     (2. * pow(ma1, 6) - 2. * pow(mpion, 6) -
+                      1. * pow(mpion, 2) * pow(mrho, 2) * s +
+                      pow(mpion, 4) * (3. * pow(mrho, 2) + s) +
+                      pow(ma1, 4) *
+                          (-6. * pow(mpion, 2) + 3. * pow(mrho, 2) + 3. * s) +
+                      pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
+                                     pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
+                                     2. * pow(mrho, 2) * s + 2. * pow(s, 2)))) *
+                log(fabs(-1. * pow(ma1, 2) + tmin)) +
+            (0.25 * (-2. + delta) * (eta1 - 1. * eta2) *
+             (eta2 * (-0.5 * pow(ma1, 6) - 0.5 * pow(mpion, 6) +
+                      0.5 * pow(mpion, 4) * pow(mrho, 2) +
+                      pow(ma1, 4) *
+                          (0.5 * pow(mpion, 2) + 0.5 * pow(mrho, 2) - 1. * s) +
+                      pow(ma1, 2) * pow(mpion, 2) *
+                          (0.5 * pow(mpion, 2) + 1. * pow(mrho, 2) - 1. * s)) +
+              eta1 *
+                  (pow(ma1, 4) * (1. * pow(mpion, 2) + 0.5 * s) +
+                   pow(mpion, 2) * (1. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                    pow(mpion, 2) * (-1. * pow(mrho, 2) + 0.5 * s) -
+                                    0.5 * pow(mrho, 2) * s) +
+                   pow(ma1, 2) * (-2. * pow(mpion, 4) - 0.5 * pow(mrho, 2) * s +
+                                  pow(mpion, 2) * (-1. * pow(mrho, 2) + 1. * s)))) *
+             log(fabs(-1. * pow(ma1, 2) + tmin))) /
+                (pow(ma1, 2) - 1. * pow(mpion, 2)) -
+            (0.25 * (1. * eta1 - 1. * eta2) *
+             (delta *
+                  (eta1 * (1. * pow(ma1, 6) - 1. * pow(mpion, 6) +
+                           pow(mpion, 4) * (-2.5 * pow(mrho, 2) + 0.5 * s) +
+                           pow(mpion, 2) * s * (-0.5 * pow(mrho, 2) + 1. * s) +
+                           pow(ma1, 4) * (-3. * pow(mpion, 2) - 1.5 * pow(mrho, 2) +
+                                          1.5 * s) +
+                           s * (0.5 * pow(mrho, 4) - 0.25 * pow(mrho, 2) * s -
+                                0.25 * pow(s, 2)) +
+                           pow(ma1, 2) *
+                               (3. * pow(mpion, 4) + 0.5 * pow(mrho, 4) +
+                                pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
+                                2. * pow(mrho, 2) * s + 1. * pow(s, 2))) +
+                   eta2 * (-1. * pow(ma1, 6) +
+                           pow(ma1, 4) *
+                               (3. * pow(mpion, 2) - 1. * pow(mrho, 2) - 1. * s) +
+                           pow(mpion, 2) *
+                               (1. * pow(mpion, 4) - 0.5 * pow(mrho, 4) +
+                                0.25 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) +
+                           pow(ma1, 2) *
+                               (-3. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
+                                pow(mpion, 2) * (1. * pow(mrho, 2) + 1. * s)))) +
+              pow(mrho, 2) *
+                  (eta2 * (pow(ma1, 4) * (-1. + 2. * C4 * pow(mrho, 2)) +
+                           pow(mpion, 2) *
+                               (0.5 * pow(mrho, 2) +
+                                pow(mpion, 2) * (-1. + 2. * C4 * pow(mrho, 2)) +
+                                0.5 * s) +
+                           pow(ma1, 2) *
+                               (2. * C4 * pow(mrho, 4) +
+                                pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
+                                pow(mrho, 2) * (-1.5 - 4. * C4 * s) +
+                                s * (0.5 + 2. * C4 * s))) +
+                   eta1 * (pow(ma1, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
+                           pow(mpion, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
+                           (-0.5 * pow(mrho, 2) + 0.5 * s) * s +
+                           pow(ma1, 2) *
+                               (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
+                                pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
+                                2. * C4 * pow(s, 2)) +
+                           pow(mpion, 2) * (-4. * C4 * pow(mrho, 4) - 1. * s +
+                                            pow(mrho, 2) * (2. + 4. * C4 * s))))) *
+             log(fabs(-1. * pow(ma1, 2) + tmin))) /
+                pow(mrho, 2) -
+            (HeavisideTheta(-mrho + sqrt(s)) *
+             (-0.5 *
+                  (eta1 * eta2 *
+                       (0.25 * pow(mrho, 6) + 1.5 * pow(mrho, 4) * s -
+                        0.125 * delta * pow(mrho, 4) * s -
+                        0.75 * pow(mrho, 2) * pow(s, 2) -
+                        0.75 * delta * pow(mrho, 2) * pow(s, 2) +
+                        0.375 * delta * pow(s, 3) +
+                        pow(ma1, 4) * (-2. * pow(mrho, 2) + 1. * delta * s) +
+                        pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
+                        pow(mpion, 2) * (-3. * pow(mrho, 4) +
+                                         (3. + 1.5 * delta) * pow(mrho, 2) * s -
+                                         1.5 * delta * pow(s, 2)) +
+                        pow(ma1, 2) * (0.5 * pow(mrho, 4) +
+                                       (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
+                                       1.25 * delta * pow(s, 2) +
+                                       pow(mpion, 2) *
+                                           (6. * pow(mrho, 2) - 3. * delta * s))) +
+                   pow(eta1, 2) *
+                       (0.5 * pow(mrho, 6) - 2. * pow(mrho, 4) * s -
+                        0.25 * delta * pow(mrho, 4) * s +
+                        0.5 * pow(mrho, 2) * pow(s, 2) +
+                        1. * delta * pow(mrho, 2) * pow(s, 2) -
+                        0.25 * delta * pow(s, 3) +
+                        pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                        pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (4. * pow(mrho, 4) +
+                                         (-2. - 2. * delta) * pow(mrho, 2) * s +
+                                         1. * delta * pow(s, 2)) +
+                        pow(ma1, 2) * (-1.5 * pow(mrho, 4) +
+                                       (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
+                                       0.75 * delta * pow(s, 2) +
+                                       pow(mpion, 2) * (-3. * pow(mrho, 2) +
+                                                        1.5 * delta * s))) +
+                   pow(eta2, 2) *
+                       (-0.75 * pow(mrho, 6) + 0.5 * pow(mrho, 4) * s +
+                        0.375 * delta * pow(mrho, 4) * s +
+                        0.25 * pow(mrho, 2) * pow(s, 2) -
+                        0.25 * delta * pow(mrho, 2) * pow(s, 2) -
+                        0.125 * delta * pow(s, 3) +
+                        pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                        pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (-1. * pow(mrho, 4) +
+                                         (-1. + 0.5 * delta) * pow(mrho, 2) * s +
+                                         0.5 * delta * pow(s, 2)) +
+                        pow(ma1, 2) * (1. * pow(mrho, 4) +
+                                       (1. - 0.5 * delta) * pow(mrho, 2) * s -
+                                       0.5 * delta * pow(s, 2) +
+                                       pow(mpion, 2) * (-3. * pow(mrho, 2) +
+                                                        1.5 * delta * s)))) *
+                  tmin -
+              0.25 *
+                  (eta1 * eta2 *
+                       (0.5 * pow(mrho, 4) - 2.5 * pow(mrho, 2) * s -
+                        0.25 * delta * pow(mrho, 2) * s + 1.25 * delta * pow(s, 2) +
+                        pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s) +
+                        pow(ma1, 2) * (-2. * pow(mrho, 2) + 1. * delta * s)) +
+                   pow(eta1, 2) *
+                       (-1.5 * pow(mrho, 4) + 1.5 * pow(mrho, 2) * s +
+                        0.75 * delta * pow(mrho, 2) * s - 0.75 * delta * pow(s, 2) +
+                        pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
+                   pow(eta2, 2) *
+                       (1. * pow(mrho, 4) + 1. * pow(mrho, 2) * s -
+                        0.5 * delta * pow(mrho, 2) * s - 0.5 * delta * pow(s, 2) +
+                        pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s))) *
+                  pow(tmin, 2) -
+              0.16666666666666666 *
+                  (pow(eta1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                   pow(eta2, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                   eta1 * eta2 * (-2. * pow(mrho, 2) + 1. * delta * s)) *
+                  pow(tmin, 3) -
+              0.5 *
+                  (eta1 * eta2 *
+                       (pow(mpion, 6) * (2. * pow(mrho, 2) - 1. * delta * s) +
+                        pow(ma1, 6) * (-2. * pow(mrho, 2) + 1. * delta * s) +
+                        pow(mpion, 4) * (2.5 * pow(mrho, 4) +
+                                         (-0.5 - 1.25 * delta) * pow(mrho, 2) * s +
+                                         0.25 * delta * pow(s, 2)) +
+                        s * (-0.25 * pow(mrho, 6) +
+                             0.125 * delta * pow(mrho, 4) * s +
+                             0.25 * pow(mrho, 2) * pow(s, 2) -
+                             0.125 * delta * pow(s, 3)) +
+                        pow(mpion, 2) *
+                            (-0.25 * pow(mrho, 6) +
+                             (0.5 + 0.125 * delta) * pow(mrho, 4) * s +
+                             (-1.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) +
+                             0.625 * delta * pow(s, 3)) +
+                        pow(ma1, 4) *
+                            (0.5 * pow(mrho, 4) +
+                             (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
+                             1.25 * delta * pow(s, 2) +
+                             pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s)) +
+                        pow(ma1, 2) *
+                            (0.25 * pow(mrho, 6) +
+                             (1.5 - 0.125 * delta) * pow(mrho, 4) * s +
+                             (-0.75 - 0.75 * delta) * pow(mrho, 2) * pow(s, 2) +
+                             0.375 * delta * pow(s, 3) +
+                             pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
+                             pow(mpion, 2) *
+                                 (-3. * pow(mrho, 4) +
+                                  (3. + 1.5 * delta) * pow(mrho, 2) * s -
+                                  1.5 * delta * pow(s, 2)))) +
+                   pow(eta2, 2) *
+                       (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) *
+                            (0.25 * pow(mrho, 6) +
+                             (-0.5 - 0.125 * delta) * pow(mrho, 4) * s +
+                             (0.25 + 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
+                             0.125 * delta * pow(s, 3) +
+                             pow(mpion, 4) *
+                                 (-1. * pow(mrho, 2) + 0.5 * delta * s)) +
+                        pow(ma1, 4) * (1. * pow(mrho, 4) +
+                                       (1. - 0.5 * delta) * pow(mrho, 2) * s -
+                                       0.5 * delta * pow(s, 2) +
+                                       pow(mpion, 2) *
+                                           (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
+                        pow(ma1, 2) *
+                            (-0.75 * pow(mrho, 6) +
+                             (0.5 + 0.375 * delta) * pow(mrho, 4) * s +
+                             (0.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
+                             0.125 * delta * pow(s, 3) +
+                             pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                             pow(mpion, 2) *
+                                 (-1. * pow(mrho, 4) +
+                                  (-1. + 0.5 * delta) * pow(mrho, 2) * s +
+                                  0.5 * delta * pow(s, 2)))) +
+                   pow(eta1, 2) *
+                       (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * pow(s, 2) *
+                            (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 6) * (-1. * pow(mrho, 2) + 0.5 * delta * s) +
+                        pow(mpion, 4) * (-2.5 * pow(mrho, 4) +
+                                         (0.5 + 1.25 * delta) * pow(mrho, 2) * s -
+                                         0.25 * delta * pow(s, 2)) +
+                        s * (0.25 * pow(mrho, 6) -
+                             0.125 * delta * pow(mrho, 4) * s -
+                             0.25 * pow(mrho, 2) * pow(s, 2) +
+                             0.125 * delta * pow(s, 3)) +
+                        pow(ma1, 4) * (-1.5 * pow(mrho, 4) +
+                                       (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
+                                       0.75 * delta * pow(s, 2) +
+                                       pow(mpion, 2) *
+                                           (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
+                        pow(ma1, 2) *
+                            (0.5 * pow(mrho, 6) +
+                             (-2. - 0.25 * delta) * pow(mrho, 4) * s +
+                             (0.5 + 1. * delta) * pow(mrho, 2) * pow(s, 2) -
+                             0.25 * delta * pow(s, 3) +
+                             pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                             pow(mpion, 2) *
+                                 (4. * pow(mrho, 4) +
+                                  (-2. - 2. * delta) * pow(mrho, 2) * s +
+                                  1. * delta * pow(s, 2))))) *
+                  log(fabs(-1. * pow(ma1, 2) + tmin)))) /
+                (pow(mrho, 2) * (pow(mrho, 2) - 1. * s)) -
+            0.5 * pow(-2. + delta, 2) * pow(mpion, 2) *
+                log(fabs(-1. * pow(mpion, 2) + tmin)) +
+            (0.5 * (-2. + delta) * (eta1 - 1. * eta2) *
+             (eta2 * pow(mpion, 4) * (-1. * pow(mrho, 2) + 1. * s) +
+              eta1 * pow(mpion, 2) *
+                  (-0.5 * pow(mrho, 4) +
+                   pow(mpion, 2) * (1. * pow(mrho, 2) - 1. * s) +
+                   0.5 * pow(mrho, 2) * s)) *
              log(fabs(-1. * pow(mpion, 2) + tmin))) /
-            (pow(mrho, 4) * (pow(mrho, 2) - 1. * s)) +
-        0.0625 * pow(eta1 - 1. * eta2, 2) *
-            (eta1 * eta2 *
-                 (-4. * pow(ma1, 6) +
-                  pow(ma1, 4) * (12. * pow(mpion, 2) - 6. * s) +
+                (pow(ma1, 2) - 1. * pow(mpion, 2)) -
+            (0.5 * (pow(mrho, 2) - 1. * s) *
+                 ((0.5 - 0.25 * delta) * pow(mrho, 2) +
+                  C4 * (-2. + 1. * delta) * pow(mrho, 4) +
+                  (-0.25 + 0.125 * delta) * delta * s) *
+                 pow(tmin, 2) +
+             tmin *
+                 (-0.5 * pow(mrho, 6) + 0.25 * delta * pow(mrho, 6) +
+                  2. * C4 * pow(mrho, 8) - 1. * C4 * delta * pow(mrho, 8) +
+                  1. * pow(mrho, 4) * s + 0.25 * delta * pow(mrho, 4) * s -
+                  0.375 * pow(delta, 2) * pow(mrho, 4) * s -
+                  6. * C4 * pow(mrho, 6) * s + 3. * C4 * delta * pow(mrho, 6) * s -
+                  0.5 * pow(mrho, 2) * pow(s, 2) -
+                  0.75 * delta * pow(mrho, 2) * pow(s, 2) +
+                  0.5 * pow(delta, 2) * pow(mrho, 2) * pow(s, 2) +
+                  4. * C4 * pow(mrho, 4) * pow(s, 2) -
+                  2. * C4 * delta * pow(mrho, 4) * pow(s, 2) +
+                  0.25 * delta * pow(s, 3) - 0.125 * pow(delta, 2) * pow(s, 3) +
                   pow(mpion, 2) *
-                      (4. * pow(mpion, 4) - 4. * pow(mrho, 4) -
-                       2. * pow(mpion, 2) * s + 2. * pow(mrho, 2) * s) +
-                  pow(ma1, 2) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
-                                 8. * pow(mpion, 2) * s +
-                                 4. * pow(mrho, 2) * s - 4. * pow(s, 2))) +
-             pow(eta1, 2) *
-                 (2. * pow(ma1, 6) - 2. * pow(mpion, 6) +
-                  pow(mpion, 2) * pow(mrho, 2) * s +
-                  pow(mrho, 2) * (pow(mrho, 2) - 1. * s) * s +
-                  pow(mpion, 4) * (-3. * pow(mrho, 2) + s) +
-                  pow(ma1, 4) *
-                      (-6. * pow(mpion, 2) - 3. * pow(mrho, 2) + 3. * s) +
-                  pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
-                                 pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
-                                 4. * pow(mrho, 2) * s + 2. * pow(s, 2))) +
-             pow(eta2, 2) *
-                 (2. * pow(ma1, 6) - 2. * pow(mpion, 6) -
-                  1. * pow(mpion, 2) * pow(mrho, 2) * s +
-                  pow(mpion, 4) * (3. * pow(mrho, 2) + s) +
-                  pow(ma1, 4) *
-                      (-6. * pow(mpion, 2) + 3. * pow(mrho, 2) + 3. * s) +
-                  pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
-                                 pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
-                                 2. * pow(mrho, 2) * s + 2. * pow(s, 2)))) *
-            log(fabs(-1. * pow(ma1, 2) + tmax)) -
-        (0.25 * (-2. + delta) * (eta1 - 1. * eta2) *
-         (eta2 * (-0.5 * pow(ma1, 6) - 0.5 * pow(mpion, 6) +
-                  0.5 * pow(mpion, 4) * pow(mrho, 2) +
-                  pow(ma1, 4) *
-                      (0.5 * pow(mpion, 2) + 0.5 * pow(mrho, 2) - 1. * s) +
-                  pow(ma1, 2) * pow(mpion, 2) *
-                      (0.5 * pow(mpion, 2) + 1. * pow(mrho, 2) - 1. * s)) +
-          eta1 *
-              (pow(ma1, 4) * (1. * pow(mpion, 2) + 0.5 * s) +
-               pow(mpion, 2) * (1. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                                pow(mpion, 2) * (-1. * pow(mrho, 2) + 0.5 * s) -
-                                0.5 * pow(mrho, 2) * s) +
-               pow(ma1, 2) * (-2. * pow(mpion, 4) - 0.5 * pow(mrho, 2) * s +
-                              pow(mpion, 2) * (-1. * pow(mrho, 2) + 1. * s)))) *
-         log(fabs(-1. * pow(ma1, 2) + tmax))) /
-            (pow(ma1, 2) - 1. * pow(mpion, 2)) +
-        (0.25 * (1. * eta1 - 1. * eta2) *
-         (delta *
-              (eta1 *
-                   (1. * pow(ma1, 6) - 1. * pow(mpion, 6) +
-                    pow(mpion, 4) * (-2.5 * pow(mrho, 2) + 0.5 * s) +
-                    pow(mpion, 2) * s * (-0.5 * pow(mrho, 2) + 1. * s) +
-                    pow(ma1, 4) *
-                        (-3. * pow(mpion, 2) - 1.5 * pow(mrho, 2) + 1.5 * s) +
-                    s * (0.5 * pow(mrho, 4) - 0.25 * pow(mrho, 2) * s -
-                         0.25 * pow(s, 2)) +
-                    pow(ma1, 2) *
-                        (3. * pow(mpion, 4) + 0.5 * pow(mrho, 4) +
-                         pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
-                         2. * pow(mrho, 2) * s + 1. * pow(s, 2))) +
-               eta2 *
-                   (-1. * pow(ma1, 6) +
-                    pow(ma1, 4) *
-                        (3. * pow(mpion, 2) - 1. * pow(mrho, 2) - 1. * s) +
-                    pow(mpion, 2) *
-                        (1. * pow(mpion, 4) - 0.5 * pow(mrho, 4) +
-                         0.25 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) +
-                    pow(ma1, 2) * (-3. * pow(mpion, 4) + 1. * pow(mrho, 4) +
-                                   0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
-                                   pow(mpion, 2) *
-                                       (1. * pow(mrho, 2) + 1. * s)))) +
-          pow(mrho, 2) *
-              (eta2 *
-                   (pow(ma1, 4) * (-1. + 2. * C4 * pow(mrho, 2)) +
-                    pow(mpion, 2) *
-                        (0.5 * pow(mrho, 2) +
-                         pow(mpion, 2) * (-1. + 2. * C4 * pow(mrho, 2)) +
-                         0.5 * s) +
-                    pow(ma1, 2) *
-                        (2. * C4 * pow(mrho, 4) +
-                         pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
-                         pow(mrho, 2) * (-1.5 - 4. * C4 * s) +
-                         s * (0.5 + 2. * C4 * s))) +
-               eta1 *
-                   (pow(ma1, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
-                    pow(mpion, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
-                    (-0.5 * pow(mrho, 2) + 0.5 * s) * s +
-                    pow(ma1, 2) *
-                        (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
-                         pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
-                         2. * C4 * pow(s, 2)) +
-                    pow(mpion, 2) * (-4. * C4 * pow(mrho, 4) - 1. * s +
-                                     pow(mrho, 2) * (2. + 4. * C4 * s))))) *
-         log(fabs(-1. * pow(ma1, 2) + tmax))) /
-            pow(mrho, 2) +
-        (HeavisideTheta(-mrho + sqrt(s)) *
-         (-0.5 *
-              (eta1 * eta2 *
-                   (0.25 * pow(mrho, 6) +
-                    1.5 * pow(mrho, 4) * s - 0.125 * delta * pow(mrho, 4) * s -
-                    0.75 * pow(mrho, 2) * pow(s, 2) -
-                    0.75 * delta * pow(mrho, 2) * pow(s, 2) +
-                    0.375 *
-                        delta * pow(s, 3) +
-                    pow(ma1, 4) * (-2. * pow(mrho, 2) + 1. * delta * s) +
-                    pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
-                    pow(mpion, 2) * (-3. * pow(mrho, 4) +
-                                     (3. + 1.5 * delta) * pow(mrho, 2) * s -
-                                     1.5 * delta * pow(s, 2)) +
-                    pow(ma1, 2) * (0.5 * pow(mrho, 4) +
-                                   (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
-                                   1.25 * delta * pow(s, 2) +
-                                   pow(mpion, 2) *
-                                       (6. * pow(mrho, 2) - 3. * delta * s))) +
-               pow(eta1, 2) *
-                   (0.5 * pow(mrho, 6) - 2. * pow(mrho, 4) * s -
-                    0.25 * delta * pow(mrho, 4) * s +
-                    0.5 * pow(mrho, 2) * pow(s, 2) +
-                    1. * delta * pow(mrho, 2) * pow(s, 2) -
-                    0.25 * delta * pow(s, 3) +
-                    pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                    pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (4. * pow(mrho, 4) +
-                                     (-2. - 2. * delta) * pow(mrho, 2) * s +
-                                     1. * delta * pow(s, 2)) +
-                    pow(ma1, 2) * (-1.5 * pow(mrho, 4) +
-                                   (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
-                                   0.75 * delta * pow(s, 2) +
-                                   pow(mpion, 2) * (-3. * pow(mrho, 2) +
-                                                    1.5 * delta * s))) +
-               pow(eta2, 2) *
-                   (-0.75 * pow(mrho, 6) +
-                    0.5 * pow(mrho, 4) * s + 0.375 * delta * pow(mrho, 4) * s +
-                    0.25 * pow(mrho, 2) * pow(s, 2) -
-                    0.25 * delta * pow(mrho, 2) * pow(s, 2) -
-                    0.125 *
-                        delta * pow(s, 3) +
-                    pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                    pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (-1. * pow(mrho, 4) +
-                                     (-1. + 0.5 * delta) * pow(mrho, 2) * s +
-                                     0.5 * delta * pow(s, 2)) +
-                    pow(ma1, 2) * (1. * pow(mrho, 4) +
-                                   (1. - 0.5 * delta) * pow(mrho, 2) * s -
-                                   0.5 * delta * pow(s, 2) +
-                                   pow(mpion, 2) * (-3. * pow(mrho, 2) +
-                                                    1.5 * delta * s)))) *
-              tmax -
-          0.25 *
-              (eta1 * eta2 *
-                   (0.5 * pow(mrho, 4) - 2.5 * pow(mrho, 2) * s -
-                    0.25 * delta * pow(mrho, 2) * s + 1.25 * delta * pow(s, 2) +
-                    pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s) +
-                    pow(ma1, 2) * (-2. * pow(mrho, 2) + 1. * delta * s)) +
-               pow(eta1, 2) *
-                   (-1.5 * pow(mrho, 4) + 1.5 * pow(mrho, 2) * s +
-                    0.75 * delta * pow(mrho, 2) * s - 0.75 * delta * pow(s, 2) +
-                    pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
-               pow(eta2, 2) *
-                   (1. * pow(mrho, 4) + 1. * pow(mrho, 2) * s -
-                    0.5 * delta * pow(mrho, 2) * s - 0.5 * delta * pow(s, 2) +
-                    pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s))) *
-              pow(tmax, 2) -
-          0.16666666666666666 *
-              (pow(eta1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-               pow(eta2, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-               eta1 * eta2 * (-2. * pow(mrho, 2) + 1. * delta * s)) *
-              pow(tmax, 3) -
-          0.5 *
-              (eta1 * eta2 *
-                   (pow(mpion, 6) * (2. * pow(mrho, 2) - 1. * delta * s) +
-                    pow(ma1, 6) * (-2. * pow(mrho, 2) + 1. * delta * s) +
-                    pow(mpion, 4) * (2.5 * pow(mrho, 4) +
-                                     (-0.5 - 1.25 * delta) * pow(mrho, 2) * s +
-                                     0.25 * delta * pow(s, 2)) +
-                    s * (-0.25 * pow(mrho, 6) +
-                         0.125 *
-                             delta * pow(mrho, 4) * s +
-                         0.25 * pow(mrho, 2) * pow(s, 2) -
-                         0.125 *
-                             delta * pow(s, 3)) +
-                    pow(mpion, 2) *
-                        (-0.25 * pow(mrho, 6) +
-                         (0.5 + 0.125 * delta) * pow(mrho, 4) * s +
-                         (-1.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) +
-                         0.625 *
-                             delta * pow(s, 3)) +
-                    pow(ma1, 4) *
-                        (0.5 * pow(mrho, 4) +
-                         (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
-                         1.25 * delta * pow(s, 2) +
-                         pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s)) +
-                    pow(ma1, 2) *
-                        (0.25 * pow(mrho, 6) +
-                         (1.5 - 0.125 * delta) * pow(mrho, 4) * s +
-                         (-0.75 - 0.75 * delta) * pow(mrho, 2) * pow(s, 2) +
-                         0.375 *
-                             delta * pow(s, 3) +
-                         pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
-                         pow(mpion, 2) *
-                             (-3. * pow(mrho, 4) +
-                              (3. + 1.5 * delta) * pow(mrho, 2) * s -
-                              1.5 * delta * pow(s, 2)))) +
-               pow(eta2, 2) *
-                   (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) *
-                        (0.25 * pow(mrho, 6) +
-                         (-0.5 - 0.125 * delta) * pow(mrho, 4) * s +
-                         (0.25 + 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
-                         0.125 *
-                             delta * pow(s, 3) +
-                         pow(mpion, 4) *
-                             (-1. * pow(mrho, 2) + 0.5 * delta * s)) +
-                    pow(ma1, 4) * (1. * pow(mrho, 4) +
-                                   (1. - 0.5 * delta) * pow(mrho, 2) * s -
-                                   0.5 * delta * pow(s, 2) +
-                                   pow(mpion, 2) *
-                                       (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
-                    pow(ma1, 2) *
-                        (-0.75 * pow(mrho, 6) +
-                         (0.5 + 0.375 * delta) * pow(mrho, 4) * s +
-                         (0.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
-                         0.125 *
-                             delta * pow(s, 3) +
-                         pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                         pow(mpion, 2) *
-                             (-1. * pow(mrho, 4) +
-                              (-1. + 0.5 * delta) * pow(mrho, 2) * s +
-                              0.5 * delta * pow(s, 2)))) +
-               pow(eta1, 2) *
-                   (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 2) * pow(s, 2) *
-                        (1. * pow(mrho, 2) - 0.5 * delta * s) +
-                    pow(mpion, 6) * (-1. * pow(mrho, 2) + 0.5 * delta * s) +
-                    pow(mpion, 4) *
-                        (-2.5 * pow(mrho, 4) +
-                         (0.5 + 1.25 * delta) * pow(mrho, 2) * s -
-                         0.25 * delta * pow(s, 2)) +
-                    s * (0.25 * pow(mrho, 6) -
-                         0.125 *
-                             delta * pow(mrho, 4) * s -
-                         0.25 * pow(mrho, 2) * pow(s, 2) +
-                         0.125 *
-                             delta * pow(s, 3)) +
-                    pow(ma1, 4) * (-1.5 * pow(mrho, 4) +
-                                   (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
-                                   0.75 * delta * pow(s, 2) +
-                                   pow(mpion, 2) *
-                                       (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
-                    pow(ma1, 2) *
-                        (0.5 * pow(mrho, 6) +
-                         (-2. - 0.25 * delta) * pow(mrho, 4) * s +
-                         (0.5 + 1. * delta) * pow(mrho, 2) * pow(s, 2) -
-                         0.25 * delta * pow(s, 3) +
-                         pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
-                         pow(mpion, 2) *
-                             (4. * pow(mrho, 4) +
-                              (-2. - 2. * delta) * pow(mrho, 2) * s +
-                              1. * delta * pow(s, 2))))) *
-              log(fabs(-1. * pow(ma1, 2) + tmax)))) /
-            (pow(mrho, 2) * (pow(mrho, 2) - 1. * s)) +
-        0.5 * pow(-2. + delta, 2) * pow(mpion, 2) *
-            log(fabs(-1. * pow(mpion, 2) + tmax)) -
-        (0.5 * (-2. + delta) * (eta1 - 1. * eta2) *
-         (eta2 * pow(mpion, 4) * (-1. * pow(mrho, 2) + 1. * s) +
-          eta1 * pow(mpion, 2) *
-              (-0.5 * pow(mrho, 4) +
-               pow(mpion, 2) * (1. * pow(mrho, 2) - 1. * s) +
-               0.5 * pow(mrho, 2) * s)) *
-         log(fabs(-1. * pow(mpion, 2) + tmax))) /
-            (pow(ma1, 2) - 1. * pow(mpion, 2)) +
-        (0.5 * (pow(mrho, 2) - 1. * s) *
-             ((0.5 - 0.25 * delta) * pow(mrho, 2) +
-              C4 * (-2. + 1. * delta) * pow(mrho, 4) +
-              (-0.25 + 0.125 * delta) * delta * s) *
-             pow(tmax, 2) +
-         tmax *
-             (-0.5 * pow(mrho, 6) + 0.25 * delta * pow(mrho, 6) +
-              2. * C4 * pow(mrho, 8) - 1. * C4 * delta * pow(mrho, 8) +
-              1. * pow(mrho, 4) * s + 0.25 * delta * pow(mrho, 4) * s -
-              0.375 *
-                  pow(delta, 2) * pow(mrho, 4) * s -
-              6. * C4 * pow(mrho, 6) * s + 3. * C4 * delta * pow(mrho, 6) * s -
-              0.5 * pow(mrho, 2) * pow(s, 2) -
-              0.75 * delta * pow(mrho, 2) * pow(s, 2) +
-              0.5 * pow(delta, 2) * pow(mrho, 2) * pow(s, 2) +
-              4. * C4 * pow(mrho, 4) * pow(s, 2) -
-              2. * C4 * delta * pow(mrho, 4) * pow(s, 2) +
-              0.25 * delta * pow(s, 3) - 0.125 * pow(delta, 2) * pow(s, 3) +
-              pow(mpion, 2) *
-                  (C4 * (2. - 1. * delta) * pow(mrho, 6) +
-                   (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
-                   (-1.25 + 0.625 * delta) * delta * pow(s, 2) +
-                   pow(mrho, 4) * (-0.5 + 1.25 * delta - 0.5 * pow(delta, 2) -
-                                   2. * C4 * s + 1. * C4 * delta * s)) +
-              (pow(mpion, 2) * ((-2. + 1. * delta) * pow(mrho, 4) -
-                                0.5000000000000001 * pow(2. - 1. * delta, 2) *
-                                    pow(mrho, 2) * s +
-                                (1. - 0.5 * delta) * delta * pow(s, 2)) +
-               s * ((-0.5 + 0.25 * delta) * pow(mrho, 4) +
-                    (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
-                    (-0.25 + 0.125 * delta) * delta * pow(s, 2))) *
-                  HeavisideTheta(-mrho + sqrt(s))) +
-         pow(mrho, 2) *
-             (s * ((0.5 - 0.75 * delta + 0.25 * pow(delta, 2)) * pow(mrho, 4) -
-                   0.12500000000000003 * pow(2. - 1. * delta, 2) *
-                       pow(mrho, 2) * s +
-                   (0.25 - 0.125 * delta) * delta * pow(s, 2)) +
-              pow(mpion, 2) * (C4 * (4. - 2. * delta) * pow(mrho, 6) + delta * (-3. + 1.5 * delta) * pow(s, 2) + pow(mrho, 2) * s * (2. - 1.5 * pow(delta, 2) + 4. * C4 * s + delta * (2. - 2. * C4 * s)) + pow(mrho, 4) * (-2. - 8. * C4 * s + delta * (1. + 4. * C4 * s))) + s * ((0.5 - 0.25 * delta) * pow(mrho, 4) + 0.12500000000000003 * pow(2. - 1. * delta, 2) * pow(mrho, 2) * s + (-0.25 + 0.125 * delta) * delta * pow(s, 2) + pow(mpion, 2) * ((-4. + 2. * delta) * pow(mrho, 2) + (2. - 1. * delta) * delta * s)) * HeavisideTheta(-mrho + sqrt(s))) *
+                      (C4 * (2. - 1. * delta) * pow(mrho, 6) +
+                       (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
+                       (-1.25 + 0.625 * delta) * delta * pow(s, 2) +
+                       pow(mrho, 4) * (-0.5 + 1.25 * delta - 0.5 * pow(delta, 2) -
+                                       2. * C4 * s + 1. * C4 * delta * s)) +
+                  (pow(mpion, 2) * ((-2. + 1. * delta) * pow(mrho, 4) -
+                                    0.5000000000000001 * pow(2. - 1. * delta, 2) *
+                                        pow(mrho, 2) * s +
+                                    (1. - 0.5 * delta) * delta * pow(s, 2)) +
+                   s * ((-0.5 + 0.25 * delta) * pow(mrho, 4) +
+                        (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
+                        (-0.25 + 0.125 * delta) * delta * pow(s, 2))) *
+                      HeavisideTheta(-mrho + sqrt(s))) +
+             pow(mrho, 2) *
+                 (s * ((0.5 - 0.75 * delta + 0.25 * pow(delta, 2)) * pow(mrho, 4) -
+                       0.12500000000000003 * pow(2. - 1. * delta, 2) *
+                           pow(mrho, 2) * s +
+                       (0.25 - 0.125 * delta) * delta * pow(s, 2)) +
+                  pow(mpion, 2) * (C4 * (4. - 2. * delta) * pow(mrho, 6) +
+                                   delta * (-3. + 1.5 * delta) * pow(s, 2) +
+                                   pow(mrho, 2) * s *
+                                       (2. - 1.5 * pow(delta, 2) + 4. * C4 * s +
+                                        delta * (2. - 2. * C4 * s)) +
+                                   pow(mrho, 4) * (-2. - 8. * C4 * s +
+                                                   delta * (1. + 4. * C4 * s))) +
+                  s * ((0.5 - 0.25 * delta) * pow(mrho, 4) + 0.12500000000000003 * pow(2. - 1. * delta, 2) * pow(mrho, 2) * s + (-0.25 + 0.125 * delta) * delta * pow(s, 2) + pow(mpion, 2) * ((-4. + 2. * delta) * pow(mrho, 2) + (2. - 1. * delta) * delta * s)) *
+                      HeavisideTheta(-mrho + sqrt(s))) *
+                 log(fabs(-1. * pow(mpion, 2) + tmin))) /
+                (pow(mrho, 4) * (pow(mrho, 2) - 1. * s)) +
+            0.0625 * pow(eta1 - 1. * eta2, 2) *
+                (eta1 * eta2 *
+                     (-4. * pow(ma1, 6) +
+                      pow(ma1, 4) * (12. * pow(mpion, 2) - 6. * s) +
+                      pow(mpion, 2) *
+                          (4. * pow(mpion, 4) - 4. * pow(mrho, 4) -
+                           2. * pow(mpion, 2) * s + 2. * pow(mrho, 2) * s) +
+                      pow(ma1, 2) * (-12. * pow(mpion, 4) + 2. * pow(mrho, 4) +
+                                     8. * pow(mpion, 2) * s +
+                                     4. * pow(mrho, 2) * s - 4. * pow(s, 2))) +
+                 pow(eta1, 2) *
+                     (2. * pow(ma1, 6) - 2. * pow(mpion, 6) +
+                      pow(mpion, 2) * pow(mrho, 2) * s +
+                      pow(mrho, 2) * (pow(mrho, 2) - 1. * s) * s +
+                      pow(mpion, 4) * (-3. * pow(mrho, 2) + s) +
+                      pow(ma1, 4) *
+                          (-6. * pow(mpion, 2) - 3. * pow(mrho, 2) + 3. * s) +
+                      pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
+                                     pow(mpion, 2) * (6. * pow(mrho, 2) - 4. * s) -
+                                     4. * pow(mrho, 2) * s + 2. * pow(s, 2))) +
+                 pow(eta2, 2) *
+                     (2. * pow(ma1, 6) - 2. * pow(mpion, 6) -
+                      1. * pow(mpion, 2) * pow(mrho, 2) * s +
+                      pow(mpion, 4) * (3. * pow(mrho, 2) + s) +
+                      pow(ma1, 4) *
+                          (-6. * pow(mpion, 2) + 3. * pow(mrho, 2) + 3. * s) +
+                      pow(ma1, 2) * (6. * pow(mpion, 4) + pow(mrho, 4) +
+                                     pow(mpion, 2) * (-6. * pow(mrho, 2) - 4. * s) -
+                                     2. * pow(mrho, 2) * s + 2. * pow(s, 2)))) *
+                log(fabs(-1. * pow(ma1, 2) + tmax)) -
+            (0.25 * (-2. + delta) * (eta1 - 1. * eta2) *
+             (eta2 * (-0.5 * pow(ma1, 6) - 0.5 * pow(mpion, 6) +
+                      0.5 * pow(mpion, 4) * pow(mrho, 2) +
+                      pow(ma1, 4) *
+                          (0.5 * pow(mpion, 2) + 0.5 * pow(mrho, 2) - 1. * s) +
+                      pow(ma1, 2) * pow(mpion, 2) *
+                          (0.5 * pow(mpion, 2) + 1. * pow(mrho, 2) - 1. * s)) +
+              eta1 *
+                  (pow(ma1, 4) * (1. * pow(mpion, 2) + 0.5 * s) +
+                   pow(mpion, 2) * (1. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                    pow(mpion, 2) * (-1. * pow(mrho, 2) + 0.5 * s) -
+                                    0.5 * pow(mrho, 2) * s) +
+                   pow(ma1, 2) * (-2. * pow(mpion, 4) - 0.5 * pow(mrho, 2) * s +
+                                  pow(mpion, 2) * (-1. * pow(mrho, 2) + 1. * s)))) *
+             log(fabs(-1. * pow(ma1, 2) + tmax))) /
+                (pow(ma1, 2) - 1. * pow(mpion, 2)) +
+            (0.25 * (1. * eta1 - 1. * eta2) *
+             (delta *
+                  (eta1 *
+                       (1. * pow(ma1, 6) - 1. * pow(mpion, 6) +
+                        pow(mpion, 4) * (-2.5 * pow(mrho, 2) + 0.5 * s) +
+                        pow(mpion, 2) * s * (-0.5 * pow(mrho, 2) + 1. * s) +
+                        pow(ma1, 4) *
+                            (-3. * pow(mpion, 2) - 1.5 * pow(mrho, 2) + 1.5 * s) +
+                        s * (0.5 * pow(mrho, 4) - 0.25 * pow(mrho, 2) * s -
+                             0.25 * pow(s, 2)) +
+                        pow(ma1, 2) *
+                            (3. * pow(mpion, 4) + 0.5 * pow(mrho, 4) +
+                             pow(mpion, 2) * (4. * pow(mrho, 2) - 2. * s) -
+                             2. * pow(mrho, 2) * s + 1. * pow(s, 2))) +
+                   eta2 *
+                       (-1. * pow(ma1, 6) +
+                        pow(ma1, 4) *
+                            (3. * pow(mpion, 2) - 1. * pow(mrho, 2) - 1. * s) +
+                        pow(mpion, 2) *
+                            (1. * pow(mpion, 4) - 0.5 * pow(mrho, 4) +
+                             0.25 * pow(mrho, 2) * s - 0.25 * pow(s, 2)) +
+                        pow(ma1, 2) * (-3. * pow(mpion, 4) + 1. * pow(mrho, 4) +
+                                       0.25 * pow(mrho, 2) * s - 0.75 * pow(s, 2) +
+                                       pow(mpion, 2) *
+                                           (1. * pow(mrho, 2) + 1. * s)))) +
+              pow(mrho, 2) *
+                  (eta2 *
+                       (pow(ma1, 4) * (-1. + 2. * C4 * pow(mrho, 2)) +
+                        pow(mpion, 2) *
+                            (0.5 * pow(mrho, 2) +
+                             pow(mpion, 2) * (-1. + 2. * C4 * pow(mrho, 2)) +
+                             0.5 * s) +
+                        pow(ma1, 2) *
+                            (2. * C4 * pow(mrho, 4) +
+                             pow(mpion, 2) * (2. - 4. * C4 * pow(mrho, 2)) +
+                             pow(mrho, 2) * (-1.5 - 4. * C4 * s) +
+                             s * (0.5 + 2. * C4 * s))) +
+                   eta1 *
+                       (pow(ma1, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
+                        pow(mpion, 4) * (1. - 2. * C4 * pow(mrho, 2)) +
+                        (-0.5 * pow(mrho, 2) + 0.5 * s) * s +
+                        pow(ma1, 2) *
+                            (-1. * pow(mrho, 2) + 2. * C4 * pow(mrho, 4) +
+                             pow(mpion, 2) * (-2. + 4. * C4 * pow(mrho, 2)) -
+                             2. * C4 * pow(s, 2)) +
+                        pow(mpion, 2) * (-4. * C4 * pow(mrho, 4) - 1. * s +
+                                         pow(mrho, 2) * (2. + 4. * C4 * s))))) *
+             log(fabs(-1. * pow(ma1, 2) + tmax))) /
+                pow(mrho, 2) +
+            (HeavisideTheta(-mrho + sqrt(s)) *
+             (-0.5 *
+                  (eta1 * eta2 *
+                       (0.25 * pow(mrho, 6) +
+                        1.5 * pow(mrho, 4) * s - 0.125 * delta * pow(mrho, 4) * s -
+                        0.75 * pow(mrho, 2) * pow(s, 2) -
+                        0.75 * delta * pow(mrho, 2) * pow(s, 2) +
+                        0.375 *
+                            delta * pow(s, 3) +
+                        pow(ma1, 4) * (-2. * pow(mrho, 2) + 1. * delta * s) +
+                        pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
+                        pow(mpion, 2) * (-3. * pow(mrho, 4) +
+                                         (3. + 1.5 * delta) * pow(mrho, 2) * s -
+                                         1.5 * delta * pow(s, 2)) +
+                        pow(ma1, 2) * (0.5 * pow(mrho, 4) +
+                                       (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
+                                       1.25 * delta * pow(s, 2) +
+                                       pow(mpion, 2) *
+                                           (6. * pow(mrho, 2) - 3. * delta * s))) +
+                   pow(eta1, 2) *
+                       (0.5 * pow(mrho, 6) - 2. * pow(mrho, 4) * s -
+                        0.25 * delta * pow(mrho, 4) * s +
+                        0.5 * pow(mrho, 2) * pow(s, 2) +
+                        1. * delta * pow(mrho, 2) * pow(s, 2) -
+                        0.25 * delta * pow(s, 3) +
+                        pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                        pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (4. * pow(mrho, 4) +
+                                         (-2. - 2. * delta) * pow(mrho, 2) * s +
+                                         1. * delta * pow(s, 2)) +
+                        pow(ma1, 2) * (-1.5 * pow(mrho, 4) +
+                                       (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
+                                       0.75 * delta * pow(s, 2) +
+                                       pow(mpion, 2) * (-3. * pow(mrho, 2) +
+                                                        1.5 * delta * s))) +
+                   pow(eta2, 2) *
+                       (-0.75 * pow(mrho, 6) +
+                        0.5 * pow(mrho, 4) * s + 0.375 * delta * pow(mrho, 4) * s +
+                        0.25 * pow(mrho, 2) * pow(s, 2) -
+                        0.25 * delta * pow(mrho, 2) * pow(s, 2) -
+                        0.125 *
+                            delta * pow(s, 3) +
+                        pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                        pow(ma1, 4) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (-1. * pow(mrho, 4) +
+                                         (-1. + 0.5 * delta) * pow(mrho, 2) * s +
+                                         0.5 * delta * pow(s, 2)) +
+                        pow(ma1, 2) * (1. * pow(mrho, 4) +
+                                       (1. - 0.5 * delta) * pow(mrho, 2) * s -
+                                       0.5 * delta * pow(s, 2) +
+                                       pow(mpion, 2) * (-3. * pow(mrho, 2) +
+                                                        1.5 * delta * s)))) *
+                  tmax -
+              0.25 *
+                  (eta1 * eta2 *
+                       (0.5 * pow(mrho, 4) - 2.5 * pow(mrho, 2) * s -
+                        0.25 * delta * pow(mrho, 2) * s + 1.25 * delta * pow(s, 2) +
+                        pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s) +
+                        pow(ma1, 2) * (-2. * pow(mrho, 2) + 1. * delta * s)) +
+                   pow(eta1, 2) *
+                       (-1.5 * pow(mrho, 4) + 1.5 * pow(mrho, 2) * s +
+                        0.75 * delta * pow(mrho, 2) * s - 0.75 * delta * pow(s, 2) +
+                        pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
+                   pow(eta2, 2) *
+                       (1. * pow(mrho, 4) + 1. * pow(mrho, 2) * s -
+                        0.5 * delta * pow(mrho, 2) * s - 0.5 * delta * pow(s, 2) +
+                        pow(ma1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * (-3. * pow(mrho, 2) + 1.5 * delta * s))) *
+                  pow(tmax, 2) -
+              0.16666666666666666 *
+                  (pow(eta1, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                   pow(eta2, 2) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                   eta1 * eta2 * (-2. * pow(mrho, 2) + 1. * delta * s)) *
+                  pow(tmax, 3) -
+              0.5 *
+                  (eta1 * eta2 *
+                       (pow(mpion, 6) * (2. * pow(mrho, 2) - 1. * delta * s) +
+                        pow(ma1, 6) * (-2. * pow(mrho, 2) + 1. * delta * s) +
+                        pow(mpion, 4) * (2.5 * pow(mrho, 4) +
+                                         (-0.5 - 1.25 * delta) * pow(mrho, 2) * s +
+                                         0.25 * delta * pow(s, 2)) +
+                        s * (-0.25 * pow(mrho, 6) +
+                             0.125 *
+                                 delta * pow(mrho, 4) * s +
+                             0.25 * pow(mrho, 2) * pow(s, 2) -
+                             0.125 *
+                                 delta * pow(s, 3)) +
+                        pow(mpion, 2) *
+                            (-0.25 * pow(mrho, 6) +
+                             (0.5 + 0.125 * delta) * pow(mrho, 4) * s +
+                             (-1.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) +
+                             0.625 *
+                                 delta * pow(s, 3)) +
+                        pow(ma1, 4) *
+                            (0.5 * pow(mrho, 4) +
+                             (-2.5 - 0.25 * delta) * pow(mrho, 2) * s +
+                             1.25 * delta * pow(s, 2) +
+                             pow(mpion, 2) * (6. * pow(mrho, 2) - 3. * delta * s)) +
+                        pow(ma1, 2) *
+                            (0.25 * pow(mrho, 6) +
+                             (1.5 - 0.125 * delta) * pow(mrho, 4) * s +
+                             (-0.75 - 0.75 * delta) * pow(mrho, 2) * pow(s, 2) +
+                             0.375 *
+                                 delta * pow(s, 3) +
+                             pow(mpion, 4) * (-6. * pow(mrho, 2) + 3. * delta * s) +
+                             pow(mpion, 2) *
+                                 (-3. * pow(mrho, 4) +
+                                  (3. + 1.5 * delta) * pow(mrho, 2) * s -
+                                  1.5 * delta * pow(s, 2)))) +
+                   pow(eta2, 2) *
+                       (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) *
+                            (0.25 * pow(mrho, 6) +
+                             (-0.5 - 0.125 * delta) * pow(mrho, 4) * s +
+                             (0.25 + 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
+                             0.125 *
+                                 delta * pow(s, 3) +
+                             pow(mpion, 4) *
+                                 (-1. * pow(mrho, 2) + 0.5 * delta * s)) +
+                        pow(ma1, 4) * (1. * pow(mrho, 4) +
+                                       (1. - 0.5 * delta) * pow(mrho, 2) * s -
+                                       0.5 * delta * pow(s, 2) +
+                                       pow(mpion, 2) *
+                                           (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
+                        pow(ma1, 2) *
+                            (-0.75 * pow(mrho, 6) +
+                             (0.5 + 0.375 * delta) * pow(mrho, 4) * s +
+                             (0.25 - 0.25 * delta) * pow(mrho, 2) * pow(s, 2) -
+                             0.125 *
+                                 delta * pow(s, 3) +
+                             pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                             pow(mpion, 2) *
+                                 (-1. * pow(mrho, 4) +
+                                  (-1. + 0.5 * delta) * pow(mrho, 2) * s +
+                                  0.5 * delta * pow(s, 2)))) +
+                   pow(eta1, 2) *
+                       (pow(ma1, 6) * (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 2) * pow(s, 2) *
+                            (1. * pow(mrho, 2) - 0.5 * delta * s) +
+                        pow(mpion, 6) * (-1. * pow(mrho, 2) + 0.5 * delta * s) +
+                        pow(mpion, 4) *
+                            (-2.5 * pow(mrho, 4) +
+                             (0.5 + 1.25 * delta) * pow(mrho, 2) * s -
+                             0.25 * delta * pow(s, 2)) +
+                        s * (0.25 * pow(mrho, 6) -
+                             0.125 *
+                                 delta * pow(mrho, 4) * s -
+                             0.25 * pow(mrho, 2) * pow(s, 2) +
+                             0.125 *
+                                 delta * pow(s, 3)) +
+                        pow(ma1, 4) * (-1.5 * pow(mrho, 4) +
+                                       (1.5 + 0.75 * delta) * pow(mrho, 2) * s -
+                                       0.75 * delta * pow(s, 2) +
+                                       pow(mpion, 2) *
+                                           (-3. * pow(mrho, 2) + 1.5 * delta * s)) +
+                        pow(ma1, 2) *
+                            (0.5 * pow(mrho, 6) +
+                             (-2. - 0.25 * delta) * pow(mrho, 4) * s +
+                             (0.5 + 1. * delta) * pow(mrho, 2) * pow(s, 2) -
+                             0.25 * delta * pow(s, 3) +
+                             pow(mpion, 4) * (3. * pow(mrho, 2) - 1.5 * delta * s) +
+                             pow(mpion, 2) *
+                                 (4. * pow(mrho, 4) +
+                                  (-2. - 2. * delta) * pow(mrho, 2) * s +
+                                  1. * delta * pow(s, 2))))) *
+                  log(fabs(-1. * pow(ma1, 2) + tmax)))) /
+                (pow(mrho, 2) * (pow(mrho, 2) - 1. * s)) +
+            0.5 * pow(-2. + delta, 2) * pow(mpion, 2) *
+                log(fabs(-1. * pow(mpion, 2) + tmax)) -
+            (0.5 * (-2. + delta) * (eta1 - 1. * eta2) *
+             (eta2 * pow(mpion, 4) * (-1. * pow(mrho, 2) + 1. * s) +
+              eta1 * pow(mpion, 2) *
+                  (-0.5 * pow(mrho, 4) +
+                   pow(mpion, 2) * (1. * pow(mrho, 2) - 1. * s) +
+                   0.5 * pow(mrho, 2) * s)) *
              log(fabs(-1. * pow(mpion, 2) + tmax))) /
-            (pow(mrho, 4) * (pow(mrho, 2) - 1. * s)))) /
-      (16. * Pi * s * (-4 * pow(mpion, 2) + s));
+                (pow(ma1, 2) - 1. * pow(mpion, 2)) +
+            (0.5 * (pow(mrho, 2) - 1. * s) *
+                 ((0.5 - 0.25 * delta) * pow(mrho, 2) +
+                  C4 * (-2. + 1. * delta) * pow(mrho, 4) +
+                  (-0.25 + 0.125 * delta) * delta * s) *
+                 pow(tmax, 2) +
+             tmax *
+                 (-0.5 * pow(mrho, 6) + 0.25 * delta * pow(mrho, 6) +
+                  2. * C4 * pow(mrho, 8) - 1. * C4 * delta * pow(mrho, 8) +
+                  1. * pow(mrho, 4) * s + 0.25 * delta * pow(mrho, 4) * s -
+                  0.375 *
+                      pow(delta, 2) * pow(mrho, 4) * s -
+                  6. * C4 * pow(mrho, 6) * s + 3. * C4 * delta * pow(mrho, 6) * s -
+                  0.5 * pow(mrho, 2) * pow(s, 2) -
+                  0.75 * delta * pow(mrho, 2) * pow(s, 2) +
+                  0.5 * pow(delta, 2) * pow(mrho, 2) * pow(s, 2) +
+                  4. * C4 * pow(mrho, 4) * pow(s, 2) -
+                  2. * C4 * delta * pow(mrho, 4) * pow(s, 2) +
+                  0.25 * delta * pow(s, 3) - 0.125 * pow(delta, 2) * pow(s, 3) +
+                  pow(mpion, 2) *
+                      (C4 * (2. - 1. * delta) * pow(mrho, 6) +
+                       (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
+                       (-1.25 + 0.625 * delta) * delta * pow(s, 2) +
+                       pow(mrho, 4) * (-0.5 + 1.25 * delta - 0.5 * pow(delta, 2) -
+                                       2. * C4 * s + 1. * C4 * delta * s)) +
+                  (pow(mpion, 2) * ((-2. + 1. * delta) * pow(mrho, 4) -
+                                    0.5000000000000001 * pow(2. - 1. * delta, 2) *
+                                        pow(mrho, 2) * s +
+                                    (1. - 0.5 * delta) * delta * pow(s, 2)) +
+                   s * ((-0.5 + 0.25 * delta) * pow(mrho, 4) +
+                        (0.5 - 0.125 * pow(delta, 2)) * pow(mrho, 2) * s +
+                        (-0.25 + 0.125 * delta) * delta * pow(s, 2))) *
+                      HeavisideTheta(-mrho + sqrt(s))) +
+             pow(mrho, 2) *
+                 (s * ((0.5 - 0.75 * delta + 0.25 * pow(delta, 2)) * pow(mrho, 4) -
+                       0.12500000000000003 * pow(2. - 1. * delta, 2) *
+                           pow(mrho, 2) * s +
+                       (0.25 - 0.125 * delta) * delta * pow(s, 2)) +
+                  pow(mpion, 2) * (C4 * (4. - 2. * delta) * pow(mrho, 6) + delta * (-3. + 1.5 * delta) * pow(s, 2) + pow(mrho, 2) * s * (2. - 1.5 * pow(delta, 2) + 4. * C4 * s + delta * (2. - 2. * C4 * s)) + pow(mrho, 4) * (-2. - 8. * C4 * s + delta * (1. + 4. * C4 * s))) + s * ((0.5 - 0.25 * delta) * pow(mrho, 4) + 0.12500000000000003 * pow(2. - 1. * delta, 2) * pow(mrho, 2) * s + (-0.25 + 0.125 * delta) * delta * pow(s, 2) + pow(mpion, 2) * ((-4. + 2. * delta) * pow(mrho, 2) + (2. - 1. * delta) * delta * s)) * HeavisideTheta(-mrho + sqrt(s))) *
+                 log(fabs(-1. * pow(mpion, 2) + tmax))) /
+                (pow(mrho, 4) * (pow(mrho, 2) - 1. * s)))) /
+          (16. * Pi * s * (-4 * pow(mpion, 2) + s));
 
-  return sigma / spin_deg_factor;
-}
+      return sigma / spin_deg_factor;
+    }

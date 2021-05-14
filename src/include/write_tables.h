@@ -5,32 +5,29 @@
 
 #include <string>
 
-// Write cross sections for (π + ρ0 ->  π + γ) processes
-void write_Total_Xsec_PiRho_PiGamma(std::string dir);
-void write_Diff_Xsec_PiRho_PiGamma(std::string dir);
+class TwoToTwo_writing {
 
-// Write cross sections for (π + π -> ρ0 + γ) processes
-void write_Total_Xsec_PiPi_RhoGamma(std::string dir);
-void write_Diff_Xsec_PiPi_RhoGamma(std::string dir);
+  public:
+    // Write cross sections for (π + ρ0 ->  π + γ) processes
+    static void write_Total_Xsec_PiRho_PiGamma(std::string dir);
+    static void write_Diff_Xsec_PiRho_PiGamma(std::string dir);
 
-// Declarations of variables
+    // Write cross sections for (π + π -> ρ0 + γ) processes
+    static void write_Total_Xsec_PiPi_RhoGamma(std::string dir);
+    static void write_Diff_Xsec_PiPi_RhoGamma(std::string dir);
+};
 
-double sigma_C11;
-double sigma_C12;
-double sigma_C13;
-double sigma_C14;
-double sigma_C15;
-double sigma_C16;
-double sigma_C21;
-double sigma_C22;
+class Brems_writing {
 
-double diff_sigma_C11;
-double diff_sigma_C12;
-double diff_sigma_C13;
-double diff_sigma_C14;
-double diff_sigma_C15;
-double diff_sigma_C16;
-double diff_sigma_C21;
-double diff_sigma_C22;
+  public:
+    // Write total cross sections
+    static void write_Total_Xsec(std::string dir);
+
+    // Write differential cross sections for dSigma/dk
+    static void write_dSigma_dk(std::string dir);
+
+    // Write differential cross sections for dSigma/dtheta
+    static void write_dSigma_dTheta(std::string dir);
+};
 
 #endif

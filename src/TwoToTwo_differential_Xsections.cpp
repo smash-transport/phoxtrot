@@ -6,11 +6,11 @@
  * S. Turbide (See README for link).
  */
 
-#include "include/differential_Xsections.h"
+#include "include/TwoToTwo_differential_Xsections.h"
 #include "include/common_functions.h"
 
 // C11
-double diff_xsection_C11(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C11(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 3.0;
 
@@ -267,7 +267,7 @@ double diff_xsection_C11(double t, double s) {
 }
 
 // C12
-double diff_xsection_C12(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C12(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 3.0;
 
@@ -461,7 +461,7 @@ double diff_xsection_C12(double t, double s) {
 }
 
 // C13
-double diff_xsection_C13(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C13(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 3.0;
 
@@ -652,7 +652,7 @@ double diff_xsection_C13(double t, double s) {
 }
 
 // C14
-double diff_xsection_C14(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C14(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 3.0;
 
@@ -690,7 +690,7 @@ double diff_xsection_C14(double t, double s) {
 }
 
 // C15
-double diff_xsection_C15(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C15(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 3.0;
 
@@ -711,7 +711,7 @@ double diff_xsection_C15(double t, double s) {
 }
 
 // C16
-double diff_xsection_C16(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C16(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 3.0;
 
@@ -731,7 +731,7 @@ double diff_xsection_C16(double t, double s) {
 }
 
 // C21
-double diff_xsection_C21(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C21(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 1.0;
 
@@ -978,7 +978,7 @@ double diff_xsection_C21(double t, double s) {
 }
 
 // C22
-double diff_xsection_C22(double t, double s) {
+double TwoToTwo_Diff_Xsections::diff_xsection_C22(double t, double s) {
   double diff_sigma;
   double spin_deg_factor = 1.0;
 
